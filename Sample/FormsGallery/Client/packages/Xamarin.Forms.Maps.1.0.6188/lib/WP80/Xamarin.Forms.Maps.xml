@@ -1,0 +1,389 @@
+<doc>
+    <assembly>
+        <name>Xamarin.Forms.Maps</name>
+    </assembly>
+    <members>
+        <member name="T:Xamarin.Forms.Maps.Distance">
+            <summary>Struct that encapsulates a distance (natively stored as a double of meters).</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="C:Xamarin.Forms.Maps.Distance(System.Double)">
+            <param name="meters">To be added.</param>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Distance.Equals(System.Object)">
+            <param name="obj">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Distance.Equals(Xamarin.Forms.Maps.Distance)">
+            <param name="other">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Distance.FromKilometers(System.Double)">
+            <param name="kilometers">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Distance.FromMeters(System.Double)">
+            <param name="meters">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Distance.FromMiles(System.Double)">
+            <param name="miles">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Distance.GetHashCode">
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.Distance.Kilometers">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.Distance.Meters">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.Distance.Miles">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Distance.op_Equality(Xamarin.Forms.Maps.Distance,Xamarin.Forms.Maps.Distance)">
+            <param name="left">To be added.</param>
+            <param name="right">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Distance.op_Inequality(Xamarin.Forms.Maps.Distance,Xamarin.Forms.Maps.Distance)">
+            <param name="left">To be added.</param>
+            <param name="right">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="T:Xamarin.Forms.Maps.Geocoder">
+            <summary>Converts between string addresses and <see cref="T:Xamarin.Forms.Maps.Position" />s.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="C:Xamarin.Forms.Maps.Geocoder">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position)">
+            <param name="position">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String)">
+            <param name="address">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="T:Xamarin.Forms.Maps.Map">
+            <summary>A <see cref="T:Xamarin.Forms.View" /> that shows a map provided by a platform-specific service.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="C:Xamarin.Forms.Maps.Map">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="C:Xamarin.Forms.Maps.Map(Xamarin.Forms.Maps.MapSpan)">
+            <param name="region">To be added.</param>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Map.GetEnumerator">
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.Map.HasScrollEnabled">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.Maps.Map.HasScrollEnabledProperty">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.Map.HasZoomEnabled">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.Maps.Map.HasZoomEnabledProperty">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.Map.IsShowingUser">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.Maps.Map.IsShowingUserProperty">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.Map.MapType">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.Maps.Map.MapTypeProperty">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)">
+            <param name="mapSpan">To be added.</param>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.Map.Pins">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Map.System#Collections#IEnumerable#GetEnumerator">
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.Map.VisibleRegion">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="T:Xamarin.Forms.Maps.MapSpan">
+            <summary>Used to specify a region on a <see cref="T:Xamarin.Forms.Maps.Map" />.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="C:Xamarin.Forms.Maps.MapSpan(Xamarin.Forms.Maps.Position,System.Double,System.Double)">
+            <param name="center">To be added.</param>
+            <param name="latitudeDegrees">To be added.</param>
+            <param name="longitudeDegrees">To be added.</param>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.MapSpan.Center">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.MapSpan.ClampLatitude(System.Double,System.Double)">
+            <param name="north">To be added.</param>
+            <param name="south">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.MapSpan.Equals(System.Object)">
+            <param name="obj">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius(Xamarin.Forms.Maps.Position,Xamarin.Forms.Maps.Distance)">
+            <param name="center">To be added.</param>
+            <param name="radius">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.MapSpan.GetHashCode">
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.MapSpan.op_Equality(Xamarin.Forms.Maps.MapSpan,Xamarin.Forms.Maps.MapSpan)">
+            <param name="left">To be added.</param>
+            <param name="right">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.MapSpan.op_Inequality(Xamarin.Forms.Maps.MapSpan,Xamarin.Forms.Maps.MapSpan)">
+            <param name="left">To be added.</param>
+            <param name="right">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.MapSpan.Radius">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.MapSpan.WithZoom(System.Double)">
+            <param name="zoomFactor">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="T:Xamarin.Forms.Maps.MapType">
+            <summary>Enumeration that specifies the display style of the map.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.Maps.MapType.Hybrid">
+            <summary>To be added.</summary>
+        </member>
+        <member name="F:Xamarin.Forms.Maps.MapType.Satellite">
+            <summary>To be added.</summary>
+        </member>
+        <member name="F:Xamarin.Forms.Maps.MapType.Street">
+            <summary>To be added.</summary>
+        </member>
+        <member name="T:Xamarin.Forms.Maps.Pin">
+            <summary>A marker on a <see cref="T:Xamarin.Forms.Maps.Map" />.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="C:Xamarin.Forms.Maps.Pin">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.Pin.Address">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.Maps.Pin.AddressProperty">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Pin.Equals(System.Object)">
+            <param name="obj">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Pin.GetHashCode">
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.Pin.Label">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Pin.op_Equality(Xamarin.Forms.Maps.Pin,Xamarin.Forms.Maps.Pin)">
+            <param name="left">To be added.</param>
+            <param name="right">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Pin.op_Inequality(Xamarin.Forms.Maps.Pin,Xamarin.Forms.Maps.Pin)">
+            <param name="left">To be added.</param>
+            <param name="right">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.Pin.Position">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.Maps.Pin.PositionProperty">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.Pin.Type">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.Maps.Pin.TypeProperty">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="T:Xamarin.Forms.Maps.PinType">
+            <summary>Enumeration specifying the various kinds of <see cref="T:Xamarin.Forms.Map.Pin" />.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.Maps.PinType.Generic">
+            <summary>To be added.</summary>
+        </member>
+        <member name="F:Xamarin.Forms.Maps.PinType.Place">
+            <summary>To be added.</summary>
+        </member>
+        <member name="F:Xamarin.Forms.Maps.PinType.SavedPin">
+            <summary>To be added.</summary>
+        </member>
+        <member name="F:Xamarin.Forms.Maps.PinType.SearchResult">
+            <summary>To be added.</summary>
+        </member>
+        <member name="T:Xamarin.Forms.Maps.Position">
+            <summary>A struct that has a latitude and longitude, stored as doubles.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="C:Xamarin.Forms.Maps.Position(System.Double,System.Double)">
+            <param name="latitude">To be added.</param>
+            <param name="longitude">To be added.</param>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Position.Equals(System.Object)">
+            <param name="obj">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Position.GetHashCode">
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.Position.Latitude">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Maps.Position.Longitude">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Position.op_Equality(Xamarin.Forms.Maps.Position,Xamarin.Forms.Maps.Position)">
+            <param name="left">To be added.</param>
+            <param name="right">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Maps.Position.op_Inequality(Xamarin.Forms.Maps.Position,Xamarin.Forms.Maps.Position)">
+            <param name="left">To be added.</param>
+            <param name="right">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+    </members>
+</doc>

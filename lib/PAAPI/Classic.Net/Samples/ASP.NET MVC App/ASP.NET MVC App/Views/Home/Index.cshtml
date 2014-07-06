@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "PreEmptive Solutions MVC Sample App";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h2>PreEmptive Solutions</h2> <br/>
+                <h1>ASP.NET MVC Sample</h1>
+            </hgroup>
+            <input type="button" value="Run Sample" onclick="location.href='@Url.Action("Index", new {runSample = true})'" /> <br/>
+            <input type="button" value="Throw Unhandled Exception" onclick="location.href='@Url.Action("Index", new {throwException = true})'" />
+        </div>
+        
+    </section>
+}

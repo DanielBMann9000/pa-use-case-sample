@@ -1,0 +1,20 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="MainWindow"
+    Title="PreEmptive Solutions" Height="350" Width="525" Background="Black" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0">
+            <Label Foreground="White" Padding="5" FontSize="15" Content="PreEmptive Solutions"/>
+            <Label Foreground="White" Padding="10" FontSize="30" Content="VB.NET Sample"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Button BorderThickness="2" Margin="2" Background="Black" Foreground="White" BorderBrush="White" Content="Run Sample" FontSize="20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="RunSample_OnClick"/>
+            <Button BorderThickness="2" Margin="2" Background="Black" Foreground="White" BorderBrush="White" Content="Throw Unhandled Exception" FontSize="20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ThrowException_OnClick"/>
+        </StackPanel>
+    </Grid>
+</Window>

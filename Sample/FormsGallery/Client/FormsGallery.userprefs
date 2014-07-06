@@ -1,0 +1,32 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.HAXM" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="FormsGallery\FormsGallery\PAClientFactory.cs">
+    <Files>
+      <File FileName="FormsGallery\FormsGallery\PAClientFactory.cs" Line="70" Column="1" />
+      <File FileName="FormsGallery\FormsGallery\App.cs" Line="12" Column="40" />
+      <File FileName="FormsGallery\FormsGallery.Android\MainActivity.cs" Line="27" Column="3" />
+      <File FileName="FormsGallery\FormsGallery\BasePage.cs" Line="6" Column="38" />
+      <File FileName="FormsGallery\FormsGallery\BoxViewDemoPage.cs" Line="2" Column="1" />
+      <File FileName="FormsGallery\FormsGallery\ButtonDemoPage.cs" Line="29" Column="48" />
+      <File FileName="FormsGallery\FormsGallery\TimePickerDemoPage.cs" Line="6" Column="37" />
+      <File FileName="FormsGallery\FormsGallery\LabelDemoPage.cs" Line="6" Column="32" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="FormsGallery" expanded="True">
+            <Node name="PAClientFactory.cs" selected="True" />
+          </Node>
+          <Node name="FormsGallery.Android" expanded="True" />
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

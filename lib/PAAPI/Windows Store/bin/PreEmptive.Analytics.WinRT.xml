@@ -1,0 +1,1533 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PreEmptive.Analytics.WinRT</name>
+    </assembly>
+    <members>
+        <member name="T:PreEmptive.Analytics.WinRT.EndpointAttributeLimits">
+            <summary>
+            Holds the field size limits for the officially supported PreEmptive Solutions endpoints
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.EndpointAttributeLimits.Common">
+            <summary>
+            The "common" field size limits taken as the minimum field sizes of PATFS and RI
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.EndpointAttributeLimits.RI">
+            <summary>
+            The field size limits of the Runtime Intelligence endpoint
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.EndpointAttributeLimits.PATFS">
+            <summary>
+            The field size limits of a PreEmptive Analytics for TFS endpoint
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.EndpointAttributeLimits.None">
+            <summary>
+            No field size limits
+            </summary>
+        </member>
+        <member name="T:PreEmptive.Analytics.WinRT.IAttributeLimiter">
+            <summary>
+            Represents a way for the Client to get the field size limits of the server it sends messages to
+            This is to prevent from sending unnecessarily large messages if portions of it will be truncated at the server
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.IAttributeLimiter.MaxSize(System.String,System.String)">
+            <summary>
+            The maximum size of the field specified by the specified tag and attribute name
+            Anything over this amount of raw characters(not bytes and without XML escaping) will be truncated
+            </summary>
+            <param name="tagname">The tag name specification for the field on the server</param>
+            <param name="attribute">The attribute name specification for the field on the server</param>
+            <returns>The maximum amount of characters for that field. Null should be returned if there is no limit</returns>
+        </member>
+        <member name="T:PreEmptive.Analytics.WinRT.ILogger">
+            <summary>
+            Interface that needs to be implemented to create a custom logger implementation.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ILogger.LogError(System.String)">
+            <summary>
+            The function that will be called when an error needs to be logged. This indicates that a setting or behavior of the API is incorrect.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ILogger.LogWarning(System.String)">
+            <summary>
+            The function that will be called when an error needs to be logged. This indicates that the API may not perform as expected.
+            </summary>
+            <param name="message">The message that describes the Warning.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ILogger.LogInfo(System.String)">
+            <summary>
+            The function that will be called when an error needs to be logged. This is used to report general behavior of the API.
+            </summary>
+            <param name="message">The message describing general API behavior.</param>
+        </member>
+        <member name="T:PreEmptive.Analytics.WinRT.Logger">
+            <summary>
+            Platform specific logging class.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.Logger.#ctor(PreEmptive.Analytics.WinRT.LoggingLevelEnum)">
+            <summary>
+            Sets the logging level to "None" upon the creation of a new instance.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.Logger.#ctor(PreEmptive.Analytics.WinRT.LoggingLevelEnum,System.String)">
+            <summary>
+            Sets the logging level to "None" upon the creation of a new instance.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.Logger.LogError(System.String)">
+            <summary>
+            The function that will be called when an error needs to be logged. This indicates that a setting or behavior of the API is incorrect.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.Logger.LogWarning(System.String)">
+            <summary>
+            The function that will be called when an error needs to be logged. This indicates that the API may not perform as expected.
+            </summary>
+            <param name="message">The message that describes the Warning.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.Logger.LogInfo(System.String)">
+            <summary>
+            The function that will be called when an error needs to be logged. This is used to report general behavior of the API.
+            </summary>
+            <param name="message">The message describing general API behavior.</param>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Logger.MessageLoggingLevelEnum">
+            <summary>
+            Determines if logging messages should be saved to disk.
+            </summary>
+        </member>
+        <member name="T:PreEmptive.Analytics.WinRT.LoggingLevel">
+            <summary>
+            Used to specify the level of logging that should be done. This is done using bit flags allowing for combinations of logging levels.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.LoggingLevel.None">
+            <summary>
+            Do not perform any logging.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.LoggingLevel.Error">
+            <summary>
+            Log failures in the API.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.LoggingLevel.Warning">
+            <summary>
+            Log situations where the API may not perform as expected.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.LoggingLevel.Info">
+            <summary>
+            Log general information about the API.
+            </summary>
+        </member>
+        <member name="T:PreEmptive.Analytics.WinRT.LoggingLevelEnum">
+            <summary>
+            Used to specify the level of logging that should be done.
+            </summary>
+        </member>
+        <member name="F:PreEmptive.Analytics.WinRT.LoggingLevelEnum.None">
+            <summary>
+            Do not perform any logging.
+            </summary>
+        </member>
+        <member name="F:PreEmptive.Analytics.WinRT.LoggingLevelEnum.Error">
+            <summary>
+            Log failures in the API.
+            </summary>
+        </member>
+        <member name="F:PreEmptive.Analytics.WinRT.LoggingLevelEnum.Warning">
+            <summary>
+            Log situations where the API may not perform as expected as well as errors.
+            </summary>
+        </member>
+        <member name="F:PreEmptive.Analytics.WinRT.LoggingLevelEnum.Info">
+            <summary>
+            Log general information about the API as well as warnings and errors.
+            </summary>
+        </member>
+        <member name="T:PreEmptive.Analytics.WinRT.PAClient">
+            <summary>
+            Class that wraps the WindowsStore Client.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.#ctor(System.String,System.String,PreEmptive.Analytics.WinRT.ILogger)">
+            <summary>
+            Constructor for the Client.
+            </summary>
+            <param name="companyID">A Guid that represents the companyID.</param>
+            <param name="applicationID">A Guid that represents the applicationID.</param>
+            <param name="logger">ILogger instance that determines how logging is done.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.#ctor(PreEmptive.Analytics.WinRT.Configuration,PreEmptive.Analytics.WinRT.ILogger)">
+            <summary>
+            Constructor for the Client.
+            </summary>
+            <param name="configuration">A Configuration object that defines the behavior of the Client.</param>
+            <param name="logger">ILogger instance that determines how logging is done.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.#ctor(PreEmptive.Analytics.WinRT.Configuration)">
+            <summary>
+            Constructor for the Client.
+            </summary>
+            <param name="configuration">A Configuration object that defines the behavior of the Client.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ApplicationStart(System.Collections.Generic.IDictionary{System.String,System.Object},PreEmptive.Analytics.WinRT.BinaryInfo,PreEmptive.Analytics.WinRT.FlowController)">
+            <summary>
+            Starts the client system if it has not yet been started and sends an application start message.
+            </summary>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+            <param name="flowController">An optional FlowController instance used to define the Client's interaction with the server.</param>
+            <returns>Returns true if the request was accepted and the Client is now running.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ApplicationStart(System.Collections.Generic.IDictionary{System.String,System.Object},PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Starts the client system if it has not yet been started and sends an application start message.
+            </summary>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+            <returns>Returns true if the request was accepted and the Client is now running.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ApplicationStart(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Starts the client system if it has not yet been started and sends an application start message.
+            </summary>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <returns>Returns true if the request was accepted and the Client is now running.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ApplicationStart">
+            <summary>
+            Starts the client system if it has not yet been started and sends an application start message.
+            </summary>
+            <returns>Returns true if the request was accepted and the Client is now running.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ApplicationStopSync(System.Collections.Generic.IDictionary{System.String,System.Object},PreEmptive.Analytics.WinRT.BinaryInfo,System.Boolean)">
+            <summary>
+            Stops the PreEmptive Analytics client synchronously in a blocking manner
+            </summary>
+            <remarks>
+            This method halts the client system and releases all connections and resources used by it.
+            To continue interaction with the client system ApplicationStart() will need to be called again: all other requests to the Client will be ignored. 
+            If the client system is not currently running then the request is ignored.
+            </remarks>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+            <param name="immediate">If the API instance is configured for session extension, this can be used to immediately stop the API</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ApplicationStopSync(System.Collections.Generic.IDictionary{System.String,System.Object},PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Stops the PreEmptive Analytics client synchronously in a blocking manner
+            </summary>
+            <remarks>
+            This method halts the client system and releases all connections and resources used by it.
+            To continue interaction with the client system ApplicationStart() will need to be called again: all other requests to the Client will be ignored. 
+            If the client system is not currently running then the request is ignored.
+            </remarks>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ApplicationStopSync(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Stops the PreEmptive Analytics client synchronously in a blocking manner
+            </summary>
+            <remarks>
+            This method halts the client system and releases all connections and resources used by it.
+            To continue interaction with the client system ApplicationStart() will need to be called again: all other requests to the Client will be ignored. 
+            If the client system is not currently running then the request is ignored.
+            </remarks>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ApplicationStopSync">
+            <summary>
+            Stops the PreEmptive Analytics client synchronously in a blocking manner
+            </summary>
+            <remarks>
+            This method halts the client system and releases all connections and resources used by it.
+            To continue interaction with the client system ApplicationStart() will need to be called again: all other requests to the Client will be ignored. 
+            If the client system is not currently running then the request is ignored.
+            </remarks>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ApplicationStop(System.Collections.Generic.IDictionary{System.String,System.Object},PreEmptive.Analytics.WinRT.BinaryInfo,System.Boolean)">
+            <summary>
+            Stops the PreEmptive Analytics client.
+            </summary>
+            <remarks>
+            This method halts the client system and releases all connections and resources used by it.
+            To continue interaction with the client system ApplicationStart() will need to be called again: all other requests to the Client will be ignored. 
+            If the client system is not currently running then the request is ignored.
+            </remarks>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+            <param name="immediate">If the API instance is configured for session extension, this can be used to immediately stop the API</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ApplicationStop(System.Collections.Generic.IDictionary{System.String,System.Object},PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Stops the PreEmptive Analytics client.
+            </summary>
+            <remarks>
+            This method halts the client system and releases all connections and resources used by it.
+            To continue interaction with the client system ApplicationStart() will need to be called again: all other requests to the Client will be ignored. 
+            If the client system is not currently running then the request is ignored.
+            </remarks>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ApplicationStop(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Stops the PreEmptive Analytics client.
+            </summary>
+            <remarks>
+            This method halts the client system and releases all connections and resources used by it.
+            To continue interaction with the client system ApplicationStart() will need to be called again: all other requests to the Client will be ignored. 
+            If the client system is not currently running then the request is ignored.
+            </remarks>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ApplicationStop">
+            <summary>
+            Stops the PreEmptive Analytics client.
+            </summary>
+            <remarks>
+            This method halts the client system and releases all connections and resources used by it.
+            To continue interaction with the client system ApplicationStart() will need to be called again: all other requests to the Client will be ignored. 
+            If the client system is not currently running then the request is ignored.
+            </remarks>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ApplicationStopAsync(System.Collections.Generic.IDictionary{System.String,System.Object},PreEmptive.Analytics.WinRT.BinaryInfo,System.Boolean)">
+            <summary>
+            Stops the PreEmptive Analytics client.
+            </summary>
+            <remarks>
+            This method halts the client system and releases all connections and resources used by it.
+            To continue interaction with the client system ApplicationStart() will need to be called again: all other requests to the Client will be ignored. 
+            If the client system is not currently running then the request is ignored.
+            </remarks>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+            <param name="immediate">If the API instance is configured for session extension, this can be used to immediately stop the API</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ApplicationStopAsync(System.Collections.Generic.IDictionary{System.String,System.Object},PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Stops the PreEmptive Analytics client.
+            </summary>
+            <remarks>
+            This method halts the client system and releases all connections and resources used by it.
+            To continue interaction with the client system ApplicationStart() will need to be called again: all other requests to the Client will be ignored. 
+            If the client system is not currently running then the request is ignored.
+            </remarks>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ApplicationStopAsync(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Stops the PreEmptive Analytics client.
+            </summary>
+            <remarks>
+            This method halts the client system and releases all connections and resources used by it.
+            To continue interaction with the client system ApplicationStart() will need to be called again: all other requests to the Client will be ignored. 
+            If the client system is not currently running then the request is ignored.
+            </remarks>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ApplicationStopAsync">
+            <summary>
+            Stops the PreEmptive Analytics client.
+            </summary>
+            <remarks>
+            This method halts the client system and releases all connections and resources used by it.
+            To continue interaction with the client system ApplicationStart() will need to be called again: all other requests to the Client will be ignored. 
+            If the client system is not currently running then the request is ignored.
+            </remarks>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureTick(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String,PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Sends a message representing the occurrence of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureTick(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Sends a message representing the occurrence of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureTick(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Sends a message representing the occurrence of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureTick(System.String)">
+            <summary>
+            Sends a message representing the occurrence of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportExpiration(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String,PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Sends a message reporting that the application's license has expired.
+            </summary>
+            <param name="slid">The shelflife ID of the application</param>
+            <param name="session">A Guid that identifies the current session.</param>
+            <param name="keys">Extended key information to be sent with the message.</param>
+            <param name="binary">Binary info that describes the application where the request originated.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportExpiration(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Sends a message reporting that the application's license has expired.
+            </summary>
+            <param name="slid">The shelflife ID of the application</param>
+            <param name="session">A Guid that identifies the current session.</param>
+            <param name="keys">Extended key information to be sent with the message.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportExpiration(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Sends a message reporting that the application's license has expired.
+            </summary>
+            <param name="slid">The shelflife ID of the application</param>
+            <param name="keys">Extended key information to be sent with the message.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportExpiration(System.String)">
+            <summary>
+            Sends a message reporting that the application's license has expired.
+            </summary>
+            <param name="slid">The shelflife ID of the application</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportExpirationWarning(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String,PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Sends a message reporting that the user has been warned that the application's license is close to expiration
+            </summary>
+            <param name="slid">The shelflife ID of the application</param>
+            <param name="session">A Guid that identifies the current session.</param>
+            <param name="keys">Extended key information to be sent with the message.</param>
+            <param name="binary">Binary info that describes the application where the request originated.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportExpirationWarning(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Sends a message reporting that the user has been warned that the application's license is close to expiration
+            </summary>
+            <param name="slid">The shelflife ID of the application</param>
+            <param name="session">A Guid that identifies the current session.</param>
+            <param name="keys">Extended key information to be sent with the message.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportExpirationWarning(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Sends a message reporting that the user has been warned that the application's license is close to expiration
+            </summary>
+            <param name="slid">The shelflife ID of the application</param>
+            <param name="keys">Extended key information to be sent with the message.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportExpirationWarning(System.String)">
+            <summary>
+            Sends a message reporting that the user has been warned that the application's license is close to expiration
+            </summary>
+            <param name="slid">The shelflife ID of the application</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportTamper(System.Collections.Generic.IDictionary{System.String,System.Object},System.String,PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Sends a message reporting a tampering of the application.
+            </summary>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportTamper(System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Sends a message reporting a tampering of the application.
+            </summary>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportTamper(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Sends a message reporting a tampering of the application.
+            </summary>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportTamper">
+            <summary>
+            Sends a message reporting a tampering of the application.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStart(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String,PreEmptive.Analytics.WinRT.BinaryInfo,System.String)">
+            <summary>
+            Sends a message representing the start of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+            <param name="group">A Guid representing the message group.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStart(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String,PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Sends a message representing the start of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStart(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Sends a message representing the start of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStart(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Sends a message representing the start of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStart(System.String)">
+            <summary>
+            Sends a message representing the start of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStartWithGroup(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String,PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Sends a message representing the start of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+            <param name="group">A Guid representing the message group.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStartWithGroup(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Sends a message representing the start of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+            <param name="group">A Guid representing the message group.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStartWithGroup(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Sends a message representing the start of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="group">A Guid representing the message group.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStartWithGroup(System.String,System.String)">
+            <summary>
+            Sends a message representing the start of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="group">A Guid representing the message group.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStop(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String,PreEmptive.Analytics.WinRT.BinaryInfo,System.String)">
+            <summary>
+            Sends a message representing the stop of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="group">A Guid representing the message group.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStop(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String,PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Sends a message representing the stop of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStop(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Sends a message representing the stop of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStop(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Sends a message representing the stop of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStop(System.String)">
+            <summary>
+            Sends a message representing the stop of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStopWithGroup(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String,PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Sends a message representing the stop of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="group">A Guid representing the message group.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStopWithGroup(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Sends a message representing the stop of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="group">A Guid representing the message group.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStopWithGroup(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Sends a message representing the stop of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="group">A Guid representing the message group.</param>
+            <param name="keys">An optional ExtendedKeys instance used to send additional information to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.FeatureStopWithGroup(System.String,System.String)">
+            <summary>
+            Sends a message representing the stop of a feature.
+            </summary>
+            <param name="name">A unique name for the feature.</param>
+            <param name="group">A Guid representing the message group.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.NewFeatureGroup">
+            <summary>
+            Used to get a new Guid for a feature group.
+            </summary>
+            <returns>Returns a new Guid.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportException(PreEmptive.Analytics.WinRT.ExceptionInfo,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.Object},System.String,PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Sends a message representing an exception.
+            </summary>
+            <param name="exception">An instance of ExceptionInfo that holds information that populates the exception message.</param>
+            <param name="optInOverride">Should the optIn setting be overridden.</param>
+            <param name="keys">An ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportException(PreEmptive.Analytics.WinRT.ExceptionInfo,System.Collections.Generic.IDictionary{System.String,System.Object},System.String,PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Sends a message representing an exception.
+            </summary>
+            <param name="exception">An instance of ExceptionInfo that holds information that populates the exception message.</param>
+            <param name="keys">An ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportException(PreEmptive.Analytics.WinRT.ExceptionInfo,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Sends a message representing an exception.
+            </summary>
+            <param name="exception">An instance of ExceptionInfo that holds information that populates the exception message.</param>
+            <param name="keys">An ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportException(PreEmptive.Analytics.WinRT.ExceptionInfo,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Sends a message representing an exception.
+            </summary>
+            <param name="exception">An instance of ExceptionInfo that holds information that populates the exception message.</param>
+            <param name="keys">An ExtendedKeys instance used to send additional information to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.GetActiveDefaultSession">
+            <summary>
+            Gets the Session ID that is being used for the current API run. This ID can be passed to other APIs to activate subordinate mode.
+            </summary>
+            <returns>The Session ID</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportException(PreEmptive.Analytics.WinRT.ExceptionInfo,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Sends a message representing an exception.
+            </summary>
+            <param name="exception">An instance of ExceptionInfo that holds information that populates the exception message.</param>
+            <param name="optInOverride">Should the optIn setting be overridden.</param>
+            <param name="keys">An ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportException(PreEmptive.Analytics.WinRT.ExceptionInfo,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Sends a message representing an exception.
+            </summary>
+            <param name="exception">An instance of ExceptionInfo that holds information that populates the exception message.</param>
+            <param name="optInOverride">Should the optIn setting be overridden.</param>
+            <param name="keys">An ExtendedKeys instance used to send additional information to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportException(PreEmptive.Analytics.WinRT.ExceptionInfo,System.Boolean)">
+            <summary>
+            Sends a message representing an exception.
+            </summary>
+            <param name="exception">An instance of ExceptionInfo that holds information that populates the exception message.</param>
+            <param name="optInOverride">Should the optIn setting be overridden.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.ReportException(PreEmptive.Analytics.WinRT.ExceptionInfo)">
+            <summary>
+            Sends a message representing an exception.
+            </summary>
+            <param name="exception">An instance of ExceptionInfo that holds information that populates the exception message.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.BuildKeys(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Helper method to create and populate and ExtendedKeys object from a type availible to WinRT (e.g. IDictionary)
+            </summary>
+            <param name="keys">The object to convert to ExtendedKeys.</param>
+            <returns>The newly created ExtendedKeys object.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.GetBinary(PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Helper method to convert binary info from the WinRT implementation to the Common implementation.
+            </summary>
+            <param name="binary">A WinRT instance of BinaryInfo.</param>
+            <returns>An instance of the Common BinaryInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.GetFlowController(PreEmptive.Analytics.WinRT.FlowController)">
+            <summary>
+            Helper method to convert the flow controller instance from the WinRT implementation to the Common implementation.
+            </summary>
+            <param name="flowController">A WinRT instance of FlowController.</param>
+            <returns>An instance of the Common FlowController.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.SetSendDisabled(System.Boolean)">
+            <summary>
+            Disables or enables the sending of messages for the currently running Client.
+            </summary>
+            <param name="value">Whether or not the sending of messages should be disabled.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.SendMessages">
+            <summary>
+            Signals the Client to send all of the messages that are currently in the queue.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.PerformanceProbe(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String,PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Sends a message describing the performance of the device and the applicaion. NOTE: This is not supported on Windows Store Apps
+            </summary>
+            <param name="name">A name that describes the point at which the performance probe is performend. The name must not be null or empty.</param>
+            <param name="keys">An ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="info">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.PerformanceProbe(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Sends a message describing the performance of the device and the applicaion. NOTE: This is not supported on Windows Store Apps
+            </summary>
+            <param name="name">A name that describes the point at which the performance probe is performend. The name must not be null or empty.</param>
+            <param name="keys">An ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.PerformanceProbe(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Sends a message describing the performance of the device and the applicaion. NOTE: This is not supported on Windows Store Apps
+            </summary>
+            <param name="name">A name that describes the point at which the performance probe is performend. The name must not be null or empty.</param>
+            <param name="keys">An ExtendedKeys instance used to send additional information to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.PerformanceProbe(System.String)">
+            <summary>
+            Sends a message describing the performance of the device and the applicaion. NOTE: This is not supported on Windows Store Apps
+            </summary>
+            <param name="name">A name that describes the point at which the performance probe is performend. The name must not be null or empty.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.SystemProfile(System.Collections.Generic.IDictionary{System.String,System.Object},System.String,PreEmptive.Analytics.WinRT.BinaryInfo)">
+            <summary>
+            Sends a system profile message.
+            </summary>
+            <param name="keys">An ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="binary">An optional BinaryInfo instance used to send additional information about the caller of the method to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.SystemProfile(System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Sends a system profile message.
+            </summary>
+            <param name="keys">An ExtendedKeys instance used to send additional information to the server.</param>
+            <param name="session">A Guid defining the session for the Client.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.SystemProfile(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Sends a system profile message.
+            </summary>
+            <param name="keys">An ExtendedKeys instance used to send additional information to the server.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.SystemProfile">
+            <summary>
+            Sends a system profile message.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.PAClient.SetSessionOptIn(System.Boolean)">
+            <summary>
+            Enables or disables the optIn setting for the currently running Client.
+            </summary>
+            <param name="value">The value to set optIn to.</param>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.PAClient.Configuration">
+            <summary>
+            The Configuration object that defines the behavior of the Client.
+            </summary>
+        </member>
+        <member name="T:PreEmptive.Analytics.WinRT.BinaryInfo">
+            <summary>
+            Class for handling binary information on a WinRT app.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.BinaryInfo.GetCurrent">
+            <summary>
+            Returns a BinaryInfo object with information from the current package put into Name and Version.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.BinaryInfo.ID">
+            <summary>
+            A GUID given to the binary.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.BinaryInfo.LastModified">
+            <summary>
+            Time the binary was last modified.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.BinaryInfo.Name">
+            <summary>
+            Name of the binary.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.BinaryInfo.Version">
+            <summary>
+            Version of the binary.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.BinaryInfo.ClassName">
+            <summary>
+            Name of the class which is sending the message.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.BinaryInfo.MethodName">
+            <summary>
+            Name of the method which is sending the message.
+            </summary>
+        </member>
+        <member name="T:PreEmptive.Analytics.WinRT.Configuration">
+            <summary>
+            Class that wraps the implementation of Common Configuration.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.Configuration.#ctor">
+            <summary>
+            Constuctor for a Configuration object.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.Configuration.#ctor(System.String,System.String)">
+            <summary>
+            Constuctor for a Configuration object.
+            </summary>
+            <param name="CompanyID">A Guid that uniquely identifies the company.</param>
+            <param name="ApplicationID">A Guid tht uniquely identifies the application.</param>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.CompanyID">
+            <summary>
+            A Guid that uniquely identifies the company.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.CompanyName">
+            <summary>
+            The name of the company.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.ApplicationID">
+            <summary>
+            A Guid that uniquely identifies the application.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.ApplicationType">
+            <summary>
+            A user defined application type.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.ApplicationName">
+            <summary>
+            The name of the application.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.ApplicationVersion">
+            <summary>
+            The version of the application.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.InstanceId">
+            <summary>
+            An identifier for the instance of the application.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.MaximumBatchSize">
+            <summary>
+            The maximum size a message batch can be, in bytes.
+            If a batch exceeds this size, it is split into multiple batches
+            If a single message exceeds this size, it will be discarded if transmission fails at any time
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.OptIn">
+            <summary>
+            A boolean that determines if the client is permitted to send any information.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.DefaultSession">
+            <summary>
+            A Guid representing the session that is used if the user has not provided one.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.MessageGroup">
+            <summary>
+            A Guid that uniquely defines a group that the messages belong to.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.Endpoint">
+            <summary>
+            The endpoint to send the messages to.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.UseSSL">
+            <summary>
+            Should SSL encryption be used when sending messages.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.OmitPersonalInfo">
+            <summary>
+            If set to true will scrub all personally identifiable information
+            Includes things like: Username, host IP, host name, etc
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.Offline">
+            <summary>
+            Is the transmission of messages prohibited.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.SupportOfflineStorage">
+            <summary>
+            Should messages be saved offline when they cannot be sent.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.MinimumFailureCount">
+            <summary>
+            The minimum amount of times a message should fail to be transmitted
+            before becoming eligible for deletion from offline storage
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.MinimumTimeToLive">
+            <summary>
+            The minimum age(in seconds) a message must be before it becomes eligible for deletion
+            from offline storage
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.FullData">
+            <summary>
+            This controls how "deep" Platform.GetSystemInfo is allowed to go. If true, it may take longer
+            to read some information. If set to false, it'll skip getting information that is considered slow
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.AttributeLimiter">
+            <summary>
+            The field size limits of the server pointed to by Endpoint
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.StopTimeout">
+            <summary>
+            The maximum amount of time in milliseconds that ApplicationStop will block for when stopping synchronously 
+            If something goes wrong and it takes longer than this, then the method will return even if a batch of messages could be lost. 
+            If set to -1, the value will be set to the most useful value for the current platform
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.NeededTimeForSavingAtStop">
+            <summary>
+            The amount of time in milliseconds that should be dedicated to saving all unsent messages to offline storage at ApplicationStop
+            If set to -1, the value will be set to the most useful value for the current platform
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.Configuration.SessionExtensionWindow">
+            <summary>
+            This allows a session to be "extended" whenever an application start is called soon after an application stop. 
+            For example in mobile applications when the user switches screens or is briefly interrupted.
+            The value, in milliseconds, indicates the amount of time allowed before an app-stop is actually executed.
+            A value of 0 disables this feature.
+            If set to -1, the value will be set to the most useful value for the current platform
+            </summary>
+        </member>
+        <member name="T:PreEmptive.Analytics.WinRT.ExceptionInfo">
+            <summary>
+            Class for handling exception information.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.#ctor">
+            <summary>
+            Constructor for ExceptionInfo.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.#ctor(PreEmptive.Analytics.WinRT.ExceptionType,System.Exception,System.String,System.String,System.String)">
+            <summary>
+            Constructor for ExceptionInfo.
+            </summary>
+            <param name="type">The type of the exception.</param>
+            <param name="exception">The exception object.</param>
+            <param name="contact">Contact information for the end user (e.g. an email address).</param>
+            <param name="comment">A comment string provided by the end user.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.#ctor(PreEmptive.Analytics.WinRT.ExceptionType)">
+            <summary>
+            Constructor for ExceptionInfo.
+            </summary>
+            <param name="type">The type of the exception.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.#ctor(PreEmptive.Analytics.WinRT.ExceptionType,System.Exception)">
+            <summary>
+            Constructor for ExceptionInfo.
+            </summary>
+            <param name="type">The type of the exception.</param>
+            <param name="exception">The exception object.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.#ctor(PreEmptive.Analytics.WinRT.ExceptionType,System.Exception,System.String)">
+            <summary>
+            Constructor for ExceptionInfo.
+            </summary>
+            <param name="type">The type of the exception.</param>
+            <param name="exception">The exception object.</param>
+            <param name="contact">Contact information for the end user (e.g. an email address).</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.#ctor(PreEmptive.Analytics.WinRT.ExceptionType,System.Exception,System.String,System.String)">
+            <summary>
+            Constructor for ExceptionInfo.
+            </summary>
+            <param name="type">The type of the exception.</param>
+            <param name="exception">The exception object.</param>
+            <param name="contact">Contact information for the end user (e.g. an email address).</param>
+            <param name="comment">A comment string provided by the end user.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Caught(System.Exception,System.String,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Caught.
+            </summary>
+            <param name="exception">The exception object.</param>
+            <param name="contact">Contact information for the end user (e.g. an email address).</param>
+            <param name="comment">A comment string provided by the end user.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Caught(System.Exception,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Caught.
+            </summary>
+            <param name="exception">The exception object.</param>
+            <param name="contact">Contact information for the end user (e.g. an email address).</param>
+            <param name="comment">A comment string provided by the end user.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Caught(System.Exception,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Caught.
+            </summary>
+            <param name="exception">The exception object.</param>
+            <param name="contact">Contact information for the end user (e.g. an email address).</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Caught(System.Exception)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Caught.
+            </summary>
+            <param name="exception">The exception object.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Caught">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Caught.
+            </summary>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Caught(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Caught.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <param name="callstack">The callstack representing the state when the exception occurred.</param>
+            <param name="callstackregex">The regular expression that should be used to parse the callstack.</param>
+            <param name="contact">A comment string provided by the end user.</param>
+            <param name="comment">A comment string provided by the end user.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Caught(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Caught.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <param name="callstack">The callstack representing the state when the exception occurred.</param>
+            <param name="callstackregex">The regular expression that should be used to parse the callstack.</param>
+            <param name="contact">A comment string provided by the end user.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Caught(System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Caught.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <param name="callstack">The callstack representing the state when the exception occurred.</param>
+            <param name="callstackregex">The regular expression that should be used to parse the callstack.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Caught(System.String,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Caught.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <param name="callstack">The callstack representing the state when the exception occurred.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Caught(System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Caught.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Caught(System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Caught.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Uncaught(System.Exception,System.String,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Uncaught.
+            </summary>
+            <param name="exception">The exception object.</param>
+            <param name="contact">Contact information for the end user (e.g. an email address).</param>
+            <param name="comment">A comment string provided by the end user.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Uncaught(System.Exception,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Uncaught.
+            </summary>
+            <param name="exception">The exception object.</param>
+            <param name="contact">Contact information for the end user (e.g. an email address).</param>
+            <param name="comment">A comment string provided by the end user.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Uncaught(System.Exception,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Uncaught.
+            </summary>
+            <param name="exception">The exception object.</param>
+            <param name="contact">Contact information for the end user (e.g. an email address).</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Uncaught(System.Exception)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Uncaught.
+            </summary>
+            <param name="exception">The exception object.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Uncaught">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Uncaught.
+            </summary>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Uncaught(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Uncaught.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <param name="callstack">The callstack representing the state when the exception occurred.</param>
+            <param name="callstackregex">The regular expression that should be used to parse the callstack.</param>
+            <param name="contact">A comment string provided by the end user.</param>
+            <param name="comment">A comment string provided by the end user.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Uncaught(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Uncaught.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <param name="callstack">The callstack representing the state when the exception occurred.</param>
+            <param name="callstackregex">The regular expression that should be used to parse the callstack.</param>
+            <param name="contact">A comment string provided by the end user.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Uncaught(System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Uncaught.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <param name="callstack">The callstack representing the state when the exception occurred.</param>
+            <param name="callstackregex">The regular expression that should be used to parse the callstack.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Uncaught(System.String,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Uncaught.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <param name="callstack">The callstack representing the state when the exception occurred.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Uncaught(System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Uncaught.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Uncaught(System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Uncaught.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Thrown(System.Exception,System.String,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Thrown.
+            </summary>
+            <param name="exception">The exception object.</param>
+            <param name="contact">Contact information for the end user (e.g. an email address).</param>
+            <param name="comment">A comment string provided by the end user.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Thrown(System.Exception,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Thrown.
+            </summary>
+            <param name="exception">The exception object.</param>
+            <param name="contact">Contact information for the end user (e.g. an email address).</param>
+            <param name="comment">A comment string provided by the end user.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Thrown(System.Exception,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Thrown.
+            </summary>
+            <param name="exception">The exception object.</param>
+            <param name="contact">Contact information for the end user (e.g. an email address).</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Thrown(System.Exception)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Thrown.
+            </summary>
+            <param name="exception">The exception object.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Thrown">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Thrown.
+            </summary>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Thrown(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Thrown.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <param name="callstack">The callstack representing the state when the exception occurred.</param>
+            <param name="callstackregex">The regular expression that should be used to parse the callstack.</param>
+            <param name="contact">A comment string provided by the end user.</param>
+            <param name="comment">A comment string provided by the end user.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Thrown(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Thrown.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <param name="callstack">The callstack representing the state when the exception occurred.</param>
+            <param name="callstackregex">The regular expression that should be used to parse the callstack.</param>
+            <param name="contact">A comment string provided by the end user.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Thrown(System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Thrown.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <param name="callstack">The callstack representing the state when the exception occurred.</param>
+            <param name="callstackregex">The regular expression that should be used to parse the callstack.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Thrown(System.String,System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Thrown.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <param name="callstack">The callstack representing the state when the exception occurred.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Thrown(System.String,System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Thrown.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <param name="message">A human readable message that describes the condition.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.ExceptionInfo.Thrown(System.String)">
+            <summary>
+            Creates a new exception that is of type ExceptionType.Thrown.
+            </summary>
+            <param name="name">The name of the exception.</param>
+            <returns>The resulting ExceptionInfo.</returns>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.ExceptionInfo.Exception">
+            <summary>
+            The exception object.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.ExceptionInfo.ExceptionType">
+            <summary>
+            The type of the exception.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.ExceptionInfo.Message">
+            <summary>
+            A human readable message that describes the condition.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.ExceptionInfo.Contact">
+            <summary>
+            Contact information for the end user (e.g. an email address).
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.ExceptionInfo.Comment">
+            <summary>
+            A comment string provided by the end user.
+            </summary>
+        </member>
+        <member name="T:PreEmptive.Analytics.WinRT.ExceptionTypes">
+            <summary>
+            Wrapper for the ExceptionType enum for languages that don't support enums (e.g. Javascript).
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.ExceptionTypes.Caught">
+            <summary>
+            A caught exception.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.ExceptionTypes.Uncaught">
+            <summary>
+            An uncaught exception.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.ExceptionTypes.Thrown">
+            <summary>
+            A thrown exception.
+            </summary>
+        </member>
+        <member name="T:PreEmptive.Analytics.WinRT.ExceptionType">
+            <summary>
+            Values that represent the type of exception. Values come from Win32 API.
+            </summary>
+        </member>
+        <member name="F:PreEmptive.Analytics.WinRT.ExceptionType.Caught">
+            <summary>
+            A caught exception.
+            </summary>
+        </member>
+        <member name="F:PreEmptive.Analytics.WinRT.ExceptionType.Uncaught">
+            <summary>
+            An uncaught exception.
+            </summary>
+        </member>
+        <member name="F:PreEmptive.Analytics.WinRT.ExceptionType.Thrown">
+            <summary>
+            A thrown exception.
+            </summary>
+        </member>
+        <member name="T:PreEmptive.Analytics.WinRT.FlowController">
+            <summary>
+            Class that used to manage the behavior of the message queue.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.FlowController.#ctor">
+            <summary>
+            Constructor for the FlowController.
+            </summary>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.FlowController.GetInterval(System.Int32)">
+            <summary>
+            Calculates the time to wait until the next automatic batching and sending of messages.
+            </summary>
+            <param name="numberOfMessages">A count of the current number of queued messages.</param>
+            <returns>The time interval to wait in milliseconds.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.FlowController.MessagesToDrop(System.Int32)">
+            <summary>
+            The number of messages to drop when QueueSize has been exceeded.
+            </summary>
+            <param name="currentMessageCount">The current number of messages.</param>
+            <returns>The number of messages to drop.</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.FlowController.OkToTransmit">
+            <summary>
+            Determines if messages sending is currently permitted.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.FlowController.OnSend(System.Boolean)">
+            <summary>
+            Updates the flow controller based on the success or failure of a message transmission.
+            </summary>
+            <param name="sendSucceeded">The status of the message transmission.</param>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.FlowController.CanStartClient">
+            <summary>
+            Determines if the CoreClient instance should actually start queueing of messages
+            </summary>
+            <returns>True if it should start, false if not</returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.FlowController.ShouldSendNow(System.Int32)">
+            <summary>
+            Determines if the queue should awaken the transmitter and start sending
+            </summary>
+            <param name="messageCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreEmptive.Analytics.WinRT.FlowController.Copy">
+            <summary>
+            Creates a deep copy of the FlowController.
+            </summary>
+            <returns>A new instance of IFlowController.</returns>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.QueueSize">
+            <summary>
+            The maximum number of messages that can be held in the queue.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.HighWater">
+            <summary>
+            The point at which queued messages should be batched and sent.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.MaximumInterval">
+            <summary>
+            The maximum amout of time the transmitter should wait between checking the message queue specified in milliseconds.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.MinimumInterval">
+            <summary>
+            The minimum amout of time the transmitter should wait between checking the message queue specified in milliseconds.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.Gain">
+            <summary>
+            The rate at which the interval should be changed in relation to the number of messages queued. This is an integer greater than zero that acts as a percentage.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.QuietGain">
+            <summary>
+            The rate at which the interval should be changed when the queue is empty. This is an integer greater than zero and greater than or equal to 100 that acts as a percentage. 
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.Offline">
+            <summary>
+            Is the transmission of messages prohibited.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.MinimumFailureCount">
+            <summary>
+            The minimum amount of times a message should fail to be transmitted
+            before becoming eligible for deletion from offline storage
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.MinimumTimeToLive">
+            <summary>
+            The minimum age(in seconds) a message must be before it becomes eligible for deletion
+            from offline storage
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.SupportOfflineStorage">
+            <summary>
+            Is offline storage of messages permitted.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.SendDisabled">
+            <summary>
+            Is the transmission of messages temporarily disabled.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.MaximumSequentialFailureCount">
+            <summary>
+            The maximum number of sequential transmission failures before waiting the duration of the RetryTimeout to retry sending.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.RetryTimeout">
+            <summary>
+            The number of milliseconds to wait before allowing transmissions after a series of sequential failures.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.LastSendTime">
+            <summary>
+            Last time messages were sent specified int ticks.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.Interval">
+            <summary>
+            The time to wait between automatic batching and sending of messages specified in milliseconds.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.SequentialFailureCount">
+            <summary>
+            The current number of sequential transmission failures.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.RetryTime">
+            <summary>
+            The time when message sending will resume. Specified in ticks.
+            </summary>
+        </member>
+        <member name="P:PreEmptive.Analytics.WinRT.FlowController.MaximumBatchSize">
+            <summary>
+            The maximum size a message batch can be, in bytes.
+            If a batch exceeds this size, it is split into multiple batches
+            If a single message exceeds this size, it will be discarded if transmission fails at any time
+            </summary>
+        </member>
+    </members>
+</doc>
