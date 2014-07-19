@@ -24,7 +24,7 @@ namespace FormsGallery
                 BorderWidth = 1
             };
             button1.Clicked += async (sender, args) =>
-                await Navigation.PushAsync(new LabelDemoPage());
+                await Navigation.PushAsync(new AboutPage());
 
             Button button2 = new Button
             {
@@ -42,7 +42,7 @@ namespace FormsGallery
                 BorderWidth = 1
             };
             button3.Clicked += async (sender, args) =>
-                await Navigation.PushAsync(new BoxViewDemoPage());
+				await Navigation.PushAsync(new ExceptionPage());
 
             Button button4 = new Button
             {

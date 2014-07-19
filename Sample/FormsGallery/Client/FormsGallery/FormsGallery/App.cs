@@ -11,8 +11,18 @@ namespace FormsGallery
     {
         public static Page GetMainPage()
         {
-			PAClientFactory.StartApplication ("MyInstance");
+			
             return new NavigationPage(new HomePage());
+        }
+
+		public static void Shutdown()
+		{
+			PAClientFactory.StopApplication (true);
+		}
+
+        public static void Start()
+        {
+            PAClientFactory.StartApplication("MyInstance");
         }
     }
 }

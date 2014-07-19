@@ -1,6 +1,0 @@
-drawable-hdpi/ide_xamarin_studio.png;drawable-hdpi/ide_xamarin_studio.png
-drawable-xxhdpi/Icon.png;drawable-xxhdpi/icon.png
-drawable-xhdpi/Icon.png;drawable-xhdpi/icon.png
-drawable-mdpi/Icon.png;drawable-mdpi/icon.png
-drawable-ldpi/Icon.png;drawable-ldpi/icon.png
-drawable-hdpi/Icon.png;drawable-hdpi/icon.png

@@ -1,4 +1,4 @@
-package formsgallery.android;
+package pausecase.android;
 
 import android.app.Activity;
 import android.content.Context;

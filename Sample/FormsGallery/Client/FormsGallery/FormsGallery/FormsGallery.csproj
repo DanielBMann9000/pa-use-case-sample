@@ -53,7 +53,6 @@
     <Compile Include="ImageDemoPage.cs" />
     <Compile Include="LabelDemoPage.cs" />
     <Compile Include="ListViewDemoPage.cs" />
-    <Compile Include="MapDemoPage.cs" />
     <Compile Include="MasterDetailPageDemoPage.cs" />
     <Compile Include="NamedColor.cs" />
     <Compile Include="NamedColorPage.cs" />
@@ -65,7 +64,6 @@
     <Compile Include="ScrollViewDemoPage.cs" />
     <Compile Include="SearchBarDemoPage.cs" />
     <Compile Include="SliderDemoPage.cs" />
-    <Compile Include="StackLayoutDemoPage.cs" />
     <Compile Include="StepperDemoPage.cs" />
     <Compile Include="SwitchCellDemoPage.cs" />
     <Compile Include="SwitchDemoPage.cs" />
@@ -77,12 +75,10 @@
     <Compile Include="WebViewDemoPage.cs" />
     <Compile Include="PAClientFactory.cs" />
     <Compile Include="BasePage.cs" />
+    <Compile Include="PerformancePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="Xamarin.Forms.Maps">
-      <HintPath>..\..\packages\Xamarin.Forms.Maps.1.0.6188\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Maps.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Forms.Core">
       <HintPath>..\..\packages\Xamarin.Forms.1.0.6188\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
@@ -94,6 +90,9 @@
     </Reference>
     <Reference Include="PreEmptive.Analytics.XamarinAndroid">
       <HintPath>..\..\..\..\..\lib\PAAPI\Xamarin\bin\PreEmptive.Analytics.XamarinAndroid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps">
+      <HintPath>..\..\packages\Xamarin.Forms.Maps.1.0.6188\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Maps.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

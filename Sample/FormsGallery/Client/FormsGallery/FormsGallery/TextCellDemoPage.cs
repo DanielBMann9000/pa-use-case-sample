@@ -3,14 +3,14 @@ using Xamarin.Forms;
 
 namespace FormsGallery
 {
-    class TextCellDemoPage : BasePage
+    class IdentityPage : BasePage
     {
-        public TextCellDemoPage()
+        public IdentityPage()
         {
             Label header = new Label
             {
-                Text = "TextCell",
-                Font = Font.BoldSystemFontOfSize(50),
+				Text = "This is your ID for the duration of this session",
+				Font = Font.BoldSystemFontOfSize(NamedSize.Medium),
                 HorizontalOptions = LayoutOptions.Center
             };
 
@@ -21,11 +21,17 @@ namespace FormsGallery
                 {
                     new TableSection
                     {
+						  
                         new TextCell
                         {
-                            Text = "This is a TextCell",
-                            Detail = "This is some detail text",
-                        }
+                            Text = "License Key",
+                            Detail = "Generated InstanceId",
+                        },
+						new TextCell{
+							Text="User Name",
+							Detail="Generated Username"
+						}
+					
                     }
                 }
             };

@@ -18,5 +18,20 @@ namespace FormsGallery
 			PAClientFactory.StopFeature (this.ToString());
 		}
 	}
+	public class BaseCarouselPage	  : CarouselPage
+	{
+		public BaseCarouselPage () 
+		{
+
+		}
+		protected override void OnAppearing ()
+		{
+			PAClientFactory.StartFeature (this.ToString());
+		}
+		protected override void OnDisappearing ()
+		{
+			PAClientFactory.StopFeature (this.ToString());
+		}
+	}
 }
 

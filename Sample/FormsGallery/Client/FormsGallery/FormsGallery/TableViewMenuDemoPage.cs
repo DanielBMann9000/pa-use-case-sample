@@ -25,7 +25,7 @@ namespace FormsGallery
                             {
                                 Text = "Label",
                                 Command = new Command(async () => 
-                                    await Navigation.PushAsync(new LabelDemoPage()))
+                                    await Navigation.PushAsync(new AboutPage()))
                             },
 
                             new TextCell
@@ -39,7 +39,7 @@ namespace FormsGallery
                             {
                                 Text = "BoxView",
                                 Command = new Command(async () => 
-                                    await Navigation.PushAsync(new BoxViewDemoPage()))
+								await Navigation.PushAsync(new ExceptionPage()))
                             },
 
                             new TextCell

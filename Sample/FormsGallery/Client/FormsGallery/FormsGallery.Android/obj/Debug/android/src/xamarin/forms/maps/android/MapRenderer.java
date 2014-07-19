@@ -2,7 +2,7 @@ package xamarin.forms.maps.android;
 
 
 public class MapRenderer
-	extends xamarin.forms.platform.android.NativeRenderer
+	extends xamarin.forms.platform.android.ViewRenderer
 	implements
 		mono.android.IGCUserPeer,
 		com.google.android.gms.maps.GoogleMap.OnCameraChangeListener
@@ -13,7 +13,7 @@ public class MapRenderer
 			"n_onLayout:(ZIIII)V:GetOnLayout_ZIIIIHandler\n" +
 			"n_onCameraChange:(Lcom/google/android/gms/maps/model/CameraPosition;)V:GetOnCameraChange_Lcom_google_android_gms_maps_model_CameraPosition_Handler:Android.Gms.Maps.GoogleMap/IOnCameraChangeListenerInvoker, GooglePlayServicesLib\n" +
 			"";
-		mono.android.Runtime.register ("Xamarin.Forms.Maps.Android.MapRenderer, Xamarin.Forms.Maps.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", MapRenderer.class, __md_methods);
+		mono.android.Runtime.register ("Xamarin.Forms.Maps.Android.MapRenderer, Xamarin.Forms.Maps.Android, Version=1.1.1.0, Culture=neutral, PublicKeyToken=null", MapRenderer.class, __md_methods);
 	}
 
 
@@ -21,7 +21,7 @@ public class MapRenderer
 	{
 		super (p0);
 		if (getClass () == MapRenderer.class)
-			mono.android.TypeManager.Activate ("Xamarin.Forms.Maps.Android.MapRenderer, Xamarin.Forms.Maps.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0 });
+			mono.android.TypeManager.Activate ("Xamarin.Forms.Maps.Android.MapRenderer, Xamarin.Forms.Maps.Android, Version=1.1.1.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0 });
 	}
 
 
@@ -29,7 +29,7 @@ public class MapRenderer
 	{
 		super (p0, p1);
 		if (getClass () == MapRenderer.class)
-			mono.android.TypeManager.Activate ("Xamarin.Forms.Maps.Android.MapRenderer, Xamarin.Forms.Maps.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0, p1 });
+			mono.android.TypeManager.Activate ("Xamarin.Forms.Maps.Android.MapRenderer, Xamarin.Forms.Maps.Android, Version=1.1.1.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0, p1 });
 	}
 
 
@@ -37,7 +37,7 @@ public class MapRenderer
 	{
 		super (p0, p1, p2);
 		if (getClass () == MapRenderer.class)
-			mono.android.TypeManager.Activate ("Xamarin.Forms.Maps.Android.MapRenderer, Xamarin.Forms.Maps.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:System.Int32, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0, p1, p2 });
+			mono.android.TypeManager.Activate ("Xamarin.Forms.Maps.Android.MapRenderer, Xamarin.Forms.Maps.Android, Version=1.1.1.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:System.Int32, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0, p1, p2 });
 	}
 
 

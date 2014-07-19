@@ -1,14 +1,17 @@
 D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\bin\Debug\FormsGallery.Android.dll
+D:\source\wbsample\Sample\FormsGallery\Client\packages\ExifLib.PCL.1.0.0\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+MonoAndroid10+MonoTouch10\ExifLib.dll
 D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery\bin\Debug\FormsGallery.dll
-D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.GooglePlayServices.15.0.3\lib\MonoAndroid10\GooglePlayServicesLib.dll
-D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Android.Support.v4.19.0.2\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll
-D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Android.Support.v7.AppCompat.19.0.2\lib\MonoAndroid10\Xamarin.Android.Support.v7.AppCompat.dll
-D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Android.Support.v7.MediaRouter.19.0.2\lib\MonoAndroid10\Xamarin.Android.Support.v7.MediaRouter.dll
-D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Forms.1.0.6188\lib\MonoAndroid10\Xamarin.Forms.Core.dll
-D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Forms.Maps.1.0.6188\lib\MonoAndroid10\Xamarin.Forms.Maps.Android.dll
-D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Forms.Maps.1.0.6188\lib\MonoAndroid10\Xamarin.Forms.Maps.dll
-D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Forms.1.0.6188\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll
-D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Forms.1.0.6188\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll
+D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.GooglePlayServices.16.0.0\lib\MonoAndroid10\GooglePlayServicesLib.dll
+D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Android.Support.v4.19.1.0\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll
+D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Android.Support.v7.AppCompat.19.1.0\lib\MonoAndroid10\Xamarin.Android.Support.v7.AppCompat.dll
+D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Android.Support.v7.MediaRouter.19.1.0\lib\MonoAndroid10\Xamarin.Android.Support.v7.MediaRouter.dll
+D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Forms.1.1.1.6206\lib\MonoAndroid10\Xamarin.Forms.Core.dll
+D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Forms.Labs.1.0.1.5\lib\portable-net45+win+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Labs.dll
+D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Forms.Maps.1.1.1.6206\lib\MonoAndroid10\Xamarin.Forms.Maps.Android.dll
+D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Forms.Maps.1.1.1.6206\lib\MonoAndroid10\Xamarin.Forms.Maps.dll
+D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Forms.1.1.1.6206\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll
+D:\source\wbsample\Sample\FormsGallery\Client\packages\Xamarin.Forms.1.1.1.6206\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll
+D:\source\wbsample\Sample\FormsGallery\Client\Components\xamarin.mobile-0.7.1\lib\android\Xamarin.Mobile.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\Facades\System.Collections.Concurrent.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\Facades\System.Collections.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\Facades\System.ComponentModel.Annotations.dll

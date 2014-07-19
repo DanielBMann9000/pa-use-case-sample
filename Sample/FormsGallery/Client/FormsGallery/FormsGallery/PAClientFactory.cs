@@ -11,6 +11,10 @@ namespace Xamarin.Forms
     {
         private static PAClient Client;
 
+		public static void StopApplication(bool immediate=false)
+		{
+			GetPAClient ().ApplicationStop (immediate:immediate);
+		}
 		public static void StartApplication(string instance)
 		{
 			GetPAClient (instance).ApplicationStart ();
@@ -26,6 +30,20 @@ namespace Xamarin.Forms
 		public static void StopFeature(string name)
 		{
 			GetPAClient ().FeatureStop (name);
+		}
+		public static void Exception(System.Exception ex,ExceptionType exType)
+		{
+			GetPAClient ().ReportException (new ExceptionInfo {
+				Comment="user comment",
+				Contact="TODO:Get UserId",
+				Exception=ex,
+				ExceptionType=exType,
+				Message=ex.Message
+			});
+		}
+		public static void Exception(System.Exception ex)
+		{
+			Exception (ex, ExceptionType.Uncaught);
 		}
 
 		public static void OnEventFeatureTick(Button element,string name=null)
@@ -56,7 +74,7 @@ namespace Xamarin.Forms
                 // Optional configuration
                 configuration.CompanyName = "PreEmptive Solutions";
 #if Android
-                configuration.ApplicationName = "Android Xamarin Sample App";
+				configuration.ApplicationName = "PreEmptive Analytics Sample";
                 configuration.ApplicationType = "Android Sample";
 #elif iOS
                 configuration.ApplicationName = "iOS Xamarin Sample App";
@@ -66,13 +84,15 @@ namespace Xamarin.Forms
                 configuration.ApplicationVersion = "1.0";
 				configuration.Endpoint = "josh-2012r2-2.preemptive.internal/endpoint";
                 configuration.UseSSL = false;
-                configuration.FullData = false;
-				configuration.StopBehavior.SessionExtensionWindow = 10000;
+                configuration.FullData = true;
+				configuration.StopBehavior.SessionExtensionWindow = 5000;
 				configuration.SupportOfflineStorage = true;
                 //configuration.SupportOfflineStorage = true;
                 //configuration.OmitPersonalInfo = true;
 
                 Client = new PAClient(configuration);
+
+
             }
 
             return Client;

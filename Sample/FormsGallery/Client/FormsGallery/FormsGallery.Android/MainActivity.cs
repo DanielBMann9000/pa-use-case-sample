@@ -11,18 +11,37 @@ using Xamarin.Forms.Platform.Android;
 
 namespace FormsGallery.Droid
 {
-    [Activity(Label = "FormsGallery", MainLauncher = true)]
+	[Activity(Label = "PreEmptive Analytics Use Case Gallery ", MainLauncher = true)]
     public class MainActivity : AndroidActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
+
             base.OnCreate(bundle);
 
             Xamarin.Forms.Forms.Init(this, bundle);
-            Xamarin.FormsMaps.Init(this, bundle);
+            
 
             SetPage(App.GetMainPage());
+          
+			AndroidEnvironment.UnhandledExceptionRaiser += (s, e) => {
+				Xamarin.Forms.PAClientFactory.Exception(e.Exception);
+			};
         }
+      
+        protected override void OnStart()
+        {
+            base.OnStart();
+            App.Start();
+        }
+
+        protected override void OnStop()
+        {
+            base.OnStop();
+            App.Shutdown();
+        }
+
+
 
 
     }

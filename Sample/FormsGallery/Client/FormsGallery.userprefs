@@ -1,32 +1,28 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.HAXM" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FormsGallery\FormsGallery\PAClientFactory.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FormsGallery\FormsGallery.Android\packages.config">
     <Files>
-      <File FileName="FormsGallery\FormsGallery\PAClientFactory.cs" Line="70" Column="1" />
-      <File FileName="FormsGallery\FormsGallery\App.cs" Line="12" Column="40" />
-      <File FileName="FormsGallery\FormsGallery.Android\MainActivity.cs" Line="27" Column="3" />
-      <File FileName="FormsGallery\FormsGallery\BasePage.cs" Line="6" Column="38" />
-      <File FileName="FormsGallery\FormsGallery\BoxViewDemoPage.cs" Line="2" Column="1" />
-      <File FileName="FormsGallery\FormsGallery\ButtonDemoPage.cs" Line="29" Column="48" />
-      <File FileName="FormsGallery\FormsGallery\TimePickerDemoPage.cs" Line="6" Column="37" />
-      <File FileName="FormsGallery\FormsGallery\LabelDemoPage.cs" Line="6" Column="32" />
+      <File FileName="FormsGallery\FormsGallery.Android\MainActivity.cs" Line="9" Column="1" />
+      <File FileName="FormsGallery\FormsGallery\PAClientFactory.cs" Line="77" Column="38" />
+      <File FileName="FormsGallery\FormsGallery\MapDemoPage.cs" Line="4" Column="21" />
+      <File FileName="FormsGallery\FormsGallery\HomePage.cs" Line="67" Column="47" />
+      <File FileName="C:\Program Files (x86)\MSBuild\Xamarin\Android\Xamarin.Android.Common.targets" Line="1050" Column="3" />
+      <File FileName="FormsGallery\FormsGallery.Android\packages.config" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="FormsGallery" expanded="True">
-            <Node name="PAClientFactory.cs" selected="True" />
+          <Node name="FormsGallery.Android" expanded="True">
+            <Node name="packages.config" selected="True" />
           </Node>
-          <Node name="FormsGallery.Android" expanded="True" />
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\MainActivity.cs" line="28" column="6" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
