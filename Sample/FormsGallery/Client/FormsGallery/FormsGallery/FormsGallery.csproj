@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -34,19 +34,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AbsoluteLayoutDemoPage.cs" />
     <Compile Include="ActivityIndicatorDemoPage.cs" />
     <Compile Include="App.cs" />
-    <Compile Include="BoxViewDemoPage.cs" />
+    <Compile Include="ExceptionPage.cs" />
     <Compile Include="ButtonDemoPage.cs" />
     <Compile Include="CarouselPageDemoPage.cs" />
-    <Compile Include="ContentPageDemoPage.cs" />
-    <Compile Include="ContentViewDemoPage.cs" />
-    <Compile Include="DatePickerDemoPage.cs" />
-    <Compile Include="EditorDemoPage.cs" />
-    <Compile Include="EntryCellDemoPage.cs" />
-    <Compile Include="EntryDemoPage.cs" />
-    <Compile Include="FrameDemoPage.cs" />
     <Compile Include="GridDemoPage.cs" />
     <Compile Include="HomePage.cs" />
     <Compile Include="ImageCellDemoPage.cs" />
@@ -70,7 +62,7 @@
     <Compile Include="TabbedPageDemoPage.cs" />
     <Compile Include="TableViewFormDemoPage.cs" />
     <Compile Include="TableViewMenuDemoPage.cs" />
-    <Compile Include="TextCellDemoPage.cs" />
+    <Compile Include="IdentityPage.cs" />
     <Compile Include="TimePickerDemoPage.cs" />
     <Compile Include="WebViewDemoPage.cs" />
     <Compile Include="PAClientFactory.cs" />
