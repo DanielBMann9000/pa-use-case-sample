@@ -1,0 +1,16 @@
+{
+    "datasets":[
+	{
+	    "name":"counting",
+	    "input": "local:sample_counting.query",
+	    "transform": [
+			{
+				"type":"copy",
+				"from":"data",
+				"fields":["Character","Level","EnemiesDefeated","Inventory","CustomCount"],
+				"as":["Character","Level","EnemiesDefeated","Inventory","Count"]
+			}
+	    ]
+	}
+    ]
+}

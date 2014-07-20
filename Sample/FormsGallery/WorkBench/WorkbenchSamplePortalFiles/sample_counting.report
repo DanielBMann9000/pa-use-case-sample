@@ -1,0 +1,23 @@
+{
+    "title": "Sample Counting",
+    "order": 12,
+    "widgets": [
+	{
+		"widget_id": "sample_counting",
+		"span":12,
+		"break":true
+	}
+  ],
+  "filters": [{
+      "label": "Date Range",
+      "type": "DateRange",
+      "domains": ["All"],
+      "fields": ["Time"]
+    },{
+      "label": "Application",
+      "type": "Application",
+      "domains": ["All"],
+      "fields": ["AppId_Version"]
+    }
+  ]
+}

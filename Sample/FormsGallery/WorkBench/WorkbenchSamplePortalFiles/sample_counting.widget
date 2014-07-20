@@ -1,0 +1,31 @@
+{
+  "title": "Sample Counting",
+  "type": "Table",
+  "input": "local:sample_counting.transformation>counting",
+  "options": {
+		"show_count": 10,
+		"columns": [
+			{
+				"key": "data.Character",
+				"as": "Character"
+			},
+			{
+				"key":"data.Level",
+				"as": "Level"
+			},
+			{
+				"key": "data.EnemiesDefeated",
+				"as": "EnemiesDefeated"
+			},
+			{
+				"key": "data.Inventory",
+				"as": "Inventory"
+			},
+			{
+				"key":"Count",
+				"as": "Count",
+				"type": "number"
+			}
+		]
+	}
+}
