@@ -14,15 +14,20 @@ namespace FormsGallery
                 HorizontalOptions = LayoutOptions.Center
             };
 
+            PAClientFactory.StartFeature("ServiceLevel");
             WebView webView = new WebView
             {
                 Source = new UrlWebViewSource
                 {
-					Url = "http://www.preemptive.com/pa",
+                    Url = "http://www.preemptive.com/pa"
+
                 },
-                VerticalOptions = LayoutOptions.FillAndExpand
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                
             };
 
+
+            
             // Accomodate iPhone status bar.
             this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
 

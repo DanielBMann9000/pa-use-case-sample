@@ -3,14 +3,14 @@ using Xamarin.Forms;
 
 namespace FormsGallery
 {
-    class ImageCellDemoPage : BasePage
+    class IdentityPage : BasePage
     {
-        public ImageCellDemoPage()
+        public IdentityPage()
         {
             Label header = new Label
             {
-                Text = "ImageCell",
-                Font = Font.BoldSystemFontOfSize(50),
+				Text = "This is your ID for the duration of this session",
+				Font = Font.BoldSystemFontOfSize(NamedSize.Medium),
                 HorizontalOptions = LayoutOptions.Center
             };
 
@@ -21,16 +21,17 @@ namespace FormsGallery
                 {
                     new TableSection
                     {
-                        new ImageCell
+						  
+                        new TextCell
                         {
-                            // Some differences with loading images in initial release.
-                            ImageSource = 
-                                Device.OnPlatform(ImageSource.FromUri(new Uri("http://xamarin.com/images/index/ide-xamarin-studio.png")),
-                                                  ImageSource.FromFile("ide_xamarin_studio.png"),
-                                                  ImageSource.FromFile("Images/ide-xamarin-studio.png")),
-                            Text = "This is an ImageCell",
-                            Detail = "This is some detail text",
-                        }
+                            Text = "License Key",
+                            Detail = App.LicenseKey,
+                        },
+						new TextCell{
+							Text="User Name",
+							Detail=App.UserName
+						}
+					
                     }
                 }
             };

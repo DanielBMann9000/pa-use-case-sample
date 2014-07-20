@@ -23,6 +23,10 @@ namespace Xamarin.Forms
 		{
 			GetPAClient ().FeatureTick (name);
 		}
+        public static void FeatureTick(string name, ExtendedKeys keys)
+        {
+            GetPAClient().FeatureTick(name, keys);
+        }
 		public static void StartFeature(string name)
 		{
 			GetPAClient ().FeatureStart (name);
@@ -91,6 +95,7 @@ namespace Xamarin.Forms
                 //configuration.OmitPersonalInfo = true;
 
                 Client = new PAClient(configuration);
+                
 
 
             }

@@ -64,7 +64,7 @@ namespace FormsGallery
 						new TextCell {
 							Text = "User Behavior/Custom Data",
 							Command = navigateCommand,
-							CommandParameter = typeof(ImageDemoPage)
+							CommandParameter = typeof(FeedbackPage)
 						}
 					}
 				}

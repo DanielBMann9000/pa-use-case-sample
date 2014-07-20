@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using PreEmptive.Analytics.Common;
 using Xamarin.Forms;
 
 namespace FormsGallery
 {
-    class PickerDemoPage : BasePage
+    class FeedbackPage : BasePage
     {
+        Label labelSlider;
         // Dictionary to get Color from color name.
         Dictionary<string, Color> nameToColor = new Dictionary<string, Color>
         {
@@ -19,18 +21,46 @@ namespace FormsGallery
             { "White", Color.White },       { "Yellow", Color.Yellow }
         };
 
-        public PickerDemoPage()
+        public FeedbackPage()
         {
             Label header = new Label
             {
-                Text = "Picker",
-                Font = Font.BoldSystemFontOfSize(50),
+                Text = "Feedback & Preferences",
+                Font = Font.BoldSystemFontOfSize(NamedSize.Medium),
                 HorizontalOptions = LayoutOptions.Center
             };
 
+
+            Label headerSlider = new Label
+            {
+                Text = "Happiness Index",
+                Font = Font.BoldSystemFontOfSize(NamedSize.Medium),
+                HorizontalOptions = LayoutOptions.Center
+            };
+
+            Slider slider = new Slider
+            {
+                Minimum = 0,
+                Maximum = 10,
+                Value=5,
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+            slider.ValueChanged += OnSliderValueChanged;
+
+            labelSlider = new Label
+            {
+                Text = "Your happiness value is 0",
+                Font = Font.SystemFontOfSize(NamedSize.Large),
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+
+
+
+
             Picker picker = new Picker
             {
-                Title = "Color",
+                Title = "Favorite Color",
                 VerticalOptions = LayoutOptions.CenterAndExpand
             };
 
@@ -64,17 +94,41 @@ namespace FormsGallery
             // Accomodate iPhone status bar.
             this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
 
+            var button = new Button()
+            {
+                Text="Submit"
+            };
+            button.Clicked += (sender, args) =>
+            {
+                var keys=new ExtendedKeys();
+                keys.Add("Happiness",slider.Value);
+                keys.Add("Color",picker.Items[picker.SelectedIndex]);
+                PAClientFactory.FeatureTick("Feedback",keys);
+                
+                DisplayAlert("Feedback Accepted", "Thank you for submitting your feedback.", "Ok","Cancel");
+
+            };
             // Build the page.
             this.Content = new StackLayout
             {
                 Children = 
                 {
                     header,
+                    headerSlider,
+                    slider,
+                    labelSlider,
                     picker,
-                    boxView
+                    boxView,
+                    button
+                    
                 }
             };
 
+        }
+
+        private void OnSliderValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            labelSlider.Text = String.Format("Your Happiness value is {0:F1}", e.NewValue);
         }
     }
 }
