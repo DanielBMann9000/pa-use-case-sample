@@ -32,7 +32,7 @@ namespace FormsGallery
 			startButton.Clicked += (s, e) => {
 				stopButton.IsEnabled=true;
 				startButton.IsEnabled=false;
-				PAClientFactory.StartFeature("PerformanceButton");
+				PAClientFactory.StartFeature("Performance.Button");
 				_isFeaturePressed=true;
 			};
 			stopButton.Clicked += (s, e) => {

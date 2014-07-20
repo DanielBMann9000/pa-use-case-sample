@@ -64,10 +64,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SampleCustomDataFilter.cs" />
-    <Compile Include="SampleIndexer.cs" />
+    <Compile Include="DeviceIndexer.cs" />
+    <Compile Include="DeviceQuery.cs" />
+    <Compile Include="InstanceIndexer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SampleQuery.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

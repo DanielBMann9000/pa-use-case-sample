@@ -17,18 +17,19 @@ using PreEmptive.Workbench.Interfaces.Indexing.Scopes;
 namespace WorkbenchSample
 {
     /// <summary>
-    /// Sample indexer that counts how many sessions occur in on computers with less than 1 gig of memory, 1-4 gigs of memory and greater than 4
+    /// 
     /// </summary>
-    public class SampleIndexer : IndexerBase, IIndexerPattern, IQueryPattern
+    public class InstanceIndexer : IndexerBase, IIndexerPattern, IQueryPattern
     {
-        public const string Namespace = "Sample";
+        public const string Namespace = "FormsGaller";
 
         //PivotKeys
         public const string MemoryBucket = "MemoryBucket";
+        public const string InstanceId = "InstanceId";
 
         private readonly IFunctionalLogger _logger;
 
-        public SampleIndexer(FieldKeyFactory fieldKeyFactory, SessionScope sessionScope, IFunctionalLogger logger)
+        public InstanceIndexer(FieldKeyFactory fieldKeyFactory, SessionScope sessionScope, IFunctionalLogger logger)
             : base(fieldKeyFactory, Namespace, sessionScope)
         {
             _logger = logger;
@@ -41,38 +42,22 @@ namespace WorkbenchSample
 
         public override Type[] DefineMessageTypesToExtract()
         {
-            return new[] { MessageType.PerformanceProbe };
+            return new[] { MessageType.SessionLifeCycle };
         }
 
         protected override void DefineFields()
         {
-            DefineField(MemoryBucket, typeof(string), FieldType.PivotKey);
+            DefineField(InstanceId, typeof(string), FieldType.PivotKey);
         }
 
         public override ExtractResult Extract(IStateBin tempStateBin, 
             EnvelopeAttributes envelopeAttributes, 
             Message message)
         {
-            var performanceProbeMessage = message as PerformanceProbeMessage;
-            if (null == performanceProbeMessage)
-                return new ExtractResult(false);
+            
+            tempStateBin.AddValue(GetFieldKey(InstanceId), envelopeAttributes.Serial);
 
-            //Adjust memory into one of three buckets
-            var availableMemoryInMb = performanceProbeMessage.MemoryMBAvailable;
-            if (availableMemoryInMb < 1024)
-                availableMemoryInMb = 0;
-            else if (availableMemoryInMb < 4096)
-                availableMemoryInMb = 1024;
-            else availableMemoryInMb = 4096;
-
-#if DEBUG
-            _logger.Log("CustomSampleIndexer", "This is a sample logging message recording {Bytes}", 
-                null, 
-                LoggingLevel.Warn, 
-                new KeyValuePair<string,object>("Bytes", availableMemoryInMb)); //By default, only Warn and above will be recorded
-#endif
-
-            tempStateBin.AddValue(GetFieldKey(MemoryBucket), availableMemoryInMb.ToString());
+         
             return new ExtractResult(true);
         }
 
@@ -84,35 +69,40 @@ namespace WorkbenchSample
         public override OutputSchema[] DefineOutputSchemas()
         {
             //Return null instead if using the sample pattern
-            return new []
-                {
-                    new OutputSchema("SampleSessionCountSchema", this)
-                    {
-                        RequiredFields = new HashSet<FieldKey> 
-                                        { 
-                                            GetFieldKey(SessionIndexer.Namespace, SessionIndexer.SessionStartCount)
-                                        },
-                        PivotKeys = new HashSet<FieldKey>
-                                        {
-                                            GetFieldKey(MemoryBucket)
-                                        }
-                    }
-                };
+            return null;
+            //return new []
+            //    {
+            //        new OutputSchema("InstanceIdSchema", this)
+            //        {
+            //            RequiredFields = new HashSet<FieldKey> 
+            //                            { 
+            //                                GetFieldKey(SessionIndexer.Namespace, SessionIndexer.CompleteSessionStartCount)
+            //                                //,
+            //                                //GetFieldKey(SessionIndexer.Namespace, SessionIndexer.SessionLength),
+            //                                //GetFieldKey(SessionIndexer.Namespace, SessionIndexer.MinSessionLength),
+            //                                //GetFieldKey(SessionIndexer.Namespace, SessionIndexer.MaxSessionLength),
+            //                            },
+            //            PivotKeys = new HashSet<FieldKey>
+            //                            {
+            //                                GetFieldKey(InstanceId)
+            //                            }
+            //        }
+            //    };
         }
 
         public OutputSchema[] ExtendOutputSchemaWithPattern(OutputSchema[] outputSchemas)
         {
             //Comment out the following line when you want to use the Sample Pattern
-            return null;
+            //return null;
 
             return outputSchemas.Select(outputSchema =>
             {
                 var pivotKeys = new HashSet<FieldKey>(outputSchema.PivotKeys)
                                 {
-                                    GetFieldKey(SampleIndexer.Namespace, SampleIndexer.MemoryBucket)
+                                    GetFieldKey(Namespace, InstanceId)
                                 };
 
-                return new OutputSchema(outputSchema.Name + "_MemoryPattern", this)
+                return new OutputSchema(outputSchema.Name + "_InstanceId", this)
                 {
                     RequiredFields = outputSchema.RequiredFields,
                     PivotKeys = pivotKeys
@@ -123,15 +113,15 @@ namespace WorkbenchSample
         public FieldMetadata[] ExtendQuery(IQuery query)
         {
             //Comment out the following line when you want to use the Sample Pattern
-            return null;
+            //return null;
 
             return new[]
             {
                 new FieldMetadata
                 {
-                    AssociatedFieldKey = GetFieldKey(SampleIndexer.Namespace, SampleIndexer.MemoryBucket),
-                    FieldName = "MemoryAmount",
-                    FriendlyName = "Amount of Memory",
+                    AssociatedFieldKey = GetFieldKey(Namespace, InstanceId),
+                    FieldName = "Serial",
+                    FriendlyName = "Serial Number",
                     DataType = typeof(string),
                     Filters = new List<FilterMetadata>()
                     {
