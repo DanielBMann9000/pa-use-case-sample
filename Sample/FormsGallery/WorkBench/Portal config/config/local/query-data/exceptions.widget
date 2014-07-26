@@ -1,0 +1,9 @@
+{
+  "title": "Exceptions",
+  "type": "Table",
+  "input": "preemptive:exceptions.query",
+  "options": {
+      "show_count":10,
+      "columns": "All"
+  }
+}

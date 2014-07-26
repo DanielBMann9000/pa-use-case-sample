@@ -1,0 +1,9 @@
+{
+  "title": "Sessions by OS",
+  "type": "Table",
+  "input": "preemptive:sessions-by-os.query",
+  "options": {
+      "show_count":10,
+      "columns": "All"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Summary",
+  "domain": "PreEmptive.Exceptions",
+  "aggregate_on": [
+	  {
+      "field": "Serial",
+	  "include_data":"true"
+    }
+  ],
+  "fields": [
+  	  {
+      "field": "Serial",
+	  "include_data":"true"
+    },
+    {
+      "field": "AppId_Version",
+      "include_data": false
+    },
+    {
+      "field": "Time",
+      "include_data": true
+    },
+    {
+      "field": "OS",
+      "include_data": true
+    },
+    {
+      "field": "Runtime",
+      "include_data": true
+    },
+    {
+      "field": "Country",
+      "include_data": false
+    },
+    {
+      "field": "Count",
+      "include_data": true
+    }
+  ]
+}

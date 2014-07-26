@@ -1,0 +1,23 @@
+{
+  "title": "Version Adoption (top 10)",
+  "type": "Line Graph",
+  "input": "version-adoption.transformation>entities",
+  "options": {
+    "type": "stacked",
+    "series_count": 10,
+  	"series_sort": "-sum",
+  	"xaxis": {
+      "key": "Time",
+      "type": "date"  
+    },
+    "yaxis": [
+      {
+        "regex": "transposed\\..+",
+        "type": "number"
+      }
+    ],
+    "xaxis_label": " ",
+    "yaxis_label": " ",
+    "sort": ["Time"]
+  }
+}

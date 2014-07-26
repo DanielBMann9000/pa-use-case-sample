@@ -1,0 +1,43 @@
+{
+    "datasets":[
+	{
+	    "name":"sessions-by-day",
+	    "input": "preemptive:sessions-by-day.query"
+	},
+	{
+	    "name":"aggregation",
+	    "input":"preemptive:exceptions-over-time.query",
+	    "transform": [
+		{
+		    "type":"zip",
+		    "with":"sessions-by-day",
+		    "as":"Sessions",
+		    "key":"data.Time",
+		    "withKey":"data.Time"
+		},
+		{
+		    "type":"copy",
+		    "from":"Sessions.data",
+		    "fields":["Count"],
+		    "as":"Count"
+		},
+		{
+		    "type":"copy",
+		    "from":"data",
+		    "fields":["Time","Count"],
+		    "as":["Time","ExceptionCount"]
+		},
+		{
+		    "type":"formula",
+		    "field":"ExceptionsPerSession",
+		    "as":"Exceptions Per Session",
+		    "expr":"d.ExceptionCount/d.Count"
+		},
+		{
+		    "type":"sort",
+		    "by":["Time","ExceptionCount"]
+		}
+	    ]
+	}
+    ]
+}

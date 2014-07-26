@@ -1,0 +1,9 @@
+{
+  "title": "Tamper by Country",
+  "type": "Table",
+  "input": "preemptive:tamper-by-country.query",
+  "options": {
+      "show_count":10,
+      "columns": "All"
+  }
+}

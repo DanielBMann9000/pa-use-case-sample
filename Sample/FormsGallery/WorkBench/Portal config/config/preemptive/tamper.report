@@ -1,0 +1,30 @@
+{
+	"title": "Tamper Notifications",
+	"icon": "icon-unlink",
+	"widgets": [
+		{
+			"widget_id":"tamper-choropleth",
+			"span":12,
+			"max_height":"500px",
+			"break":true
+		},
+		{
+			"widget_id": "tamper",
+			"span": 12,
+			"max_height":"318px",
+			"break":true
+		}
+	],
+	"filters": [{
+			"label": "Date Range",
+			"type": "DateRange",
+			"domains": ["All"],
+			"fields": ["Time"]
+		},{
+			"label": "Application",
+			"type": "Application",
+			"domains": ["All"],
+			"fields": ["AppId_Version"]
+		}
+	]
+}

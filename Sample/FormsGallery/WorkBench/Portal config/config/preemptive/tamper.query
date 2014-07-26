@@ -1,0 +1,53 @@
+{
+  "name": "Summary",
+  "domain": "PreEmptive.Tamper",
+  "aggregate_on": [
+	{
+		"field":"SerialNumber"
+	},
+	{
+		"field":"Domain"
+	},
+	{
+		"field":"ExternalIP"
+	},
+	{
+		"field":"Country"
+	},
+	{
+		"field":"City"
+	},
+	{
+		"field":"Region"
+	}
+  ],
+  "fields": [
+    {
+      "field": "AppId_Version"
+    },
+    {
+      "field": "Time"
+    },
+	{
+	  "field":"Domain"
+	},
+    {
+      "field": "SerialNumber"
+    },
+	{
+		"field": "ExternalIP"
+	},
+	{
+		"field": "Count"
+	},
+	{
+		"field":"Country"
+	},
+	{
+		"field":"City"
+	},
+	{
+		"field":"Region"
+	}
+  ]
+}

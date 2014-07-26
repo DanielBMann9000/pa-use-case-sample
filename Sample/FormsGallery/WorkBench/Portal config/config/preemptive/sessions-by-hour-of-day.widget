@@ -1,0 +1,14 @@
+{
+  "title": "Session Times (UTC)",
+  "type": "Bar Graph",
+  "input": "sessions-by-hour-of-day.transformation>aggregation",
+  "options": {
+  	"xaxis": {
+	    "key":"Time",
+	    "type":"hour_of_day"
+	  },
+  	"yaxis": ["Count"],
+    "xaxis_label": " ",
+    "yaxis_label": " "
+  }
+} 

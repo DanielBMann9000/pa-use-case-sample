@@ -1,0 +1,12 @@
+{
+  "title": "Sessions by Day",
+  "type": "Line Graph",
+  "input": "sessions-graphs.transformation>aggregation",
+  "options": {
+  	"xaxis": "Time",
+    "yaxis": [ "Count.sum", "CompleteCount.sum" ],
+    "xaxis_label": " ",
+    "yaxis_label": " ",
+    "sort": ["Time"]
+  }
+}

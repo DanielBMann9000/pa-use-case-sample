@@ -1,0 +1,9 @@
+{
+  "title": "Sessions by Runtime",
+  "type": "Table",
+  "input": "preemptive:sessions-by-runtime.query",
+  "options": {
+      "show_count":10,
+      "columns": "All"
+  }
+}

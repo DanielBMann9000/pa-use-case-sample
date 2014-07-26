@@ -20,8 +20,6 @@ D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\
 D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\bin\Debug\Xamarin.Forms.Core.xml
 D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\bin\Debug\Xamarin.Forms.Xaml.xml
 D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\bin\Debug\Xamarin.Forms.Maps.xml
-D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\bin\Debug\PreEmptive.Analytics.XamarinAndroid.xml
-D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\bin\Debug\PreEmptive.Analytics.Common.xml
 D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\obj\Debug\FormsGallery.Android.csprojResolveAssemblyReference.cache
 D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\obj\Debug\FormsGallery.Android.dll
 D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\obj\Debug\FormsGallery.Android.pdb
@@ -42,3 +40,5 @@ D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\
 D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\obj\Debug\res\drawable-xxhdpi\icon.png
 D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\obj\Debug\res\drawable-xxhdpi\iconstock.png
 D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\obj\Debug\res\drawable-xxhdpi\preemptivesolutions.gif
+D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\bin\Debug\PreEmptive.Analytics.XamarinAndroid.pdb
+D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery.Android\bin\Debug\PreEmptive.Analytics.Common.pdb

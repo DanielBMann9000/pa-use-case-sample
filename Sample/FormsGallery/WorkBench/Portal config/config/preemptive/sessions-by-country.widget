@@ -1,0 +1,23 @@
+{
+  "title": "Sessions by Country",
+  "type": "Table",
+  "input": "sessions-by-country.transformation>aggregation",
+  "options": {
+    "columns": [
+      "data.Country",
+      "data.Count",
+      {
+        "key": "AvgLength",
+        "as": "Avg. Length"
+      }
+    ],
+    "show_count": 10,
+    "onclick": {
+      "action": "filter",
+      "target": "Country",
+      "value": "data.Country",
+      "title": "click to filter"
+    },
+    "sort": ["-data.Count"]
+  }
+}

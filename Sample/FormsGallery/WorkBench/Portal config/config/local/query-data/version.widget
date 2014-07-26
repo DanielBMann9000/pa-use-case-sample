@@ -1,0 +1,9 @@
+{
+  "title": "Version",
+  "type": "Table",
+  "input": "preemptive:version.query",
+  "options": {
+      "show_count":10,
+      "columns": "All"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "datasets": [
+    {
+      "name": "user-stats-metrics",
+      "input": "key-stats-user-metrics.transformation"
+    },
+	{
+		"name":"day_metrics",
+		"input":"sessions-by-day.query",
+		"transform":[
+			{
+				"type":"aggregate",
+				"fields":[
+					"data.StopCount",
+					"data.StartCount",
+					"data.CompleteCount",
+					"data.Count",
+					"data.MinLength",
+					"data.MaxLength",
+					"data.NewUsers",
+					"data.ReturningUsers",
+					"data.UniqueUsers"
+				],
+				"as":[
+					"StopCount",
+					"StartCount",
+					"CompleteCount",
+					"Count",
+					"MinLength",
+					"MaxLength",
+					"NewUsers",
+					"ReturningUsers",
+					"UniqueUsers"
+				]
+			},
+			{ "type": "zip", "with": "user-stats-metrics", "as":"user-stats" },
+			{ "type": "copy", "from": "user-stats.data", "fields": ["AllSessionsStopped","AllSessionsStarted","AllCompleteSessions","AllCount", "AllNewUsers", "AllReturningUsers", "AllUniqueUsers"] }
+		]
+	}
+  ]
+}

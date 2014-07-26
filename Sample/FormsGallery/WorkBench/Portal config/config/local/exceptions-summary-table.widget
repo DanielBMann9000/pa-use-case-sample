@@ -1,0 +1,26 @@
+{
+  	"title": "Exception Summary",
+  	"type": "Table",
+  	"input": "exceptions-summary.transformation",
+   	"options": {
+		"show_count": 10,
+		"columns": [
+		    {
+			"key": "data.ExceptionMessage",
+			"as": "Exception"
+		    },
+		    {
+			"key": "data.Count",
+			"as": "Count",
+			"type": "number"
+		    }
+		],
+		"onclick": {
+			"action": "Modal",
+			"target": "data.ExceptionMessage",
+			"value": "data.ExceptionTrace",
+			"title": "click to filter"
+	    },
+    	"sort": ["-data.Count"]
+  	}
+}

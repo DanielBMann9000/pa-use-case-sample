@@ -1,0 +1,42 @@
+{
+	"title": "Overview",
+	"icon": "icon-dashboard",
+	"widgets": [
+	    {
+			"widget_id": "users-by-day",
+			"span": 6
+	    },
+	    {
+			"widget_id": "sessions-by-day",
+			"span": 6,
+			"break": true
+	    },
+	    {
+			"widget_id": "key-statistics-table",
+			"span": 3,
+	  		"max_height":"318px"
+	    },
+	    {
+			"widget_id": "feature-summary-table",
+			"span": 9,
+			"break": true,
+	  		"max_height":"318px"
+	    },
+	    {
+			"widget_id": "sessions-by-os",
+			"span": 4,
+	  		"max_height":"318px"
+	    },
+	    {
+			"widget_id": "sessions-by-runtime",
+			"span": 4,
+	  		"max_height":"318px"
+	    },
+	    {
+			"widget_id": "sessions-by-country",
+			"span": 4,
+			"break": true,
+	  		"max_height":"318px"
+	    }
+  	]
+}

@@ -1,0 +1,20 @@
+{
+  "datasets": [
+    {
+      "name": "key-stats-metrics",
+      "input": "key-stats.transformation>day_metrics"
+    },
+    {
+      "name": "aggregation",
+      "input": "features.query",
+      "transform": [
+        { "type": "zip", "with": "key-stats-metrics", "as":"key-stats" },
+        { "type": "copy", "from": "key-stats.data", "fields": ["Count"] },
+        { "type": "formula", "field":"AvgUsesPerSession", "expr":"d.data.Count / d.data.Sessions" },
+        { "type": "formula", "field":"PercentageSessions", "expr":"d.data.Sessions / d.Count.sum" },
+        { "type": "formula", "field":"AvgLength", "expr":"d.data.TotalLength/d.data.CompleteCount" },
+        { "type": "sort", "by": "-data.Count"}
+      ]
+    }
+  ]
+}

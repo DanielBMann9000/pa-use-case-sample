@@ -1,0 +1,19 @@
+{
+  "title": "Users by Day",
+  "type": "Line Graph",
+  "input": "sessions-graphs.transformation>aggregation",
+  "options": {
+    "xaxis": {
+      "key": "Time",
+      "type": "date"
+    },
+    "yaxis": [
+      "NewUsers.sum",
+      "ReturningUsers.sum"
+    ],
+    "xaxis_label": " ",
+    "yaxis_label": " ",
+    "sort": ["Time"],
+	"type": "stacked"
+  }
+}

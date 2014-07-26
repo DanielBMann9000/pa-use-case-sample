@@ -1,0 +1,8 @@
+-	This folder specifies the core PreEmptive reports that will be 
+	loaded in the Portal.
+-	This folder may be overwritten when we release an update.
+-	If you want to make custom queries, either use the 'config/local' 
+	folder or create a new folder under the 'config' folder.
+-	If you create a new folder or use the 'config/local' folder you
+	must also update the associated profile in 'config.json'
+-	Read more: ../../docs/rendering_core_concepts.html

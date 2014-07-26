@@ -1,0 +1,14 @@
+{
+    "title":"Tamper Locations",
+    "type":"Choropleth",
+    "input": "preemptive:tamper-by-country.query",
+    "options": {
+		"map":"world-countries",
+		"value":"Count",
+		"location":"Country",
+		"default_color":"#ddd",
+		"scale":{
+		    "type":"gradient"
+		}
+    }
+}

@@ -12,7 +12,7 @@ namespace FormsGallery
         private static Random _rand = new Random();
 
         private static string[] _keys = { "ABC-123", "XYZ-432", "EFG-234", "HIJ-012", "YUI-765", "ITI-912", "LKL-876", "TRE-432", "LIK-101", "TRE-111" };
-        private static string[] _userNames = { "Josh", "Fred", "Nathan", "Bill", "Mark", "Gabe", "Joe", "Pat", "Cindy", "Laura", "Emily" };
+        private static string[] _userNames = {"Sue", "Josh", "Fred", "Nathan", "Bill", "Mark", "Gabe", "Joe", "Pat", "Cindy", "Laura", "Emily" };
 
         private static string _userName = _userNames[_rand.Next(0, _userNames.Length)];
         private static string _licenseKey = GetLicenseKey();
@@ -30,7 +30,7 @@ namespace FormsGallery
         public static void Start()
         {
             
-            PAClientFactory.StartApplication(_licenseKey);
+            PAClientFactory.StartApplication(_licenseKey,_userName);
 
         }
 
@@ -57,5 +57,14 @@ namespace FormsGallery
                 return _userName;
             }
         }
+
+        internal static IGeocoder Geocoder { get; private set; }
+
+        public static void RegisterGeocoder(IGeocoder geocoder)
+        {
+            Geocoder = geocoder;
+        }
+
+
     }
 }

@@ -1,0 +1,30 @@
+{
+	"title": "Custom Data",
+	"icon": "icon-tags",
+	"widgets": [
+		{
+			"widget_id":"custom-data-string-summary",
+			"span":5,
+			"max_height":"318px",
+			"break":false
+		},
+		{
+			"widget_id": "custom-data-decimal-summary",
+			"span": 7,
+			"max_height":"318px",
+			"break":false
+		}
+	],
+	"filters": [{
+			"label": "Date Range",
+			"type": "DateRange",
+			"domains": ["All"],
+			"fields": ["Time"]
+		},{
+			"label": "Application",
+			"type": "Application",
+			"domains": ["All"],
+			"fields": ["AppId_Version"]
+		}
+	]
+}

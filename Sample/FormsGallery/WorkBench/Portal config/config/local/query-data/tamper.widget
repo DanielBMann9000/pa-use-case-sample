@@ -1,0 +1,9 @@
+{
+  "title": "Tamper",
+  "type": "Table",
+  "input": "preemptive:tamper.query",
+  "options": {
+      "show_count":10,
+      "columns": "All"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Sessions by Runtime",
+  "type": "Table",
+  "input": "sessions-by-runtime.transformation>aggregation",
+  "options": {
+    "show_count": 10,
+    "columns": [
+      "data.Runtime",
+      "data.Count",
+      {
+        "key": "AvgLength",
+        "as": "Avg. Length"
+      }
+    ],
+    "onclick": {
+      "action": "filter",
+      "target": "Runtime",
+      "value": "data.Runtime",
+      "title": "click to filter"
+    },
+    "sort": ["-data.Count"]
+  }
+}

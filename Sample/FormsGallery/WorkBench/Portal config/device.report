@@ -1,0 +1,52 @@
+{
+	"title": "Devices",
+	"icon": "icon-mobile-phone",
+	"order": 1,
+	"widgets": [
+	{
+		"widget_id": "device-graph",
+		"span": 12,
+		"break": true
+	},	
+	{
+		"widget_id": "device-summary-manufacturer",
+		"span": 6		
+	}, {
+		"widget_id": "device-summary",
+		"span": 6,
+		"break": true
+	}
+	
+	],	
+	"filters": [{
+		"report_id": "device",
+		"label": "Date Range",
+		"domains": ["All"],
+		"fields": ["Time"]
+	}, {
+		"report_id": "device",
+		"label": "Application",
+		"domains": ["All"],
+		"fields": ["AppId_Version"]
+	},
+	{
+      "label": "OS",
+      "type": "Many",
+      "domains": ["All"],
+      "fields": ["OS"],
+      "hidden": true
+    },{
+      "label": "Runtime",
+      "type": "Many",
+      "domains": ["All"],
+      "fields": ["Runtime"],
+      "hidden": true
+    },{
+      "label": "Location",
+      "type": "Many",
+      "domains": ["All"],
+      "fields": ["Country"],
+      "hidden": true
+    }
+	]
+}

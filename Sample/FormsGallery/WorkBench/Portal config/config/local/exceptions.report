@@ -1,0 +1,26 @@
+{
+  "title": "Exceptions",
+  "icon": "icon-exclamation-sign",
+  "widgets": [
+  {
+  "widget_id":"exceptions-by-serial",
+  "span":12,
+  "break":true
+  },
+		{
+			"widget_id": "exceptions-by-day",
+			"span": 12,
+			"break": true
+		},
+		{
+			"widget_id": "exceptions-summary-table",
+			"span": 12,
+			"max_height":"318px",
+			"break":true
+		},
+		{
+			"widget_id": "preemptive:service-level",
+			"span": 12
+		}
+  	]
+}

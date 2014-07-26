@@ -128,7 +128,7 @@ namespace WorkbenchSample
                         new FilterMetadata()
                         {
                             Type = FilterType.Many.ToString(),
-                            Filter = new PickFilter(new object[0])
+                            Filter=new PickFilter(new object[0])
                         }
                     }
                 }

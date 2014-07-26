@@ -1,0 +1,16 @@
+{
+    "title": "Time and Location",
+    "widgets": [
+	{
+	    "widget_id": "sessions-by-hour-of-day",
+	    "span": 12,
+	    "break":true 
+	},
+	{
+	    "widget_id":"sessions-by-country-choropleth",
+	    "span":12,
+	    "max_height":"500px",
+	    "break":true
+	}
+  ]
+}

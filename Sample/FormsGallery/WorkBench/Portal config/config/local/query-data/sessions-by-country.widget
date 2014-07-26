@@ -1,0 +1,9 @@
+{
+  "title": "Sessions by Country",
+  "type": "Table",
+  "input": "preemptive:sessions-by-country.query",
+  "options": {
+      "show_count":10,
+      "columns": "All"
+  }
+}

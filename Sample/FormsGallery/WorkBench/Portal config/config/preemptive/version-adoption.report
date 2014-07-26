@@ -1,0 +1,10 @@
+{
+  "title": "Version Adoption",
+  "icon": "icon-signal",
+  "widgets": [
+	  {
+      "widget_id": "version-adoption",
+      "span": 12
+    }
+  ]
+}

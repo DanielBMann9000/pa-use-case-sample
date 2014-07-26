@@ -1,0 +1,34 @@
+{
+	"datasets": [
+		{
+			"name": "entities",
+			"input": "sessions-by-day.query"
+		},
+		{
+			"name": "aggregation",
+			"source": "entities",
+			"transform": [
+				{ "type": "facet", "keys":["data.Time"], "as":["Time"] },
+				{ "type": "log", "meta": true, "label": "Log1" },
+				{ 	
+					"type": "aggregate", 
+					"fields": [
+						"data.CompleteCount", 
+						"data.StartCount",
+						"data.Count",
+						"data.NewUsers",
+						"data.ReturningUsers"
+					],
+					"as": [
+						"CompleteCount",
+						"StartCount",
+						"Count",
+						"NewUsers",
+						"ReturningUsers"
+					]
+				},
+				{ "type": "sort", "by": "Time" }
+			]
+		}
+	]
+}

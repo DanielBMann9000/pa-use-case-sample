@@ -1,0 +1,24 @@
+{
+    "title": "Custom Data Summary (String Values)",
+    "type": "Table",
+    "input": "preemptive:custom-data-string-summary.query",
+    "options": {
+        "columns": [{
+            "key": "EventCode",
+            "as": "Event Type"
+        }, {
+            "key": "Source",
+            "as": "Event Name"
+        }, {
+            "key": "Key",
+            "as": "Key"
+        }, {
+            "key": "Value",
+            "as": "Value"
+        }, {
+            "key": "Count",
+            "as": "Count"
+        }],
+        "sort": ["+Source","+Key","-Count"]
+	}
+}

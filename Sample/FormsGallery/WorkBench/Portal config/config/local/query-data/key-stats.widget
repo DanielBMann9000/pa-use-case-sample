@@ -1,0 +1,9 @@
+{
+  "title": "Key Stats",
+  "type": "Table",
+  "input": "preemptive:key-stats.query",
+  "options": {
+      "show_count":10,
+      "columns": "All"
+  }
+}

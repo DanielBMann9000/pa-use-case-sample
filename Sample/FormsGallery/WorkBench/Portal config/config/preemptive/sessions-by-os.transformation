@@ -1,0 +1,11 @@
+{
+  "datasets": [
+    {
+      "name": "aggregation",
+      "input": "sessions-by-os.query",
+      "transform": [
+        { "type": "formula", "data_type": "timelength", "field":"AvgLength", "expr":"d.data.TotalLength/d.data.CompleteCount" }
+      ]
+    }
+  ]
+}

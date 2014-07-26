@@ -1,0 +1,23 @@
+{
+  "title": "Service Level",
+  "type": "Bar Graph",
+  "input": "preemptive:service-level.transformation>aggregation",
+  "options": {
+  	"xaxis": {
+	    "key":"Time",
+	    "as":"Date",
+	    "type":"date"
+	  },
+  	"yaxis": [
+      "ExceptionsPerSession",
+      "Count", 
+      { 
+        "key": "ExceptionCount",
+        "as": "Exceptions"
+      }
+    ],
+    "xaxis_label": " ",
+    "yaxis_label": " ",
+    "sort": ["Time"]
+  } 
+}

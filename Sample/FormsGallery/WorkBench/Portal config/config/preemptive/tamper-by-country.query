@@ -1,0 +1,17 @@
+{
+  "name": "Summary",
+  "domain": "PreEmptive.Tamper",
+  "aggregate_on": [
+	{
+		"field":"Country"
+	}
+  ],
+  "fields": [
+	{
+		"field": "Count"
+	},
+	{
+		"field":"Country"
+	}
+  ]
+}

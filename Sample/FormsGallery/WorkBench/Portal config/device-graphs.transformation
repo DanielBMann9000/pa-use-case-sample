@@ -1,0 +1,20 @@
+{
+  "datasets": [
+    {
+      "name": "entities",
+      "input": "device-manufacturer-time.query"
+    },
+    {
+      "name": "aggregation",
+      "source": "entities",
+      "transform": [
+		{ "type": "log", "meta": true, "label": "DevicePreFacetLog" },	
+        { "type": "facet", "keys":["data.Time"], "as":["Time"] },
+        { "type": "log", "meta": true, "label": "DeviceFacetLog" },
+		{ "type": "transpose", "by": "data.Manufacturer", "as": "data.Manufacturer", "value": "data.SessionCount" },
+		{ "type": "log", "meta": true, "label": "DeviceTransposeLog" }
+		
+      ]
+    }
+  ]
+}

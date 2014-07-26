@@ -1,0 +1,34 @@
+{
+    "title": "Custom Data Summary (Decimal Values)",
+    "type": "Table",
+    "input": "preemptive:custom-data-decimal-summary.transformation>aggregation",
+    "options": {
+        "columns": [{
+            "key": "data.EventCode",
+            "as": "Event Type"
+        }, {
+            "key": "data.Source",
+            "as": "Event Name"
+        }, {
+            "key": "data.Key",
+            "as": "Key"
+        }, {
+            "key": "data.Sum",
+            "as": "Sum"
+        }, {
+            "key": "Avg",
+            "as": "Avg"
+        }, {
+            "key": "data.Min",
+            "as": "Min"
+        }, {
+            "key": "data.Max",
+            "as": "Max"
+        }, {
+            "key": "data.Count",
+            "as": "Count"
+        }
+		],
+        "sort": ["data.Source","data.Key","-data.Count"]
+    }
+}

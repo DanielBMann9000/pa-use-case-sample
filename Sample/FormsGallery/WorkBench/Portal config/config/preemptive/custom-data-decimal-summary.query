@@ -1,0 +1,44 @@
+{
+  "name": "DecimalSummary",
+  "domain": "PreEmptive.CustomData",
+  "aggregate_on": [
+	{
+		"field":"EventCode"
+	},
+	{
+		"field":"Source"
+	},
+	{
+		"field":"Key"
+	}
+  ],
+  "fields": [
+    {
+      "field": "AppId_Version"
+    },
+    {
+      "field": "Time"
+    },
+	{
+	  "field":"EventCode"
+	},
+    {
+      "field": "Source"
+    },
+	{
+		"field": "Key"
+	},
+	{
+		"field": "Sum"
+	},
+	{
+		"field":"Count"
+	},
+	{
+		"field":"Min"
+	},
+	{
+		"field":"Max"
+	}
+  ]
+}

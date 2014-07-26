@@ -1,0 +1,23 @@
+{
+  "title": "Sessions by OS",
+  "type": "Table",
+  "input": "sessions-by-os.transformation>aggregation",
+  "options": {
+    "columns": [
+      "data.OS",
+      "data.Count", 
+      {
+        "key": "AvgLength",
+        "as": "Avg. Length"
+      }
+    ],
+  	"show_count": 10,
+    "onclick": {
+      "action": "filter",
+      "target": "OS",
+      "value": "data.OS",
+      "title": "click to filter"
+    },
+    "sort": ["-data.Count"]
+  }
+}

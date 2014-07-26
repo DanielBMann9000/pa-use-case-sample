@@ -1,0 +1,14 @@
+{
+    "title":"Session Locations",
+    "type":"Choropleth",
+    "input": "preemptive:sessions-by-country.transformation>aggregation",
+    "options": {
+		"map":"world-countries",
+		"value":"data.Count",
+		"location":"data.Country",
+		"default_color":"#ddd",
+		"scale":{
+		    "type":"gradient"
+		}
+    }
+}

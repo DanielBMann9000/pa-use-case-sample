@@ -1,0 +1,12 @@
+{
+  "title": "Serial#",
+  "icon": "icon-beaker",
+    "widgets": [
+	{
+	    "widget_id": "sessions-by-serial",
+	    "span": 12,
+	    "max_height":"318px",
+	    "break": true
+	}
+    ]
+}

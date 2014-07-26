@@ -1,0 +1,14 @@
+{
+  "datasets": [
+  	{
+  		"name":"entities",
+  		"input":"exceptions.query",
+  		"transform": [
+  			{
+  				"type": "sort",
+  				"by": "-data.Count"
+  			}
+  		]
+  	}
+  ]
+}

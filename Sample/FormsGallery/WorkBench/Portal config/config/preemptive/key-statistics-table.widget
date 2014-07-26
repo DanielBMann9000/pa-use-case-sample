@@ -1,0 +1,45 @@
+{
+  "title": "Key Statistics",
+  "type": "Metrics Table",
+  "input": "key-stats.transformation>day_metrics",
+  "options": {
+    "fields": [{
+    		"key": "Count.sum",
+    		"as": "Total Sessions"
+    	},{
+    		"key": "CompleteCount.sum",
+    		"as": "Complete Sessions"
+    	},{
+    		"key": "Count.mean",
+    		"as": "Avg. Total Sessions",
+    		"type": "fixed"
+    	},{
+    		"key": "CompleteCount.mean",
+    		"as": "Avg. Complete Sessions",
+    		"type": "fixed"
+    	},{
+    		"key": "MinLength.min",
+    		"as": "Min. Session Length",
+    		"type": "timelength"
+    	},{
+    		"key": "MaxLength.max",
+    		"as": "Max. Session Length",
+    		"type": "timelength"
+    	},{
+    		"key": "AllNewUsers.sum",
+    		"as": "New Users in Period"
+    	},{
+    		"key": "AllUniqueUsers.sum",
+    		"as": "Unique Users in Period"
+    	},{
+    		"key": "NewUsers.mean",
+    		"as": "Avg. New Users Per Day",
+    		"type": "fixed"
+    	},{
+    		"key": "UniqueUsers.mean",
+    		"as": "Avg. Unique Users Per Day",
+    		"type": "fixed"
+    	}
+    ]
+  }
+}

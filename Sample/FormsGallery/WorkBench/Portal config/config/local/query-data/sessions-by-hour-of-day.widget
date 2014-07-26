@@ -1,0 +1,9 @@
+{
+  "title": "Sessions by Hour of Day",
+  "type": "Table",
+  "input": "preemptive:sessions-by-hour-of-day.query",
+  "options": {
+      "show_count":10,
+      "columns": "All"
+  }
+}

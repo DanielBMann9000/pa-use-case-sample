@@ -1,0 +1,78 @@
+{
+  "title": "Query Data",
+  "icon": "icon-cog",
+    "widgets": [
+	{
+	    "widget_id": "query-data/key-stats",
+	    "span": 12,
+	    "max_height":"318px",
+	    "break": true
+	},
+	{
+	    "widget_id": "query-data/exceptions",
+	    "span": 12,
+	    "max_height":"318px",
+	    "break": true
+	},
+	{
+	    "widget_id": "query-data/exceptions-over-time",
+	    "span": 12,
+	    "max_height":"318px",
+	    "break": true
+	},
+	{
+	    "widget_id": "query-data/features",
+	    "span": 12,
+	    "max_height":"318px",
+	    "break":true
+	},
+	{
+	    "widget_id": "query-data/sessions-by-country",
+	    "span": 12,
+	    "max_height":"318px",
+	    "break":true
+	},
+	{
+	    "widget_id": "query-data/sessions-by-day",
+	    "span": 12,
+	    "max_height":"318px",
+	    "break": true
+	},
+	{
+	    "widget_id": "query-data/sessions-by-hour-of-day",
+	    "span": 12,
+	    "max_height":"318px",
+	    "break": true
+	},
+	{
+	    "widget_id": "query-data/sessions-by-os",
+	    "span": 12,
+	    "max_height":"318px",
+	    "break":true
+	},
+	{
+	    "widget_id": "query-data/sessions-by-runtime",
+	    "span": 12,
+	    "max_height":"318px",
+	    "break": true
+	},
+	{
+	    "widget_id": "query-data/tamper",
+	    "span": 12,
+	    "max_height":"318px",
+	    "break":true
+	},
+	{
+	    "widget_id": "query-data/tamper-by-country",
+	    "span": 12,
+	    "max_height":"318px",
+	    "break": true
+	},
+	{
+	    "widget_id": "query-data/version",
+	    "span": 12,
+	    "max_height":"318px",
+	    "break": true
+	}
+    ]
+}

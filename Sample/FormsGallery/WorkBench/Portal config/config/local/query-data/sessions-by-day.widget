@@ -1,0 +1,9 @@
+{
+  "title": "Sessions by Day",
+  "type": "Table",
+  "input": "preemptive:sessions-by-day.query",
+  "options": {
+      "show_count":10,
+      "columns": "All"
+  }
+}

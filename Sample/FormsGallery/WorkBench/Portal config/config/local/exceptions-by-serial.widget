@@ -1,0 +1,19 @@
+{
+  "title": "Exceptions by Serial",
+  "type": "Table",
+  "input": "exceptions-by-serial.query",
+  "options": {
+      "show_count":10,
+      "columns": [
+      "Serial",
+      "Count"	  
+	  ],
+	  "onclick": {
+      "action": "filter",
+      "target": "Serial",
+      "value": "Serial",
+      "title": "click to filter"
+    }
+  }
+   
+}

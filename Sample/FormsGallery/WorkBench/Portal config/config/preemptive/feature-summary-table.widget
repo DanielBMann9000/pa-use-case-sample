@@ -1,0 +1,40 @@
+{
+	"title": "Feature Summary",
+	"type": "Table",
+	"input": "feature-summary.transformation>aggregation",
+	"options": {
+		"show_count": 10,
+		"columns": [
+			{
+				"key": "data.FeatureName",
+				"as": "Feature"
+			},
+			{
+				"key":"data.Count",
+				"as": "Count",
+				"type": "number"
+			},
+			{
+				"key": "data.Sessions",
+				"as": "# Sessions",
+				"type": "number"
+			},
+			{
+				"key":"AvgUsesPerSession",
+				"as": "Avg. per Session",
+				"type": "fixed"
+			},
+			{
+				"key":"PercentageSessions",
+				"as": "% of Sessions",
+				"type": "percentage"
+			},
+			{
+				"key":"AvgLength",
+				"as": "Avg. Length",
+				"type": "timelength"
+			}
+		],
+    	"sort": ["-data.Count"]
+	}
+}

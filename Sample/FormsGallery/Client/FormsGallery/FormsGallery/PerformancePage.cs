@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+using PreEmptive.Analytics.Common;
 using Xamarin.Forms;
 
 namespace FormsGallery
@@ -46,11 +48,27 @@ namespace FormsGallery
 					Text = "Go"
 			
 				};
-			serviceButton.Clicked += async (s, e) => {
-				PAClientFactory.StartFeature("Performance.Service");
-				var webView=new WebViewDemoPage();
-				await Navigation.PushAsync(webView);
+
+            var svcLabel = new Label();
+            serviceButton.Clicked +=  (s, e) =>
+            {
+                PAClientFactory.StartFeature("Performance.Geolocate");
+                App.Geocoder.GetCurrentLocation((c) =>
+                {
+                    svcLabel.Text = "Geocoding completed";
+
+                    var keys = new ExtendedKeys();
+                    keys.Add("Latitude", c.latitude);
+                    keys.Add("longitude", c.longitude);
+                    PAClientFactory.StopFeature("Performance.Geolocate",keys);
+
+                });
+               
+                
+
+
 			};
+
             StackLayout stackLayout = new StackLayout
             {
                 Spacing = 0,
@@ -73,19 +91,23 @@ namespace FormsGallery
 							startButton,
 							stopButton
                         }
-                    },
-					new StackLayout
-					{
-						Orientation=StackOrientation.Horizontal,
-						Children=
-						{
-							new Label{
-								Text="Service Level"
-							},
+                    }
+                    
+                    //,new StackLayout
+                    //{
+                    //    Orientation=StackOrientation.Horizontal,
+                    //    Children=
+                    //    {
+                    //        new Label{
+                    //            Text="Service Level",
+                    //            HorizontalOptions=LayoutOptions.CenterAndExpand
+                    //        },
+                    //        serviceButton,
+                    //        svcLabel
 
-						}
+                    //    }
 
-					}
+                    //}
                 }
             };
 

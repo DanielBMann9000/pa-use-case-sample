@@ -1,0 +1,27 @@
+{
+    "title": "Tamper Summary",
+    "type": "Table",
+    "input": "preemptive:tamper.query",
+    "options": {
+        "columns": [{
+            "key": "SerialNumber",
+            "as": "Serial Number"
+        }, {
+            "key": "ExternalIP",
+            "as": "External IP"
+        }, {
+            "key": "City",
+            "as": "City"
+        }, {
+            "key": "Region",
+            "as": "State/Region"
+        }, {
+            "key": "Country",
+            "as": "Country"
+        }, {
+            "key": "Count",
+            "as": "Count"
+        }],
+        "sort": ["-Count"]
+    }
+}

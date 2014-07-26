@@ -1,0 +1,11 @@
+{
+	"datasets": [
+		{
+			"name": "aggregation",
+			"input": "custom-data-decimal-summary.query",
+			"transform": [
+				{"type": "formula", "field":"Avg", "expr":"d.data.Sum/d.data.Count", "data_type": "fixed"}
+			]
+		}
+	]
+}

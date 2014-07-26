@@ -1,0 +1,13 @@
+{
+  "datasets": [
+  	{
+  		"name":"entities",
+  		"input":"version.query",
+  		"transform": [
+  			 { "type": "facet", "keys":["data.Time"], "as":["Time"] },
+			   { "type": "transpose", "by": "data.AppId_Version.value", "as": "data.AppId_Version.format", "value": "data.Count" },
+			   { "type": "sort", "by": "Time"}
+  		]
+  	}
+  ]
+}

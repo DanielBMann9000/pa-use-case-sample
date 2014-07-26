@@ -15,9 +15,9 @@ namespace Xamarin.Forms
 		{
 			GetPAClient ().ApplicationStop (immediate:immediate);
 		}
-		public static void StartApplication(string instance)
+		public static void StartApplication(string instance,string username)
 		{
-			GetPAClient (instance).ApplicationStart ();
+			GetPAClient (instance,username).ApplicationStart ();
 		}
 		public static void FeatureTick(string name)
 		{
@@ -31,9 +31,9 @@ namespace Xamarin.Forms
 		{
 			GetPAClient ().FeatureStart (name);
 		}
-		public static void StopFeature(string name)
+		public static void StopFeature(string name, ExtendedKeys keys=null)
 		{
-			GetPAClient ().FeatureStop (name);
+			GetPAClient ().FeatureStop (name,keys);
 		}
 		public static void Exception(System.Exception ex,ExceptionType exType)
 		{
@@ -63,7 +63,7 @@ namespace Xamarin.Forms
 					}
 			return Client;
 		}
-		public static PAClient GetPAClient(string instance)
+		public static PAClient GetPAClient(string instance=null,string username=null)
         {
             if (Client == null)
             {
@@ -85,6 +85,7 @@ namespace Xamarin.Forms
                 configuration.ApplicationType = "iOS Sample";
 #endif
 				configuration.InstanceID = instance;
+                configuration.GeneratedUserName = username;
                 configuration.ApplicationVersion = "1.0";
 				configuration.Endpoint = "josh-2012r2-2.preemptive.internal/endpoint";
                 configuration.UseSSL = false;

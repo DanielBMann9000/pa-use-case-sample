@@ -1,0 +1,20 @@
+{
+    "datasets":[
+	{
+	    "name":"aggregation",
+	    "input": ["sessions-by-hour-of-day.query"],
+	    "transform": [
+			{
+			    "type":"copy",
+			    "from":["data"],
+			    "fields":["Time","StartCount","StopCount","Count"],
+			    "as":["Time","StartCount","StopCount","Count"]
+			},
+			{
+			    "type":"sort",
+			    "by":"Time"
+			}
+	    ]
+	}
+    ]
+}

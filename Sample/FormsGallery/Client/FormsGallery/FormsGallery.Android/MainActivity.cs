@@ -8,6 +8,8 @@ using Android.Widget;
 using Android.OS;
 
 using Xamarin.Forms.Platform.Android;
+using Xamarin.Geolocation;
+using System.Threading.Tasks;
 
 namespace FormsGallery.Droid
 {
@@ -20,8 +22,8 @@ namespace FormsGallery.Droid
             base.OnCreate(bundle);
 
             Xamarin.Forms.Forms.Init(this, bundle);
-            
 
+            App.RegisterGeocoder(new Geocoder(this));
             SetPage(App.GetMainPage());
           
 			AndroidEnvironment.UnhandledExceptionRaiser += (s, e) => {
@@ -44,6 +46,39 @@ namespace FormsGallery.Droid
 
 
 
+    }
+
+    
+    class Geocoder : IGeocoder
+    {
+        private Android.Content.Context _ctx;
+        public Geocoder(Android.Content.Context ctx)
+        {
+            this._ctx = ctx;
+        }
+
+        public  void GetCurrentLocation(Action<Cordinate> action)
+        {
+            var locator = new Geolocator(_ctx) { DesiredAccuracy = 50 };
+            
+            
+            locator.GetPositionAsync(timeout: 10000).ContinueWith(t =>
+            {
+                if (t.IsCompleted)
+                {
+                    action(new Cordinate
+                    {
+                        latitude = t.Result.Latitude,
+                        longitude = t.Result.Longitude
+
+                    });
+                }
+
+                
+
+            }
+            );
+        }
     }
 }
 
