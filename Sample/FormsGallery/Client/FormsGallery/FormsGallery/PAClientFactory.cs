@@ -85,7 +85,7 @@ namespace Xamarin.Forms
                 configuration.ApplicationType = "iOS Sample";
 #endif
 				configuration.InstanceID = instance;
-                configuration.GeneratedUserName = username;
+                //configuration.GeneratedUserName = username;
                 configuration.ApplicationVersion = "1.0";
 				configuration.Endpoint = "josh-2012r2-2.preemptive.internal/endpoint";
                 configuration.UseSSL = false;

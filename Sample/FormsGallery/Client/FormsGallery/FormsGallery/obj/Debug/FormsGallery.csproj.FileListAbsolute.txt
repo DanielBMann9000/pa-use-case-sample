@@ -25,6 +25,6 @@ D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery\bin\Debu
 D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery\bin\Debug\Xamarin.Forms.Maps.xml
 D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery\obj\Debug\FormsGallery.dll
 D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery\obj\Debug\FormsGallery.pdb
-D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery\bin\Debug\PreEmptive.Analytics.Common.pdb
-D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery\bin\Debug\PreEmptive.Analytics.XamarinAndroid.pdb
 D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery\obj\Debug\FormsGallery.csprojResolveAssemblyReference.cache
+D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery\bin\Debug\PreEmptive.Analytics.Common.xml
+D:\source\wbsample\Sample\FormsGallery\Client\FormsGallery\FormsGallery\bin\Debug\PreEmptive.Analytics.XamarinAndroid.xml
