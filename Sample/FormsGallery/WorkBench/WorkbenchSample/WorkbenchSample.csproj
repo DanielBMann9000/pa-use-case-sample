@@ -40,6 +40,9 @@
     <Reference Include="AggregationInterfaces">
       <HintPath>..\Libraries\AggregationInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="FeatureIndexer">
+      <HintPath>..\Libraries\FeatureIndexer.dll</HintPath>
+    </Reference>
     <Reference Include="PreEmptive.Analytics.Server.Common">
       <HintPath>..\Libraries\PreEmptive.Analytics.Server.Common.dll</HintPath>
     </Reference>
@@ -64,10 +67,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeviceIndexer.cs" />
-    <Compile Include="DeviceQuery.cs" />
+    <Compile Include="CustomDataCounter.cs" />
+    <Compile Include="CustomerIndexer.cs" />
     <Compile Include="InstanceIndexer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CustomerList.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,10 @@
+﻿ABC-123,Contoso Medical
+XYZ-432,Contoso Medical
+EFG-234,ABC Security
+HIJ-012,ABC Security 
+YUI-765,Solutions Inc. 
+ITI-912,Solutions Inc. 
+LKL-876,Up And Away Inc.
+TRE-432,Up And Away Inc.
+LIK-101,Ma's Garage 
+TRE-111,Ma's Garage 

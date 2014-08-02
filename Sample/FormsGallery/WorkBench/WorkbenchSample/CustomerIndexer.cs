@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using AggregationInterfaces.BinAggregation;
 using AggregationInterfaces.Querying;
 using AggregationInterfaces.Querying.Filters;
 using AggregationInterfaces.Querying.Metadata;
 using AggregationInterfaces.Schema;
 using Common.Logging;
+using PreEmptive.Analytics.Workbench.Plugins;
+using PreEmptive.Analytics.Workbench.Plugins.Feature;
 using PreEmptive.Analytics.Workbench.Plugins.Session;
 using PreEmptive.Components.Messaging.Schema.Public.V2;
 using PreEmptive.Workbench.Interfaces;
@@ -16,19 +19,17 @@ using PreEmptive.Workbench.Interfaces.Indexing.Scopes;
 
 namespace WorkbenchSample
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class InstanceIndexer : IndexerBase, IIndexerPattern, IQueryPattern
+    public class CustomerIndexer : IndexerBase, IIndexerPattern, IQueryPattern
     {
         public static readonly string Namespace = "FormsGallery";
-
+        private Dictionary<string, string> _customers;
+        private const string  _customerFile="CustomerList.txt";
         //PivotKeys
-        public const string InstanceId = "InstanceId";
+        public const string Customer = "Customer";
 
         private readonly IFunctionalLogger _logger;
 
-        public InstanceIndexer(FieldKeyFactory fieldKeyFactory, SessionScope sessionScope, IFunctionalLogger logger)
+        public CustomerIndexer(FieldKeyFactory fieldKeyFactory, SessionScope sessionScope, IFunctionalLogger logger)
             : base(fieldKeyFactory, Namespace, sessionScope)
         {
             _logger = logger;
@@ -46,11 +47,11 @@ namespace WorkbenchSample
 
         protected override void DefineFields()
         {
-            DefineField(InstanceId, typeof(string), FieldType.PivotKey);
+            DefineField(Customer, typeof(string), FieldType.PivotKey);
         }
 
-        public override ExtractResult Extract(IStateBin tempStateBin, 
-            EnvelopeAttributes envelopeAttributes, 
+        public override ExtractResult Extract(IStateBin tempStateBin,
+            EnvelopeAttributes envelopeAttributes,
             Message message)
         {
             var appMessage = message as ApplicationLifeCycle;
@@ -58,10 +59,41 @@ namespace WorkbenchSample
                 return new ExtractResult(false);
 
 
-                tempStateBin.AddValue(GetFieldKey(InstanceId), envelopeAttributes.Serial);
+            tempStateBin.AddValue(GetFieldKey(Customer), MapSerial(envelopeAttributes.Serial));
 
-         
+
             return new ExtractResult(true);
+        }
+
+        private string MapSerial(string serial)
+        {
+            try
+            {
+                var customers = _customers ?? LoadCustomers();
+                return _customers[serial];
+            }
+            catch(Exception ex)
+            {
+                _logger.Log("CustomerIndexer", "Unable to lookup customer", ex, LoggingLevel.Warn, new KeyValuePair<string, object>("Serial", serial));
+                return "Unknown";
+            }
+        }
+
+        private Dictionary<string, string> LoadCustomers()
+        {
+            var lines=System.IO.File.ReadAllLines(GetFilePath());
+            _customers = new Dictionary<string, string>(10);
+            foreach (var line in lines)
+            {
+                var parts = line.Split(',');
+                _customers.Add(parts[0], parts[1]);
+            }
+            return _customers;
+        }
+
+        private string GetFilePath()
+        {
+            return System.IO.Path.Combine(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetAssembly(this.GetType()).Location), _customerFile);
         }
 
         public override Transform[] DefineTransforms()
@@ -73,29 +105,29 @@ namespace WorkbenchSample
         {
             //Return null instead if using the sample pattern
             return null;
-  
+
         }
 
         public OutputSchema[] ExtendOutputSchemaWithPattern(OutputSchema[] outputSchemas)
         {
 
             return outputSchemas
-                .Where(s => !s.PivotKeys.Contains(GetFieldKey(Namespace, InstanceId)))
+                .Where(s => !s.PivotKeys.Contains(GetFieldKey(Namespace, Customer)))
                 .Select(outputSchema =>
-            {
-                var pivotKeys = new HashSet<FieldKey>(outputSchema.PivotKeys)
+                {
+                    var pivotKeys = new HashSet<FieldKey>(outputSchema.PivotKeys)
                                 {
-                                    GetFieldKey(Namespace, InstanceId)
+                                    GetFieldKey(Namespace, Customer)
                                    
                                 };
 
-                return new OutputSchema(outputSchema.Name + "_InstanceId", this)
-                {
-                    RequiredFields = outputSchema.RequiredFields,
-                    PivotKeys = pivotKeys
-                    
-                };
-            }).ToArray();
+                    return new OutputSchema(outputSchema.Name + "_Customer", this)
+                    {
+                        RequiredFields = outputSchema.RequiredFields,
+                        PivotKeys = pivotKeys
+
+                    };
+                }).ToArray();
         }
 
 
@@ -106,9 +138,9 @@ namespace WorkbenchSample
             {
                 new FieldMetadata
                 {
-                    AssociatedFieldKey = GetFieldKey(Namespace, InstanceId),
-                    FieldName = "Serial",
-                    FriendlyName = "Serial Number",
+                    AssociatedFieldKey = GetFieldKey(Namespace, Customer),
+                    FieldName = "Customer",
+                    FriendlyName = "Customer",
                     DataType = typeof(string),
                     IsOptional=true,
                     //LinkedFields=new[] { "Runtime", "Country","OS" },
