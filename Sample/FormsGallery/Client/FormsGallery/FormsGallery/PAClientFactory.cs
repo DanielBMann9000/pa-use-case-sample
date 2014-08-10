@@ -15,9 +15,12 @@ namespace Xamarin.Forms
 		{
 			GetPAClient ().ApplicationStop (immediate:immediate);
 		}
-		public static void StartApplication(string instance,string username)
+		public static void StartApplication(string instance,string department)
 		{
-			GetPAClient (instance,username).ApplicationStart ();
+
+            var keys = new ExtendedKeys();
+            keys.Add("Department", department);
+            GetPAClient(instance).ApplicationStart(keys);
 		}
 		public static void FeatureTick(string name)
 		{

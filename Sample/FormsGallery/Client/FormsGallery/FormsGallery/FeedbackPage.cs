@@ -49,7 +49,7 @@ namespace FormsGallery
 
             labelSlider = new Label
             {
-                Text = "Your happiness value is 0",
+                Text = "Your happiness value is 5",
                 Font = Font.SystemFontOfSize(NamedSize.Large),
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.CenterAndExpand
@@ -100,13 +100,19 @@ namespace FormsGallery
             };
             button.Clicked += (sender, args) =>
             {
-                var keys=new ExtendedKeys();
-                keys.Add("Happiness",slider.Value);
-                keys.Add("Color",picker.Items[picker.SelectedIndex]);
-                PAClientFactory.FeatureTick("Feedback",keys);
-                
-                DisplayAlert("Feedback Accepted", "Thank you for submitting your feedback.", "Ok","Cancel");
+                if (picker.SelectedIndex >= 0)
+                {
+                    var keys = new ExtendedKeys();
+                    keys.Add("Happiness", slider.Value);
+                    keys.Add("Color", picker.Items[picker.SelectedIndex]);
+                    PAClientFactory.FeatureTick("Feedback", keys);
 
+                    DisplayAlert("Feedback Accepted", "Thank you for submitting your feedback.", "Ok", "Cancel");
+                }
+                else
+                {
+                    DisplayAlert("Error", "Please Select your favorite color.", "Ok", "Cancel");
+                }
             };
             // Build the page.
             this.Content = new StackLayout

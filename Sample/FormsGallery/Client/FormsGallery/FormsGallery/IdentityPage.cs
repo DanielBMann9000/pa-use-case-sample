@@ -28,8 +28,8 @@ namespace FormsGallery
                             Detail = App.LicenseKey,
                         },
 						new TextCell{
-							Text="User Name",
-							Detail=App.UserName
+							Text="Department",
+							Detail=App.Department
 						}
 					
                     }
