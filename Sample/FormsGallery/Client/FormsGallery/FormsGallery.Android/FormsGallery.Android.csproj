@@ -132,9 +132,6 @@
     <AndroidResource Include="Resources\drawable-hdpi\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\ide_xamarin_studio.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable-ldpi\Icon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -144,16 +141,10 @@
     <AndroidResource Include="Resources\drawable-xhdpi\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\IconStock.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\preemptivesolutions.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidAsset Include="Assets\AboutAssets.txt" />
     <Content Include="Resources\AboutResources.txt" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon.png" />
   </ItemGroup>
+  <ItemGroup />
 </Project>

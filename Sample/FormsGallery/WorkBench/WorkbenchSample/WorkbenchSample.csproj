@@ -76,6 +76,7 @@
     <Compile Include="InstanceIndexer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CustomerQuery.cs" />
+    <Compile Include="SessionExceptionIndexer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CustomerList.txt">
