@@ -28,7 +28,7 @@ namespace FormsGallery
         //     {""}
         //};
 
-        private static string[] _departments = { "Executive Management", "Human Resources", "IT Operations", "Sales", "Marketing", "Support", "Finance" };
+        private static string[] _departments = { "Executive Management", "Human Resources", "IT Operations", "Sales", "Marketing", "Support", "Finance","VIP","Evaluation" };
         private static string _department = _departments[_rand.Next(0, _departments.Length)];
         private static string _userName = _userNames[_rand.Next(0, _userNames.Length)];
         private static string _licenseKey = GetLicenseKey();
