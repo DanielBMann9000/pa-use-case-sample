@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="CustomDataCounter.cs" />
     <Compile Include="CustomerIndexer.cs" />
+    <Compile Include="HappinessIndexer.cs" />
     <Compile Include="InstanceIndexer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CustomerQuery.cs" />

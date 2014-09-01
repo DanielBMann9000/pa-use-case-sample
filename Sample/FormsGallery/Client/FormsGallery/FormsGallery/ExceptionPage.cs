@@ -36,6 +36,14 @@ namespace FormsGallery
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.CenterAndExpand
             };
+            Button thrown = new Button
+            {
+                Text = "Thrown",
+                Font = Font.SystemFontOfSize(NamedSize.Large),
+                BorderWidth = 1,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
 
             // Build the page.
             this.Content = new StackLayout
@@ -44,16 +52,28 @@ namespace FormsGallery
                 {
                     header,
 					handled,
+                    thrown,
 					unhandled
                 }
             };
 
             handled.Clicked += OnHandledClicked;
             unhandled.Clicked += OnUnhandledClicked;
+            thrown.Clicked += thrown_Clicked;
+        }
+
+        void thrown_Clicked(object sender, EventArgs e)
+        {
+            var ex = new System.ArgumentException("Argument is incorrect");
+            PAClientFactory.Exception(ex, PreEmptive.Analytics.Common.ExceptionType.Thrown);
+            DisplayAlert("Error", "Thrown Error simulated and sent to PA", "Ok", null);
         }
         void OnUnhandledClicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException("This is an unhandled excption");
+            var ex=new NotImplementedException("This is an unhandled excption");
+            PAClientFactory.Exception(ex, PreEmptive.Analytics.Common.ExceptionType.Uncaught);
+            DisplayAlert("Error", "Unhandled Error simulated and sent to PA", "Ok", null);
+         
 
 
         }
