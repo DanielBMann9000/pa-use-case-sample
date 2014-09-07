@@ -1,0 +1,33 @@
+{
+  "datasets": [
+  
+	{	      
+		"name": "exceptions",
+		"input": "exceptions-by-customer.query"
+	},
+  
+    {
+      "name": "aggregation",
+      "input": "sessions-by-customer.query",
+      "transform": [
+        { "type": "formula", "data_type": "timelength", "field":"AvgLength", "expr":"d.data.TotalLength/d.data.CompleteCount" },
+		{
+			"type": "zip",
+			"key":"data.Customer",
+			"with": "exceptions",
+			"withKey":"data.Customer", 
+			"default":
+				{
+					"data":
+						{
+							"Count": 0,
+							"Thrown":0,
+							  "Unhandled":0,
+							  "Caught":0
+						}
+				}
+		}
+      ]
+    }
+  ]
+}

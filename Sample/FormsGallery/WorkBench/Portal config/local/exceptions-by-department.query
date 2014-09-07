@@ -1,0 +1,20 @@
+{
+  "name": "Summary",
+  "domain": "PreEmptive.Exceptions",
+  "aggregate_on": 
+  [
+	{
+		"field":"Department",
+		"include_data":true
+	}
+  ],
+  "fields": [
+
+      {"field": "AppId_Version"},
+	  {"field": "Count"},
+	  {"field":"Thrown"},
+	  {"field":"Caught"},
+	  {"field":"Unhandled"}
+    
+  ]
+}

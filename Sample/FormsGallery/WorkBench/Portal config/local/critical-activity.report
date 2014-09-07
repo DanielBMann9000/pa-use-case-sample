@@ -1,0 +1,37 @@
+{
+  "title": "Critical Activity",
+  "icon": "icon-bolt",
+    "widgets": [
+	{
+	   "widget_id":"sessions-by-customer",
+	   "span":12,
+	   "max_height":"318px",
+	   "break":true
+	},
+	{
+	    "widget_id": "sessions-by-department",
+	    "span": 12,
+	    "max_height":"318px",
+	    "break": true
+	},
+	{
+	"widget_id":"preemptive:feature-summary-table",	    
+	"span": 12,
+	    "max_height":"318px",
+	    "break": true
+	},
+	{
+	"widget_id":"local:buildtimes-by-day",
+	"span":12,
+		   
+	    "break": true
+	},
+		{
+	"widget_id":"local:feedback-chart",
+	"span":12,
+		    "max_height":"318px",
+	    "break": true
+	}
+	
+    ]
+}

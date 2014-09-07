@@ -1,0 +1,24 @@
+{
+  "name": "Summary",
+  "domain": "PreEmptive.Exceptions",
+  "aggregate_on": 
+  [
+	{
+		"field":"Customer",
+		"include_data":true
+	}
+  ],
+  "fields": [
+    
+
+	  {"field": "Count"},
+	  {"field":"Thrown"},
+	  {"field":"Caught"},
+	  {"field":"Unhandled"},
+	  	{
+		"field":"Customer",
+		"include_data":true
+	}
+    
+  ]
+}

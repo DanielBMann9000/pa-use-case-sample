@@ -1,0 +1,24 @@
+{
+  "title": "Activity by Role",
+  "type": "Table",
+  "input": "sessions-by-department.transformation>aggregation",
+  "options": {
+      "show_count":10,
+      "columns": [
+	  "data.Department",
+      "data.Count",
+	  "zip.data.Thrown",
+	  "zip.data.Unhandled",
+	  "zip.data.Caught",
+	  "data.UniqueUsers"
+	  ],
+	  "onclick": {
+      "action": "filter",
+      "target": "Department",
+      "value": "data.Department",
+      "title": "click to filter"
+    }
+	 
+  }
+   
+}

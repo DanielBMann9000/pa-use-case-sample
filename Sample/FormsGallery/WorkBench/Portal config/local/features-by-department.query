@@ -1,0 +1,24 @@
+{
+  "name": "Summary",
+  "domain": "PreEmptive.Features",
+  "aggregate_on": [
+    {
+      "field": "Department"
+    },
+		{
+	  "field":"Happiness"
+	}
+  ],
+  "fields": [
+    {
+      "field": "AppId_Version"
+    },
+	{
+	"field":"Count"
+	},
+
+	{
+	  "field":"Happiness"
+	}
+  ]
+}

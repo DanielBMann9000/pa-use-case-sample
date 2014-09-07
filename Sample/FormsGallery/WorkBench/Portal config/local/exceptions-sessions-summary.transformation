@@ -1,0 +1,30 @@
+{
+  "datasets": [
+    {
+	      "name": "sessions",
+      "input": "sessions-by-customer.query"
+
+    },
+    {
+      "name": "exceptions",
+      "input": "exceptions-by-customer.query",
+
+      "transform": 
+	  [
+		{
+			"type": "zip",
+			"key":"Company",
+			"with": "sessions",
+			"withKey":"Company", 
+			"default":
+				{
+					"data":
+						{
+							"Count": 0
+						}
+				}
+		}
+      ]
+    }	
+  ]
+}

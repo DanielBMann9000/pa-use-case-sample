@@ -1,0 +1,90 @@
+{
+	"datasets": [
+		{
+			"name": "multiplefeatures",
+			"input": "features-by-day.query",
+			"transform": [				
+				{ "type": "filter", "test": "d.data.FeatureName ==\"FormsGallery.ExceptionPage\" || d.data.FeatureName == \"FormsGallery.About\" || d.data.FeatureName == \"Performance.Button\" || d.data.FeatureName ==\"FormsGallery.IdentityPage\""}							
+			]
+		},	
+		{
+			"name": "exceptionFeatures",
+			"input": "features-by-day.query",
+			"transform": [				
+				{ "type": "filter", "test": "d.data.FeatureName ==\"FormsGallery.ExceptionPage\"" }							
+			]
+		},
+		{
+			"name": "aboutFeatures",
+			"input": "features-by-day.query",
+			"transform": [				
+				{ "type": "filter", "test": "d.data.FeatureName ==\"FormsGallery.About\"" }							
+			]
+		},		
+		{
+			"name": "performanceFeatures",
+			"input": "features-by-day.query",
+			"transform": [				
+				{ "type": "filter", "test": "d.data.FeatureName ==\"Performance.Button\"" }							
+			]
+		},	
+		{
+			"name": "feedbackFeatures",
+			"input": "features-by-day.query",
+			"transform": [				
+				{ "type": "filter", "test": "d.data.FeatureName ==\"Feedback\"" }							
+			]
+		},		
+		{
+			"name": "multipletimes",
+			"source": "multiplefeatures",
+			"transform": [
+				{ "type": "formula", "field": "AvgLength", "expr": "round(d.data.TotalLength/(d.data.CompleteCount))", "data_type": "timelength"},
+				{ "type": "log", "meta": true, "label": "AfterFormula" },
+				{ "type": "facet", "keys":["data.Time"], "as":["Time"] },
+				{ "type": "log", "meta": true, "label": "AfterFacet" },
+				{ "type": "transpose", "by": "data.FeatureName", "value": "AvgLength" },
+				{ "type": "formula", "field": "Threshold", "data_type": "timelength", "expr": "2*60*1000*10000"},				
+				{ "type": "log", "meta": true, "label": "AfterTranspose" }
+			]
+		},		
+		{
+			"name": "feedbackCounts",
+			"source": "feedbackFeatures",
+			"transform": [
+				{ "type": "formula", "field": "AvgBuildsPerSession", "expr": "d.data.Count/(d.data.Sessions)"},
+				{ "type": "log", "meta": true, "label": "AfterFormula" },				
+				{ "type": "sort", "by": "data.Time" }				
+			]
+		},
+		{
+			"name": "performanceTimes",
+			"source": "performanceFeatures",
+			"transform": [
+				{ "type": "formula", "field": "AvgLength", "expr": "round(d.data.TotalLength/(d.data.CompleteCount))"},
+				{ "type": "formula", "field": "CappedMaxLength", "expr": "min(d.data.MaxLength, 30*60*1000*10000 )"},				
+				{ "type": "formula", "field": "Threshold", "data_type": "timelength", "expr": "10*1000*10000"},									
+				{ "type": "sort", "by": "data.Time" }				
+			]		
+		},
+		{
+			"name": "aboutTimes",
+			"source": "aboutFeatures",
+			"transform": [
+				{ "type": "formula", "field": "AvgLength", "expr": "round(d.data.TotalLength/(d.data.CompleteCount))"},						
+				{ "type": "formula", "field": "Threshold", "data_type": "timelength", "expr": "2*60*1000*10000"},									
+				{ "type": "sort", "by": "Time" }
+			]
+		},
+		{
+			"name": "exceptionTimes",
+			"source": "exceptionFeatures",
+			"transform": [
+				{ "type": "formula", "field": "AvgLength", "expr": "round(d.data.TotalLength/(d.data.CompleteCount))"},						
+				{ "type": "formula", "field": "Threshold", "data_type": "timelength", "expr": "2*60*1000*10000"},									
+				{ "type": "sort", "by": "Time" }
+			]
+		}		
+		
+	]
+}

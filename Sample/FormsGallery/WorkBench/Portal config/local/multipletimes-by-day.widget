@@ -1,0 +1,20 @@
+{
+  "title": "Average Build Times by Day",
+  "type": "Line Graph",
+  "input": "feature-graphs.transformation>multipletimes",
+  "options": {
+  	"xaxis": "Time",
+    "yaxis": [ 
+		{
+			"regex": "transposed[.](.*)",
+			"format": true,
+			"type": "timelength" 
+		},
+		"Threshold" 	
+	],
+    "xaxis_label": " ",
+    "yaxis_label": " ",
+	"yaxis_type": "timelength",
+    "sort": ["Time"]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "datasets": [
+  
+	{	      
+		"name": "exceptions",
+		"input": "exceptions-by-customer.query"
+	},
+  
+    {
+      "name": "aggregation",
+      "input": "sessions-by-serial.query",
+      "transform": [
+        { "type": "formula", "data_type": "timelength", "field":"AvgLength", "expr":"d.data.TotalLength/d.data.CompleteCount" },
+		{
+			"type": "zip",
+			"key":"Company",
+			"with": "exceptions",
+			"withKey":"Company", 
+			"default":
+				{
+					"data":
+						{
+							"Count": 0
+						}
+				}
+		}
+      ]
+    }
+  ]
+}

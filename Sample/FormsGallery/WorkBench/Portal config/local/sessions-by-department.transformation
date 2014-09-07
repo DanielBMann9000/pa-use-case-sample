@@ -1,0 +1,51 @@
+{
+  "datasets": [
+  
+	{	      
+		"name": "exceptions",
+		"input": "exceptions-by-department.query",
+		"transform":[
+
+			
+			
+		]
+	},
+	
+	
+  
+    {
+      "name": "aggregation",
+      "input": "sessions-by-department.query",
+      "transform": [
+       
+		{
+    "type": "log",
+    "meta": true,
+    "label": "Pre Zip"
+},
+		{
+			"type": "zip",
+			"key":"data.Department",
+			"with": "exceptions",
+			"withKey":"data.Department", 
+			"default":
+				{
+					"data":
+						{
+							"Count": 0,
+							"Thrown":0,
+							"Unhandled":0,
+							"Caught":0
+						}
+				}
+		}
+		
+		,{
+    "type": "log",
+    "meta": true,
+    "label": "Post Zip"
+}
+      ]
+    }
+  ]
+}

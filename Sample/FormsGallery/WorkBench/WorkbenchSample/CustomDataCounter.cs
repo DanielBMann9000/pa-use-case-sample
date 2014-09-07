@@ -22,17 +22,17 @@ namespace WorkbenchSample
         }
     }
 
-    public class CustomUserDataFilter : CustomDataCounterBase
-    {
+    //public class CustomUserDataFilter : CustomDataCounterBase
+    //{
 
-        public CustomUserDataFilter(FieldKeyFactory fieldKeyFactory)
-            : base(InstanceIndexer.Namespace, "User", new Type[] { typeof(ApplicationLifeCycle) }, new[]
-        {
-            new CustomDataCounterKey("Department", false),
+    //    public CustomUserDataFilter(FieldKeyFactory fieldKeyFactory)
+    //        : base(InstanceIndexer.Namespace, "User", new Type[] { typeof(ApplicationLifeCycle) }, new[]
+    //    {
+    //        new CustomDataCounterKey("Department", false),
             
-        }, fieldKeyFactory, true)
-        {
-        }
-    }
+    //    }, fieldKeyFactory, true)
+    //    {
+    //    }
+    //}
 
 }

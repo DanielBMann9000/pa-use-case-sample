@@ -1,8 +1,0 @@
-{ 
-	"default_report": "local:sample_counting",
-	"display_date_format": "m/d/yy",
-	"input_date_format": "mm/dd/yyyy",
-	"reports": {
-		"sample_counting":"local:sample_counting"
-	}
-}

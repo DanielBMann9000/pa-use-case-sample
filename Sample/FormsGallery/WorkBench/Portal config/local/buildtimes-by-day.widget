@@ -1,0 +1,30 @@
+{
+  "title": "Performance Times by Day",
+  "type": "Line Graph",
+  "input": "feature-graphs.transformation>performanceTimes",
+  "options": {
+  	"xaxis": "data.Time",
+    "yaxis": [ 
+		{
+			"key": "AvgLength",
+			"as": "Average Time",
+			"type": "timelength" 
+		},
+		{
+			"key": "CappedMaxLength",
+			"as": "Max Time",
+			"type": "timelength" 
+		},
+		{
+			"key": "data.MinLength",
+			"as": "Min Time",
+			"type": "timelength" 
+		},		
+		"Threshold" 	
+	],
+    "xaxis_label": " ",
+    "yaxis_label": " ",
+	"yaxis_type": "timelength",
+    "sort": ["data.Time"]
+  }
+}

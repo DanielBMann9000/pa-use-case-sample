@@ -1,0 +1,23 @@
+{
+  "title": "Feedback Counts",
+  "type": "Bar Graph",
+  "input": "feature-graphs.transformation>feedbackCounts",
+  "options": {
+	"xaxis": {
+		"key": "data.Time",
+		"as": " "
+	},
+	"yaxis": [
+		{
+			"key": "data.Count",
+			"as": "Feedback",
+			"type": "number" 
+		},
+		{
+			"key": "data.Sessions",
+			"as": "Sessions",
+			"type": "number" 
+		}
+	]
+  }
+}

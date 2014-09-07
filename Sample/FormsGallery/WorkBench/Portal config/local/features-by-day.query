@@ -1,0 +1,55 @@
+{
+  "name": "Summary",
+  "domain": "PreEmptive.Features",
+  "aggregate_on": [
+    {
+      "field": "FeatureName"
+    },
+    {
+      "field": "Time",
+      "options": "day"
+    }
+	
+  ],
+  "fields": [
+    {
+      "field": "AppId_Version"
+    },
+    {
+      "field": "Time"
+    },
+    {
+      "field": "OS",
+      "include_data": false
+    },
+    {
+      "field": "Runtime",
+      "include_data": false
+    },
+    {
+      "field": "Country",
+      "include_data": false
+    },
+    {
+      "field": "FeatureName"
+    },
+    {
+      "field": "Count"
+    },
+	{
+	  "field": "CompleteCount"
+	},
+    {
+      "field": "TotalLength"
+    },
+    {
+      "field": "MinLength"
+    },
+    {
+      "field": "MaxLength"
+    },
+    {
+      "field": "Sessions"
+    }
+  ]
+}
