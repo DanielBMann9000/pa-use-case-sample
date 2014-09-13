@@ -1,21 +1,31 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace FormsGallery
+namespace PASample
 {
     class ExceptionPage : BasePage
     {
         private Random _rand = new Random();
         public ExceptionPage()
+        
         {
-            Label header = new Label
+            this.Title = "Throw exceptions – It’s fun!";
+            //Label header = new Label
+            //{
+            //    Text = "Throw exceptions – It’s fun!",
+            //    Font = Font.BoldSystemFontOfSize(NamedSize.Large),
+            //    HorizontalOptions = LayoutOptions.Center,
+            //    TextColor = Xamarin.Forms.Color.White
+            //};
+
+            var subHeader = new Label
             {
-                Text = "Throw exceptions – It’s fun!",
-                Font = Font.BoldSystemFontOfSize(NamedSize.Medium),
-                HorizontalOptions = LayoutOptions.Center
+                Text = "Context means distinguishing between application, runtime, and user issues and knowing how to prioritize them all.",
+                TextColor = Color.Accent,
+                Font = Font.SystemFontOfSize(NamedSize.Medium)
+
+
             };
-
-
 
             // Accomodate iPhone status bar.
             this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
@@ -25,7 +35,8 @@ namespace FormsGallery
                 Font = Font.SystemFontOfSize(NamedSize.Large),
                 BorderWidth = 1,
                 HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.CenterAndExpand
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+
             };
 
             Button unhandled = new Button
@@ -50,7 +61,8 @@ namespace FormsGallery
             {
                 Children = 
                 {
-                    header,
+                    //header,
+                    subHeader,
 					handled,
                     thrown,
 					unhandled
@@ -61,7 +73,13 @@ namespace FormsGallery
             unhandled.Clicked += OnUnhandledClicked;
             thrown.Clicked += thrown_Clicked;
         }
-
+        public override string Feature
+        {
+            get
+            {
+                return "Incident Alert";
+            }
+        }
         void thrown_Clicked(object sender, EventArgs e)
         {
             var ex = new System.ArgumentException("Argument is incorrect");

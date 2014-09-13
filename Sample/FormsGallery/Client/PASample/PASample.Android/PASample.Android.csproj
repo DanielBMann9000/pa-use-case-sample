@@ -7,7 +7,7 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>FormsGallery.Android</AssemblyName>
+    <AssemblyName>PASample.Android</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
@@ -123,9 +123,9 @@
     <Compile Include="Resources\Resource.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FormsGallery\FormsGallery.csproj">
+    <ProjectReference Include="..\FormsGallery\PASample.csproj">
       <Project>{3CD45692-4376-4FFA-B9ED-3A9503728016}</Project>
-      <Name>FormsGallery</Name>
+      <Name>PASample</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

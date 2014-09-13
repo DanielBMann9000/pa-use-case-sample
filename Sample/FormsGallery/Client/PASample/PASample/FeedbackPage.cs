@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using PreEmptive.Analytics.Common;
 using Xamarin.Forms;
 
-namespace FormsGallery
+namespace PASample
 {
     class FeedbackPage : BasePage
     {
@@ -23,19 +23,29 @@ namespace FormsGallery
 
         public FeedbackPage()
         {
-            Label header = new Label
+            this.Title = "Feedback & Preferences";
+            //Label header = new Label
+            //{
+            //    Text = "Feedback & Preferences",
+            //    Font = Font.BoldSystemFontOfSize(NamedSize.Large),
+            //    HorizontalOptions = LayoutOptions.Center,
+            //    TextColor=Xamarin.Forms.Color.White
+            //};
+
+            var subHeader = new Label
             {
-                Text = "Feedback & Preferences",
-                Font = Font.BoldSystemFontOfSize(NamedSize.Medium),
-                HorizontalOptions = LayoutOptions.Center
+                Text = "Context means capturing discrete behavior and explicit preferences within – and across – applications.",
+                TextColor = Color.Accent,
+                Font = Font.SystemFontOfSize(NamedSize.Medium)
+
+
             };
-
-
             Label headerSlider = new Label
             {
                 Text = "Happiness Index",
-                Font = Font.BoldSystemFontOfSize(NamedSize.Medium),
-                HorizontalOptions = LayoutOptions.Center
+                Font = Font.BoldSystemFontOfSize(NamedSize.Large),
+                HorizontalOptions = LayoutOptions.Center,
+                TextColor=Xamarin.Forms.Color.White
             };
 
             Slider slider = new Slider
@@ -49,10 +59,12 @@ namespace FormsGallery
 
             labelSlider = new Label
             {
+               
                 Text = "Your happiness value is 5",
                 Font = Font.SystemFontOfSize(NamedSize.Large),
                 HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.CenterAndExpand
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                TextColor = Xamarin.Forms.Color.White
             };
 
 
@@ -105,7 +117,7 @@ namespace FormsGallery
                     var keys = new ExtendedKeys();
                     keys.Add("Happiness", slider.Value);
                     keys.Add("Color", picker.Items[picker.SelectedIndex]);
-                    PAClientFactory.FeatureTick("Feedback", keys);
+                    PAClientFactory.FeatureTick("Feedback Submitted", keys);
 
                     DisplayAlert("Feedback Accepted", "Thank you for submitting your feedback.", "Ok", "Cancel");
                 }
@@ -119,7 +131,7 @@ namespace FormsGallery
             {
                 Children = 
                 {
-                    header,
+                    //header,
                     headerSlider,
                     slider,
                     labelSlider,
@@ -136,5 +148,14 @@ namespace FormsGallery
         {
             labelSlider.Text = String.Format("Your Happiness value is {0:F1}", e.NewValue);
         }
+
+        public override string Feature
+        {
+            get
+            {
+                return "Feedback Request";
+            }
+        }
     }
+    
 }

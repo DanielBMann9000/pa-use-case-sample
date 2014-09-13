@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="PAUseCase.Android" android:versionName="1.0" android:versionCode="10">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="PASample.Android" android:versionName="1.0" android:versionCode="10" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="15" />
-	<application android:icon="@drawable/icon" android:label="PreEmptive Analytics Use Case Gallery "></application>
+	<application android:icon="@drawable/icon" android:label="PA Sample App"></application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />

@@ -21,7 +21,7 @@ namespace WorkbenchSample
 {
     public class CustomerIndexer : IndexerBase, IIndexerPattern, IQueryPattern
     {
-        public static readonly string Namespace = "FormsGallery";
+        public static readonly string Namespace = "PASample";
         private Dictionary<string, string> _customers;
         private const string  _customerFile="CustomerList.txt";
         //PivotKeys

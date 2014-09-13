@@ -27,7 +27,7 @@ namespace WorkbenchSample
 
         public string Domain
         {
-            get { return "FormsGallery.CustomerPerformance"; }
+            get { return "PASample.CustomerPerformance"; }
         }
 
         public QueryMetadata QueryMetaData

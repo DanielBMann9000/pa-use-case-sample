@@ -21,7 +21,7 @@ namespace WorkbenchSample
     /// </summary>
     public class DepartmentIndexer : IndexerBase, IIndexerPattern, IQueryPattern
     {
-        public static readonly string Namespace = "FormsGallery";
+        public static readonly string Namespace = "PASample";
 
         //PivotKeys
         public const string Department = "Department";
@@ -97,7 +97,7 @@ namespace WorkbenchSample
                                    
                                 };
 
-                    return new OutputSchema(outputSchema.Name + "_InstanceId", this)
+                    return new OutputSchema(outputSchema.Name + "_" + Department, this)
                     {
                         RequiredFields = outputSchema.RequiredFields,
                         PivotKeys = pivotKeys

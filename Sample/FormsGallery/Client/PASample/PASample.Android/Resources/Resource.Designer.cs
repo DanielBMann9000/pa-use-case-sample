@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("FormsGallery.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("PASample.Droid.Resource", IsApplication=true)]
 
-namespace FormsGallery.Droid
+namespace PASample.Droid
 {
 	
 	

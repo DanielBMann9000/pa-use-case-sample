@@ -5,7 +5,7 @@ using System.Text;
 
 using Xamarin.Forms;
 
-namespace FormsGallery
+namespace PASample
 {
     public class App
     {
@@ -79,12 +79,7 @@ namespace FormsGallery
 
         }
 
-        internal static IGeocoder Geocoder { get; private set; }
 
-        public static void RegisterGeocoder(IGeocoder geocoder)
-        {
-            Geocoder = geocoder;
-        }
 
 
     }

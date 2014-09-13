@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using PreEmptive.Analytics.Common;
 using Xamarin.Forms;
 
-namespace FormsGallery
+namespace PASample
 {
     class PerformancePage : BasePage
     {
@@ -12,13 +12,23 @@ namespace FormsGallery
 
         public PerformancePage()
         {
-            Label header = new Label
-            {
-				Text = "Timing inside and out",
-                Font = Font.BoldSystemFontOfSize(NamedSize.Medium),
-                HorizontalOptions = LayoutOptions.Center
-            };
+            this.Title = "Timing inside and out";
+            //Label header = new Label
+            //{
+            //    Text = "Timing inside and out",
+            //    Font = Font.BoldSystemFontOfSize(NamedSize.Large),
+            //    HorizontalOptions = LayoutOptions.Center,
+            //    TextColor=Xamarin.Forms.Color.White
+            //};
 
+            var subHeader = new Label
+            {
+                Text = "Context means timing all behavior, workflow, and tasks however granular or grand – not simply measuring page loads, referrals, and transactions.",
+                TextColor = Color.Accent,
+                Font = Font.SystemFontOfSize(NamedSize.Medium)
+
+
+            };
 			var startButton = new Button {
 				Text = "Start",
 				HorizontalOptions = LayoutOptions.Start,
@@ -34,40 +44,17 @@ namespace FormsGallery
 			startButton.Clicked += (s, e) => {
 				stopButton.IsEnabled=true;
 				startButton.IsEnabled=false;
-				PAClientFactory.StartFeature("Performance.Button");
+                PAClientFactory.StartFeature("User Task");
 				_isFeaturePressed=true;
 			};
 			stopButton.Clicked += (s, e) => {
 				stopButton.IsEnabled=false;
 				startButton.IsEnabled=true;
-				PAClientFactory.StopFeature("Performance.Button");
+                PAClientFactory.StopFeature("User Task");
 				_isFeaturePressed=false;
 			};
 
-			var serviceButton =new  Button {
-					Text = "Go"
-			
-				};
 
-            var svcLabel = new Label();
-            serviceButton.Clicked +=  (s, e) =>
-            {
-                PAClientFactory.StartFeature("Performance.Geolocate");
-                App.Geocoder.GetCurrentLocation((c) =>
-                {
-                    svcLabel.Text = "Geocoding completed";
-
-                    var keys = new ExtendedKeys();
-                    keys.Add("Latitude", c.latitude);
-                    keys.Add("longitude", c.longitude);
-                    PAClientFactory.StopFeature("Performance.Geolocate",keys);
-
-                });
-               
-                
-
-
-			};
 
             StackLayout stackLayout = new StackLayout
             {
@@ -93,21 +80,7 @@ namespace FormsGallery
                         }
                     }
                     
-                    //,new StackLayout
-                    //{
-                    //    Orientation=StackOrientation.Horizontal,
-                    //    Children=
-                    //    {
-                    //        new Label{
-                    //            Text="Service Level",
-                    //            HorizontalOptions=LayoutOptions.CenterAndExpand
-                    //        },
-                    //        serviceButton,
-                    //        svcLabel
-
-                    //    }
-
-                    //}
+                  
                 }
             };
 
@@ -119,10 +92,19 @@ namespace FormsGallery
             {
                 Children = 
                 {
-                    header,
+                    //header,
+                    subHeader,
                     stackLayout
                 }
             };
+        }
+
+        public override string Feature
+        {
+            get
+            {
+                return "View User Task";
+            }
         }
     }
 }

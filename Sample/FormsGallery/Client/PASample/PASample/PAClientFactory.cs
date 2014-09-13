@@ -5,7 +5,7 @@ using PreEmptive.Analytics.XamarinAndroid;
 using PreEmptive.Analytics.XamariniOS;
 #endif
 
-namespace Xamarin.Forms
+namespace PASample
 {
     public static class PAClientFactory
     {
@@ -53,10 +53,6 @@ namespace Xamarin.Forms
 			Exception (ex, ExceptionType.Uncaught);
 		}
 
-		public static void OnEventFeatureTick(Button element,string name=null)
-		{
-			element.Clicked += (s, e) => GetPAClient ().FeatureTick ((name ?? element.Text));
-		}
 
 
 		private static PAClient GetPAClient()
@@ -81,15 +77,15 @@ namespace Xamarin.Forms
                 // Optional configuration
                 configuration.CompanyName = "PreEmptive Solutions";
 #if Android
-				configuration.ApplicationName = "PreEmptive Analytics Sample";
+                configuration.ApplicationName = "PA Sample App";
                 configuration.ApplicationType = "Android Sample";
 #elif iOS
-                configuration.ApplicationName = "iOS Xamarin Sample App";
+                configuration.ApplicationName = "PA Sample App";
                 configuration.ApplicationType = "iOS Sample";
 #endif
-				configuration.InstanceID = instance;
+                configuration.InstanceID = instance;
                 //configuration.GeneratedUserName = username;
-                configuration.ApplicationVersion = "1.0";
+                configuration.ApplicationVersion = "1.1";
 				configuration.Endpoint = "josh-2012r2-2.preemptive.internal/endpoint";
                 configuration.UseSSL = false;
                 configuration.FullData = true;

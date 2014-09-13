@@ -21,7 +21,7 @@ namespace WorkbenchSample
     /// </summary>
     public class InstanceIndexer : IndexerBase, IIndexerPattern, IQueryPattern
     {
-        public static readonly string Namespace = "FormsGallery";
+        public static readonly string Namespace = "PASample";
 
         //PivotKeys
         public const string InstanceId = "InstanceId";

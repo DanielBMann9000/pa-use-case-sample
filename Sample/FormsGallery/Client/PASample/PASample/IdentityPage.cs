@@ -1,17 +1,25 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace FormsGallery
+namespace PASample
 {
     class IdentityPage : BasePage
     {
         public IdentityPage()
         {
+            this.Title = "Session ID";
             Label header = new Label
             {
 				Text = "This is your ID for the duration of this session",
-				Font = Font.BoldSystemFontOfSize(NamedSize.Medium),
+                TextColor = Xamarin.Forms.Color.White,
+				Font = Font.BoldSystemFontOfSize(NamedSize.Large),
                 HorizontalOptions = LayoutOptions.Center
+            };
+            Label subHeader = new Label
+            {
+                Text = "Context means users have personas and identities – they are more than sessions, page views, and clicks.",
+                TextColor = Color.Accent,
+                Font = Font.SystemFontOfSize(NamedSize.Medium)
             };
 
             TableView tableView = new TableView
@@ -24,11 +32,11 @@ namespace FormsGallery
 						  
                         new TextCell
                         {
-                            Text = "License Key",
+                            Text = "License Key",TextColor=Xamarin.Forms.Color.White,
                             Detail = App.LicenseKey,
                         },
 						new TextCell{
-							Text="Department",
+							Text="Department",TextColor=Xamarin.Forms.Color.White,
 							Detail=App.Department
 						}
 					
@@ -45,9 +53,18 @@ namespace FormsGallery
                 Children = 
                 {
                     header,
+                    subHeader,
                     tableView
                 }
             };
+        }
+
+        public override string Feature
+        {
+            get
+            {
+                return "View Profile";
+            }
         }
     }
 }
