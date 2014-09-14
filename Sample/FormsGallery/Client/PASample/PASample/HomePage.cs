@@ -27,7 +27,7 @@ namespace PASample
 					}
 				});
 
-			this.Title = "PA Sample App";
+            this.Title = "PreEmptive Analytics Sample";
             
 
 			this.Content = new TableView {
@@ -40,39 +40,39 @@ namespace PASample
 			
 
 						new TextCell {
-							Text = "About",
+							Text = "About this sample app",
                             TextColor=Xamarin.Forms.Color.White,
 							Command = navigateCommand,
 							CommandParameter = typeof(AboutPage)
 						},
-
+                        
 						new TextCell {
-							Text = "Identity",
+							Text = "Capture Feedback & Preferences",
                             TextColor=Xamarin.Forms.Color.White,
 							Command = navigateCommand,
-							CommandParameter = typeof(IdentityPage)
-						},
+							CommandParameter = typeof(FeedbackPage)
+						},				
 
 						new TextCell {
-							Text = "Exception",
+							Text = "Measure Performance",
+                            TextColor=Xamarin.Forms.Color.White,
+							Command = navigateCommand,
+							CommandParameter = typeof(PerformancePage)
+						},
+                        		new TextCell {
+							Text = "Monitor Exceptions",
                             TextColor=Xamarin.Forms.Color.White,
 							Command = navigateCommand,
 							CommandParameter = typeof(ExceptionPage)
 						},
 
 						new TextCell {
-							Text = "Performance",
+							Text = "Show Identity",
                             TextColor=Xamarin.Forms.Color.White,
 							Command = navigateCommand,
-							CommandParameter = typeof(PerformancePage)
-						},
-
-						new TextCell {
-							Text = "Feedback & Preferences",
-                            TextColor=Xamarin.Forms.Color.White,
-							Command = navigateCommand,
-							CommandParameter = typeof(FeedbackPage)
+							CommandParameter = typeof(IdentityPage)
 						}
+
 					}
 				}
 			};

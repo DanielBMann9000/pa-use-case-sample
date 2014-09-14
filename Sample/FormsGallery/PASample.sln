@@ -92,6 +92,7 @@ Global
 		{3CD45692-4376-4FFA-B9ED-3A9503728016}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
 		{3CD45692-4376-4FFA-B9ED-3A9503728016}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{3CD45692-4376-4FFA-B9ED-3A9503728016}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3CD45692-4376-4FFA-B9ED-3A9503728016}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
 		{3CD45692-4376-4FFA-B9ED-3A9503728016}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{3CD45692-4376-4FFA-B9ED-3A9503728016}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CD45692-4376-4FFA-B9ED-3A9503728016}.Release|Any CPU.Build.0 = Release|Any CPU

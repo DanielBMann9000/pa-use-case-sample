@@ -34,7 +34,7 @@ namespace PASample
 
             var subHeader = new Label
             {
-                Text = "Context means capturing discrete behavior and explicit preferences within – and across – applications.",
+                Text = "Context means capturing user experience and satisfaction through direct feedback and behavioral analysis over time – not clicks, views, and likes.",
                 TextColor = Color.Accent,
                 Font = Font.SystemFontOfSize(NamedSize.Medium)
 
@@ -132,6 +132,7 @@ namespace PASample
                 Children = 
                 {
                     //header,
+                    subHeader,
                     headerSlider,
                     slider,
                     labelSlider,
