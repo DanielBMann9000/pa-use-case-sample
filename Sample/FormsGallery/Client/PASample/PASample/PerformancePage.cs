@@ -13,22 +13,7 @@ namespace PASample
         public PerformancePage()
         {
             this.Title = "Timing inside and out";
-            //Label header = new Label
-            //{
-            //    Text = "Timing inside and out",
-            //    Font = Font.BoldSystemFontOfSize(NamedSize.Large),
-            //    HorizontalOptions = LayoutOptions.Center,
-            //    TextColor=Xamarin.Forms.Color.White
-            //};
 
-            var subHeader = new Label
-            {
-                Text = "Context means timing all behavior, workflow, and tasks however granular or grand – not simply measuring page loads, referrals, and transactions.",
-                TextColor = Color.Accent,
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
-
-
-            };
 			var startButton = new Button {
 				Text = "Start",
 				HorizontalOptions = LayoutOptions.Start,
@@ -93,12 +78,19 @@ namespace PASample
                 Children = 
                 {
                     //header,
-                    subHeader,
+                    this.ContextMeans(),
                     stackLayout
                 }
             };
         }
 
+        public override string ContextMeansText
+        {
+            get
+            {
+                return " timing all behavior, workflow, and tasks however granular or grand – not simply measuring page loads, referrals, and transactions.";
+            }
+        }
         public override string Feature
         {
             get

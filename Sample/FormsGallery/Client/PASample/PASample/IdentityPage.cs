@@ -12,15 +12,11 @@ namespace PASample
             {
 				Text = "This is your ID for the duration of this session",
                 TextColor = Xamarin.Forms.Color.White,
-				Font = Font.BoldSystemFontOfSize(NamedSize.Large),
+				Font = Font.SystemFontOfSize(NamedSize.Large,FontAttributes.Bold),
                 HorizontalOptions = LayoutOptions.Center
             };
-            Label subHeader = new Label
-            {
-                Text = "Context means users have personas and identities – they are more than sessions, page views, and clicks.",
-                TextColor = Color.Accent,
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
-            };
+            
+
 
             TableView tableView = new TableView
             {
@@ -53,7 +49,7 @@ namespace PASample
                 Children = 
                 {
                     header,
-                    subHeader,
+                    this.ContextMeans(),
                     tableView
                 }
             };
@@ -65,6 +61,14 @@ namespace PASample
             {
                 return "View Profile";
             }
+        }
+        public override string ContextMeansText
+        {
+            get
+            {
+                return " users have personas and identities – they are more than sessions, page views, and clicks.";
+            }
+   
         }
     }
 }

@@ -15,9 +15,10 @@ namespace PASample
             //    HorizontalOptions = LayoutOptions.Center,
             //    TextColor=Xamarin.Forms.Color.White
             //};
-
+           
             Label label = new Label
             {
+                
                 Text =
 					"The PA Sample App lets users select preferences, time their actions, and throw different types of exceptions inside the app. All of this “user and application behavior” including the specific features exercised during each session are tracked using PreEmptive Analytics instrumentation. Additionally, a “user identity” consisting of a role and a user key is synthesized on a session-by-session basis – you can see your value at any time by visiting the Identity page. NO actual PII is ever collected. " 
                     ,

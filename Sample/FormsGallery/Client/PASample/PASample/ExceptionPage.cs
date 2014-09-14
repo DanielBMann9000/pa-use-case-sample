@@ -10,22 +10,6 @@ namespace PASample
         
         {
             this.Title = "Throw exceptions – It’s fun!";
-            //Label header = new Label
-            //{
-            //    Text = "Throw exceptions – It’s fun!",
-            //    Font = Font.BoldSystemFontOfSize(NamedSize.Large),
-            //    HorizontalOptions = LayoutOptions.Center,
-            //    TextColor = Xamarin.Forms.Color.White
-            //};
-
-            var subHeader = new Label
-            {
-                Text = "Context means distinguishing between application, runtime, and user issues and knowing how to prioritize them all.",
-                TextColor = Color.Accent,
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
-
-
-            };
 
             // Accomodate iPhone status bar.
             this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
@@ -62,7 +46,7 @@ namespace PASample
                 Children = 
                 {
                     //header,
-                    subHeader,
+                    this.ContextMeans(),
 					handled,
                     thrown,
 					unhandled
@@ -78,6 +62,13 @@ namespace PASample
             get
             {
                 return "Incident Alert";
+            }
+        }
+        public override string ContextMeansText
+        {
+            get
+            {
+                return " distinguishing between application, runtime, and user issues and knowing how to prioritize them all.";
             }
         }
         void thrown_Clicked(object sender, EventArgs e)

@@ -32,18 +32,11 @@ namespace PASample
             //    TextColor=Xamarin.Forms.Color.White
             //};
 
-            var subHeader = new Label
-            {
-                Text = "Context means capturing user experience and satisfaction through direct feedback and behavioral analysis over time – not clicks, views, and likes.",
-                TextColor = Color.Accent,
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
-
-
-            };
+     
             Label headerSlider = new Label
             {
                 Text = "Happiness Index",
-                Font = Font.BoldSystemFontOfSize(NamedSize.Large),
+                Font = Font.SystemFontOfSize(NamedSize.Large,FontAttributes.Bold),
                 HorizontalOptions = LayoutOptions.Center,
                 TextColor=Xamarin.Forms.Color.White
             };
@@ -132,7 +125,7 @@ namespace PASample
                 Children = 
                 {
                     //header,
-                    subHeader,
+                    this.ContextMeans(),
                     headerSlider,
                     slider,
                     labelSlider,
@@ -155,6 +148,13 @@ namespace PASample
             get
             {
                 return "Feedback Request";
+            }
+        }
+        public override string ContextMeansText
+        {
+            get
+            {
+                return " capturing user experience and satisfaction through direct feedback and behavioral analysis over time – not clicks, views, and likes.";
             }
         }
     }
