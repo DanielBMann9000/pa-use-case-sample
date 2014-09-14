@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Sample/FormsGallery/Client/PASample/PASample/bin/Debug
+/Sample/FormsGallery/Client/PASample/PASample/obj/Debug
+/Sample/FormsGallery/Client/PASample/PASample.Android/obj/Debug
+/Sample/FormsGallery/packages
+/Sample/FormsGallery/WorkBench/WorkbenchSample/obj/Debug

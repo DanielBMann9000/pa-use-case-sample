@@ -4,7 +4,7 @@
   "input": "exceptions-over-time.query",
   "options": {
   	"xaxis": "Time",
-    "yaxis": [ "Count" ],
+    "yaxis": [ "Count","Thrown","Caught","Unhandled"],
     "xaxis_label": " ",
     "yaxis_label": " ",
     "sort": ["Time"]

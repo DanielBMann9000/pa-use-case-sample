@@ -17,27 +17,19 @@
       "include_data": true
     },
     {
-      "field": "OS",
-      "include_data": false
-    },
-    {
-      "field": "Runtime",
-      "include_data": false
-    },
-    {
-      "field": "Country",
-      "include_data": false
-    },
-    {
-      "field": "ExceptionMessage",
-      "include_data": false
-    },
-	 {
-      "field": "ExceptionTrace",
-      "include_data": false
-    },
-    {
       "field": "Count",
+      "include_data": true
+    },
+    {
+      "field": "Thrown",
+      "include_data": true
+    },
+    {
+      "field": "Unhandled",
+      "include_data": true
+    },
+    {
+      "field": "Caught",
       "include_data": true
     }
   ]

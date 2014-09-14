@@ -1,0 +1,11 @@
+{
+  "title": "Top 10 Colors",
+  "type": "Bar Graph",
+  "input": "colors/color-favorites.transformation>filter-color",
+  "options": {
+        "xaxis": "Color",
+        "yaxis": ["Count.sum"],
+		"xaxis_label": " ",
+		"yaxis_label": " "
+	}	
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Happiness by Day",
+  "type": "Line Graph",
+  "input": "happiness/happiness-graphs.transformation>happiness",
+  "options": {
+  	"xaxis": "data.Time",
+    "yaxis": [ 
+		{
+			"key": "Avg",
+			"as": "Average" 
+		},
+		{
+			"key": "CappedMaxLength",
+			"as": "Max" 
+		},
+		{
+			"key": "data.Min",
+			"as": "Min"
+			
+		},		
+		"Threshold" 	
+	],
+    "xaxis_label": " ",
+    "yaxis_label": " ",
+	
+    "sort": ["data.Time"]
+  }
+}

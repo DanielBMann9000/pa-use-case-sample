@@ -1,0 +1,23 @@
+{
+  "datasets":[
+    {
+      "name":"filter-color",
+      "input": ["colors/color.query"],
+      "transform": [
+        {
+          "type":"log",
+          "label": "before-transformation"
+        },
+        { "type":"filter", "test":"d.data.Key == \"Color\"" },
+		{ "type": "facet", "keys":["data.Value"], "as":["Color"] },
+        { "type": "aggregate", "fields": ["data.Count"], "as": ["Count"] },
+		{ "type": "sort", "by": "-Count.sum"},
+		{ "type": "slice", "by": [0,10]},		
+		{
+          "type":"log",
+          "label": "after-transformation"
+        }
+      ]
+    }
+  ]
+}

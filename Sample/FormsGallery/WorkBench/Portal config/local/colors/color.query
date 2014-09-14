@@ -1,0 +1,35 @@
+{
+  "name": "StringSummary",
+  "domain": "PreEmptive.CustomData",
+  "aggregate_on": [
+    {
+      "field": "Key"
+    },
+    {
+      "field": "Value"
+    }
+  ],
+  "fields": [
+    {
+      "field": "AppId_Version"
+    },
+    {
+      "field": "Time"
+    },
+    {
+      "field":"EventCode"
+    },
+    {
+      "field": "Source"
+    },
+    {
+      "field": "Key"
+    },
+    {
+      "field": "Value"
+    },
+    {
+      "field":"Count"
+    }
+  ]
+}

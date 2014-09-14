@@ -1,0 +1,32 @@
+{
+  "name": "Happiness",
+  "domain": "PASample.Happiness",
+  "aggregate_on": [
+
+	 {
+      "field": "Time",
+	  "options":"day"
+    }
+  ],
+  "fields": [
+    {
+      "field": "AppId_Version"
+    },
+    {
+      "field": "Time"
+    },
+
+	{
+		"field": "Sum"
+	},
+	{
+		"field":"Count"
+	},
+	{
+		"field":"Min"
+	},
+	{
+		"field":"Max"
+	}
+  ]
+}

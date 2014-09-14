@@ -1,0 +1,27 @@
+{
+	"datasets": [
+		{
+			"name": "happiness",
+			"input": "happiness/happiness-by-day.query",
+			"transform": [	
+{
+    "type": "log",
+    "meta": true,
+    "label": "Happiness - Pre Transforms"
+}	,		
+				
+				{ "type": "formula", "field":"Avg", "expr":"d.data.Sum/d.data.Count", "data_type": "fixed"},
+				{ "type": "formula", "field": "CappedMaxLength","data_type":"number", "expr": "min(d.data.Max, 10 )"},	
+				{ "type": "formula", "field": "Threshold","data_type":"number", "expr": "7"},
+				{ "type": "sort", "by": "data.Time" },
+{
+    "type": "log",
+    "meta": true,
+    "label": "Happiness - Post Transforms"
+}							
+			]
+		}
+		
+		
+	]
+}
