@@ -42,7 +42,7 @@ namespace PASample
                         }
                     }
                 },
-
+                
                 TextColor = Color.Accent,
                 Font = Font.SystemFontOfSize(NamedSize.Medium)
             };
