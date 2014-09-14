@@ -123,7 +123,7 @@
     <Compile Include="Resources\Resource.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FormsGallery\PASample.csproj">
+    <ProjectReference Include="..\PASample\PASample.csproj">
       <Project>{3CD45692-4376-4FFA-B9ED-3A9503728016}</Project>
       <Name>PASample</Name>
     </ProjectReference>
