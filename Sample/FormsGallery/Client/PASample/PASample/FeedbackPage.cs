@@ -112,11 +112,11 @@ namespace PASample
                     keys.Add("Color", picker.Items[picker.SelectedIndex]);
                     PAClientFactory.FeatureTick("Feedback Submitted", keys);
 
-                    DisplayAlert("Feedback Accepted", "Thank you for submitting your feedback.", "Ok", "Cancel");
+                    DisplayAlert("Feedback Accepted", "Thank you for submitting your feedback.", "Ok", string.Empty);
                 }
                 else
                 {
-                    DisplayAlert("Error", "Please Select your favorite color.", "Ok", "Cancel");
+                    DisplayAlert("Error", "Please Select your favorite color.", "Ok", string.Empty);
                 }
             };
             // Build the page.

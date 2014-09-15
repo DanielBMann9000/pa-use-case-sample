@@ -33,8 +33,6 @@ namespace PASample
                     {
                         new Span{
                             Text="Context means",
-                            BackgroundColor=Color.Accent,
-                            ForegroundColor=Color.White,
                             Font=Font.SystemFontOfSize(NamedSize.Medium,FontAttributes.Bold)
                         },
                         new Span{

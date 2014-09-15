@@ -75,13 +75,13 @@ namespace PASample
         {
             var ex = new System.ArgumentException("Argument is incorrect");
             PAClientFactory.Exception(ex, PreEmptive.Analytics.Common.ExceptionType.Thrown);
-            DisplayAlert("Error", "Thrown Error simulated and sent to PA", "Ok", null);
+            DisplayAlert("Error", "Thrown Error simulated and sent to PA", "Ok", string.Empty);
         }
         void OnUnhandledClicked(object sender, EventArgs e)
         {
             var ex=new NotImplementedException("This is an unhandled excption");
             PAClientFactory.Exception(ex, PreEmptive.Analytics.Common.ExceptionType.Uncaught);
-            DisplayAlert("Error", "Unhandled Error simulated and sent to PA", "Ok", null);
+            DisplayAlert("Error", "Unhandled Error simulated and sent to PA", "Ok", string.Empty);
          
 
 
@@ -95,7 +95,8 @@ namespace PASample
             catch (Exception ex)
             {
                 PAClientFactory.Exception(ex, PreEmptive.Analytics.Common.ExceptionType.Caught);
-                DisplayAlert("Error", ex.Message, "Ok", null);
+                DisplayAlert("Error", ex.Message, "Ok",string.Empty);
+                
             }
 
 

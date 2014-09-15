@@ -29,9 +29,8 @@ namespace PASample
             };
             Label label2 = new Label
             {
-                Text ="The resulting telemetry is transmitted to a PreEmptive Analytics™ endpoint where it is ingested and processed using the PreEmptive Analytics Workbench and PreEmptive Analytics for TFS." +
-                    Environment.NewLine + "This application is a working sample of the kinds of analytics patterns that can be captured and was developed using Visual Studio, C#, Xamarin, and (of course) PreEmptive Analytics.  To download this project including source code, documentation, and access to the analytics endpoints mentioned above, email sampleanalyticsapp@preemptive.com and instructions will be provided. For more information on PreEmptive Analytics (on and beyond mobile), visit www.preemptive.com/pa."
-                    ,
+                Text ="The resulting telemetry is transmitted to a PreEmptive Analytics™ endpoint where it is ingested and processed using the PreEmptive Analytics Workbench and PreEmptive Analytics for TFS."
+                             ,
 
                 Font = Font.SystemFontOfSize(NamedSize.Medium),
                 VerticalOptions = LayoutOptions.CenterAndExpand,
