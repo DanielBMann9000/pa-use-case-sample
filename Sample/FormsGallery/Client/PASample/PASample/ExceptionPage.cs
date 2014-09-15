@@ -81,7 +81,7 @@ namespace PASample
         {
             var ex=new NotImplementedException("This is an unhandled excption");
             PAClientFactory.Exception(ex, PreEmptive.Analytics.Common.ExceptionType.Uncaught);
-            DisplayAlert("Error", "Unhandled Error simulated and sent to PA", "Ok", string.Empty);
+            DisplayAlert("Error", "Unhandled Error simulated and sent to PA", "Ok", null);
          
 
 

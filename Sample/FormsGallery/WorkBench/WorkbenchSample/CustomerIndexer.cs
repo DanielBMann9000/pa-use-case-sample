@@ -86,7 +86,7 @@ namespace WorkbenchSample
             foreach (var line in lines)
             {
                 var parts = line.Split(',');
-                _customers.Add(parts[0], parts[1]);
+                _customers.Add(parts[0].Trim(), parts[1].Trim());
             }
             return _customers;
         }
@@ -143,7 +143,6 @@ namespace WorkbenchSample
                     FriendlyName = "Customer",
                     DataType = typeof(string),
                     IsOptional=true,
-                    //LinkedFields=new[] { "Runtime", "Country","OS" },
                     
                     Filters = new List<FilterMetadata>()
                     {
