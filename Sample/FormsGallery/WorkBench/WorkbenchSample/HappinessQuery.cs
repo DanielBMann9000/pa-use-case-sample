@@ -21,7 +21,7 @@ namespace WorkbenchSample
 
         public Type[] DefinePrerequisiteIndexers()
         {
-            return new[] {typeof (CustomerIndexer)};
+            return new[] {typeof (HappinessIndexer)};
         }
 
         public string Domain
@@ -69,6 +69,7 @@ namespace WorkbenchSample
                             FriendlyName = "Count",
                             DataType = typeof(int)
                         }
+
                     }
                 };
             }

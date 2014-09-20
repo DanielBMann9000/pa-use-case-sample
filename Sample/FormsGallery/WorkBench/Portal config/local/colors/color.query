@@ -1,35 +1,15 @@
 {
-  "name": "StringSummary",
-  "domain": "PreEmptive.CustomData",
+  "name": "Color",
+  "domain": "PASample.Happiness",
   "aggregate_on": [
     {
-      "field": "Key"
-    },
-    {
-      "field": "Value"
+      "field": "Color"
     }
   ],
   "fields": [
     {
-      "field": "AppId_Version"
-    },
-    {
-      "field": "Time"
-    },
-    {
-      "field":"EventCode"
-    },
-    {
-      "field": "Source"
-    },
-    {
-      "field": "Key"
-    },
-    {
-      "field": "Value"
-    },
-    {
-      "field":"Count"
+      "field": "ColorCount"
     }
+
   ]
 }

@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColorQuery.cs" />
     <Compile Include="CustomerIndexer.cs" />
     <Compile Include="DepartmentIndexer.cs" />
     <Compile Include="HappinessIndexer.cs" />
