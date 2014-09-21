@@ -7,7 +7,7 @@ using MonoTouch.UIKit;
 
 using Xamarin.Forms;
 
-namespace FormsGallery.iOS
+namespace PASample.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 
@@ -28,15 +28,21 @@ namespace FormsGallery.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             Forms.Init();
-            Xamarin.FormsMaps.Init();
+
 
             window = new UIWindow(UIScreen.MainScreen.Bounds);
 
             window.RootViewController = App.GetMainPage().CreateViewController();
-
+            
             window.MakeKeyAndVisible();
-
+            App.Start();
             return true;
+        }
+
+        public override void WillTerminate(UIApplication application)
+        {
+            App.Shutdown();
+            base.WillTerminate(application);
         }
     }
 }

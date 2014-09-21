@@ -109,12 +109,21 @@ namespace WorkbenchSample
                                     GetFieldKey(Namespace,"Min"),
                                     GetFieldKey(Namespace,"Max"),
                                     GetFieldKey(Namespace,"Sum"),
-                                    GetFieldKey(Namespace,"ColorCount")
+                                  
 
-                                },
+                                }
+
+
+            },
+            new OutputSchema("ColorSchema",this)
+            {
+                RequiredFields=new HashSet<FieldKey>
+                {
+                    GetFieldKey(Namespace,"ColorCount")
+                },
                 PivotKeys=new HashSet<FieldKey>
                 {
-                    GetFieldKey(Namespace,"Color")
+                    GetFieldKey(Namespace,"Color")  
                 }
 
             }

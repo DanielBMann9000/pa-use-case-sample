@@ -23,45 +23,22 @@
 	<key>MinimumOSVersion</key>
 	<string>7.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>PA Sample App</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.preemptive.pasample</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>CFBundleIconFiles</key>
-	<array>
-		<string>Icon-72@2x.png</string>
-		<string>Icon-72.png</string>
-		<string>Icon@2x.png</string>
-		<string>Icon.png</string>
-		<string>Icon-Small-50@2x.png</string>
-		<string>Icon-Small-50.png</string>
-		<string>Icon-Small.png</string>
-	</array>
+	<string>Black Leather Theme</string>
 	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>NSMainNibFile</key>
 	<string></string>
 	<key>NSMainNibFile~ipad</key>
 	<string></string>
-	<key>UIStatusBarTintParameters</key>
-	<dict>
-		<key>UINavigationBar</key>
-		<dict>
-			<key>Style</key>
-			<string>UIBarStyleDefault</string>
-			<key>Translucent</key>
-			<false/>
-			<key>TintColor</key>
-			<dict>
-				<key>Red</key>
-				<real>0.72156862745098</real>
-				<key>Green</key>
-				<real>0.819607843137255</real>
-				<key>Blue</key>
-				<real>0.913725490196078</real>
-			</dict>
-		</dict>
-	</dict>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Default.png</string>
+		<string>Default@2x.png</string>
+		<string>Default-568h@2x.png</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

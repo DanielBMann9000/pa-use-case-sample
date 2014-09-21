@@ -4,8 +4,8 @@ using System.Linq;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-
-namespace FormsGallery.iOS
+using PASample;
+namespace PASample.iOS
 {
     public class Application
     {

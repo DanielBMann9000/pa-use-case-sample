@@ -29,9 +29,18 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;iOS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Ad-Hoc|AnyCPU'">
+    <OutputPath>bin\Ad-Hoc\</OutputPath>
+    <DefineConstants>TRACE;iOS</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
@@ -46,6 +55,9 @@
     <Compile Include="PerformancePage.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="PreEmptive.Analytics.XamariniOS">
+      <HintPath>..\..\..\..\..\lib\PAAPI\Xamarin\bin\PreEmptive.Analytics.XamariniOS.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="PreEmptive.Analytics.Common">
       <HintPath>..\..\..\..\..\lib\PAAPI\Xamarin\bin\PreEmptive.Analytics.Common.dll</HintPath>
