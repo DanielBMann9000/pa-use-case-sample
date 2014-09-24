@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\packages\xamstore-xamarin.mobile.0.7.1\build\monotouch\xamstore-xamarin.mobile.props" Condition="Exists('..\..\..\packages\xamstore-xamarin.mobile.0.7.1\build\monotouch\xamstore-xamarin.mobile.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{3E598DD3-5E94-465B-A9B6-3527DAD96BF9}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>PASample.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>PASampleiOS</AssemblyName>
+    <NuGetPackageImportStamp>45548b49</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>Full</MtouchLink>
+    <MtouchDebug>False</MtouchDebug>
+    <MtouchSdkVersion>7.0</MtouchSdkVersion>
+    <MtouchProfiling>False</MtouchProfiling>
+    <MtouchExtraArgs />
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchEnableGenericValueTypeSharing>True</MtouchEnableGenericValueTypeSharing>
+    <MtouchArch>Default, ARMv7</MtouchArch>
+    <MtouchUseLlvm>False</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchUseSGen>False</MtouchUseSGen>
+    <MtouchUseRefCounting>False</MtouchUseRefCounting>
+    <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
+    <MtouchI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchDebug>True</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchSdkVersion>Default</MtouchSdkVersion>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchProfiling>False</MtouchProfiling>
+    <MtouchExtraArgs />
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchEnableGenericValueTypeSharing>True</MtouchEnableGenericValueTypeSharing>
+    <MtouchArch>Default, ARMv7</MtouchArch>
+    <MtouchUseLlvm>False</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchUseSGen>False</MtouchUseSGen>
+    <MtouchUseRefCounting>False</MtouchUseRefCounting>
+    <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
+    <MtouchI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <BuildIpa>True</BuildIpa>
+    <CodesignProvision />
+    <CodesignEntitlements />
+    <CodesignResourceRules />
+    <CodesignExtraArgs />
+    <MtouchSdkVersion>7.1</MtouchSdkVersion>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchDebug>False</MtouchDebug>
+    <MtouchProfiling>False</MtouchProfiling>
+    <MtouchExtraArgs />
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchEnableGenericValueTypeSharing>True</MtouchEnableGenericValueTypeSharing>
+    <MtouchArch>Default, ARMv7</MtouchArch>
+    <MtouchUseLlvm>False</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchUseSGen>False</MtouchUseSGen>
+    <MtouchUseRefCounting>False</MtouchUseRefCounting>
+    <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
+    <MtouchI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhoneSimulator'">
+    <MtouchSdkVersion>7.0</MtouchSdkVersion>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>False</MtouchDebug>
+    <MtouchProfiling>False</MtouchProfiling>
+    <MtouchExtraArgs />
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchEnableGenericValueTypeSharing>True</MtouchEnableGenericValueTypeSharing>
+    <MtouchArch>Default, ARMv7</MtouchArch>
+    <MtouchUseLlvm>False</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchUseSGen>False</MtouchUseSGen>
+    <MtouchUseRefCounting>False</MtouchUseRefCounting>
+    <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
+    <MtouchI18n />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PASample\PASample.csproj">
+      <Name>PASample</Name>
+      <Project>{3CD45692-4376-4FFA-B9ED-3A9503728016}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="Xamarin.Forms.Core, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Xamarin.Forms.1.2.2.6243\lib\MonoTouch10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Xamarin.Forms.1.2.2.6243\lib\MonoTouch10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Xamarin.Forms.1.2.2.6243\lib\MonoTouch10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Mobile">
+      <HintPath>..\..\..\Components\xamarin.mobile-0.7.1\lib\ios\Xamarin.Mobile.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <Import Project="..\..\packages\Xamarin.Forms.1.0.6188\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.0.6188\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.1.0.6188\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.1.0.6188\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets'))" />
+    <Error Condition="!Exists('..\..\..\packages\xamstore-xamarin.mobile.0.7.1\build\monotouch\xamstore-xamarin.mobile.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\xamstore-xamarin.mobile.0.7.1\build\monotouch\xamstore-xamarin.mobile.props'))" />
+    <Error Condition="!Exists('..\..\..\packages\Xamarin.Forms.1.2.2.6243\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Xamarin.Forms.1.2.2.6243\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets'))" />
+  </Target>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon%402x.png" />
+    <BundleResource Include="Resources\Icon-72%402x.png" />
+    <BundleResource Include="Resources\Icon-72.png" />
+    <BundleResource Include="Resources\Icon-Small-50%402x.png" />
+    <BundleResource Include="Resources\Icon-Small-50.png" />
+    <BundleResource Include="Resources\Icon-Small%402x.png" />
+    <BundleResource Include="Resources\Icon-Small.png" />
+    <BundleResource Include="Resources\Icon.png" />
+  </ItemGroup>
+  <Import Project="..\..\..\packages\Xamarin.Forms.1.2.2.6243\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" Condition="Exists('..\..\..\packages\Xamarin.Forms.1.2.2.6243\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" />
+</Project>
