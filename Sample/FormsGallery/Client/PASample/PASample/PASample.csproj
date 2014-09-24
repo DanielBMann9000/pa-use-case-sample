@@ -29,7 +29,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;iOS</DefineConstants>
+    <DefineConstants>TRACE;Android</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -55,15 +55,15 @@
     <Compile Include="PerformancePage.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="PreEmptive.Analytics.XamarinAndroid">
+      <HintPath>..\..\..\..\..\lib\PAAPI\Xamarin\bin\PreEmptive.Analytics.XamarinAndroid.dll</HintPath>
+    </Reference>
     <Reference Include="PreEmptive.Analytics.XamariniOS">
       <HintPath>..\..\..\..\..\lib\PAAPI\Xamarin\bin\PreEmptive.Analytics.XamariniOS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="PreEmptive.Analytics.Common">
       <HintPath>..\..\..\..\..\lib\PAAPI\Xamarin\bin\PreEmptive.Analytics.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="PreEmptive.Analytics.XamarinAndroid">
-      <HintPath>..\..\..\..\..\lib\PAAPI\Xamarin\bin\PreEmptive.Analytics.XamarinAndroid.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core">
       <HintPath>..\..\..\packages\Xamarin.Forms.1.2.2.6243\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Core.dll</HintPath>

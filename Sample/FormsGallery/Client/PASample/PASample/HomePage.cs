@@ -33,15 +33,18 @@ namespace PASample
 			this.Content = new TableView {
                 
 				Intent = TableIntent.Menu,
+                BackgroundColor=Color.Black,
                 
 				Root = new TableRoot {
 					new TableSection ("PreEmptive Analytics Use Case Gallery") {
 			                          
+                       
 			
-
+                        
 						new TextCell {
 							Text = "About this sample app",
                             TextColor=Xamarin.Forms.Color.White,
+                          
 							Command = navigateCommand,
 							CommandParameter = typeof(AboutPage)
 						},

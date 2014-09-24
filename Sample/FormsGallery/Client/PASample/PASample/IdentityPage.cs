@@ -20,6 +20,7 @@ namespace PASample
 
             TableView tableView = new TableView
             {
+                BackgroundColor=Color.Black,
                 Intent = TableIntent.Form,
                 Root = new TableRoot
                 {
@@ -30,6 +31,7 @@ namespace PASample
                         {
                             Text = "License Key",TextColor=Xamarin.Forms.Color.White,
                             Detail = App.LicenseKey,
+                            
                         },
 						new TextCell{
 							Text="Department",TextColor=Xamarin.Forms.Color.White,
