@@ -1,4 +1,14 @@
-﻿using System;
+﻿// Copyright (c) 2014 PreEmptive Solutions; All Right Reserved, http://www.preemptive.com/
+//
+// This source is subject to the Microsoft Public License (MS-PL).
+// Please see the License.txt file for more information.
+// All other rights reserved.
+//
+// THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+// KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+// PARTICULAR PURPOSE.
+using System;
 using System.Collections.Generic;
 using PreEmptive.Analytics.Common;
 using Xamarin.Forms;
@@ -24,13 +34,6 @@ namespace PASample
         public FeedbackPage()
         {
             this.Title = "Feedback & Preferences";
-            //Label header = new Label
-            //{
-            //    Text = "Feedback & Preferences",
-            //    Font = Font.BoldSystemFontOfSize(NamedSize.Large),
-            //    HorizontalOptions = LayoutOptions.Center,
-            //    TextColor=Xamarin.Forms.Color.White
-            //};
 
      
             Label headerSlider = new Label
@@ -124,7 +127,7 @@ namespace PASample
             {
                 Children = 
                 {
-                    //header,
+            
                     this.ContextMeans(),
                     headerSlider,
                     slider,

@@ -1,4 +1,14 @@
-﻿using PreEmptive.Analytics.Common;
+﻿// Copyright (c) 2014 PreEmptive Solutions; All Right Reserved, http://www.preemptive.com/
+//
+// This source is subject to the Microsoft Public License (MS-PL).
+// Please see the License.txt file for more information.
+// All other rights reserved.
+//
+// THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+// KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+// PARTICULAR PURPOSE.
+using PreEmptive.Analytics.Common;
 #if Android
 using PreEmptive.Analytics.XamarinAndroid;
 #elif iOS
@@ -57,9 +67,10 @@ namespace PASample
 
 		private static PAClient GetPAClient()
 		{
-			if (Client == null) {
-				Client = GetPAClient (null);
-					}
+            if (Client == null)
+            {
+                Client = GetPAClient(null);
+            }
 			return Client;
 		}
 		public static PAClient GetPAClient(string instance=null,string username=null)
@@ -72,28 +83,30 @@ namespace PASample
                 // The first GUID is the company ID provided by PreEmptive Solutions.
                 // The second Guid is provided by you to identify the application.
                 // This is the endpoint described here http://www.preemptive.com/support/resources/ris-ce
+                
+                // Optional configuration
+                
+#if Android
                 var configuration = new Configuration("1d2b02e0-064d-49a0-bc1b-4be4381c62d3", "42AC2020-ABA1-9069-A2BD-98072B33309A");
 
-                // Optional configuration
-                configuration.CompanyName = "PreEmptive Solutions";
-#if Android
-                configuration.ApplicationName = "PA Sample App";
+                configuration.ApplicationName = "PA Sample App for Android";
                 configuration.ApplicationType = "Android Sample";
 #elif iOS
-                configuration.ApplicationName = "PA Sample App";
+                var configuration = new Configuration("1d2b02e0-064d-49a0-bc1b-4be4381c62d3", " 7A86DE3C-EF84-46BD-9B85-3B04E0673543");
+
+                configuration.ApplicationName = "PA Sample App for iOS";
                 configuration.ApplicationType = "iOS Sample";
 #endif
+                configuration.CompanyName = "PreEmptive Solutions";
                 configuration.InstanceID = instance;
-                //configuration.GeneratedUserName = username;
                 configuration.ApplicationVersion = "1.1";
-                //configuration.Endpoint = "so-s.info/endpoint";
-                configuration.Endpoint = "josh-2012r2-2.preemptive.internal/endpoint";
+                configuration.Endpoint = "so-s.info/endpoint";
+                //configuration.Endpoint = "josh-2012r2-2.preemptive.internal/endpoint";
                 configuration.UseSSL = false;
                 configuration.FullData = true;
 				configuration.StopBehavior.SessionExtensionWindow = 5000;
 				configuration.SupportOfflineStorage = true;
-                //configuration.SupportOfflineStorage = true;
-                //configuration.OmitPersonalInfo = true;
+
 
                 Client = new PAClient(configuration);
                 
