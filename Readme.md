@@ -14,4 +14,4 @@ The sample application can be used as:
 # More Information
 [Sample Application Overview PDF]
 
-[Sample Application Overview PDF]:./SamplePreEmptiveAnalyticsApplicationOverview.pdf
+[Sample Application Overview PDF]:./SamplePreEmptiveAnalyticsApplicationOverview.pdf?raw=true
