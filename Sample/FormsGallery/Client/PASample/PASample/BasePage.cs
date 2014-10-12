@@ -24,7 +24,7 @@ namespace PASample
         }
         public BasePage()
         {
-            this.BackgroundColor = Color.Black;
+            //this.BackgroundColor = Color.Black;
          
         }
         protected override void OnAppearing()
@@ -53,9 +53,9 @@ namespace PASample
                     }
                 },
                 
-                TextColor = Color.Accent,
-                Font = Font.SystemFontOfSize(NamedSize.Medium),
-                BackgroundColor=Color.Black
+                TextColor = Color.Red,
+                Font = Font.SystemFontOfSize(NamedSize.Medium)//,
+                //BackgroundColor=Color.Black
             };
             return subHeader;
         }

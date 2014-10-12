@@ -40,8 +40,8 @@ namespace PASample
             {
                 Text = "Happiness Index",
                 Font = Font.SystemFontOfSize(NamedSize.Large,FontAttributes.Bold),
-                HorizontalOptions = LayoutOptions.Center,
-                TextColor=Xamarin.Forms.Color.White
+                HorizontalOptions = LayoutOptions.Center
+          
             };
 
             Slider slider = new Slider
@@ -59,8 +59,7 @@ namespace PASample
                 Text = "Your happiness value is 5",
                 Font = Font.SystemFontOfSize(NamedSize.Large),
                 HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.CenterAndExpand,
-                TextColor = Xamarin.Forms.Color.White
+                VerticalOptions = LayoutOptions.CenterAndExpand
             };
 
 
@@ -115,7 +114,7 @@ namespace PASample
                     keys.Add("Color", picker.Items[picker.SelectedIndex]);
                     PAClientFactory.FeatureTick("Feedback Submitted", keys);
 
-                    DisplayAlert("Feedback Accepted", "Thank you for submitting your feedback.", "Ok", string.Empty);
+                    DisplayAlert("Feedback Accepted", "Thank you for submitting your feedback.", "Ok",string.Empty);
                 }
                 else
                 {
@@ -123,19 +122,22 @@ namespace PASample
                 }
             };
             // Build the page.
-            this.Content = new StackLayout
+            this.Content = new ScrollView
             {
-                Children = 
+                Content = new StackLayout
                 {
+                    Children = 
+                    {
             
-                    this.ContextMeans(),
-                    headerSlider,
-                    slider,
-                    labelSlider,
-                    picker,
-                    boxView,
-                    button
+                        this.ContextMeans(),
+                        headerSlider,
+                        slider,
+                        labelSlider,
+                        picker,
+                        boxView,
+                        button
                     
+                    }
                 }
             };
 

@@ -21,7 +21,6 @@ namespace PASample
             Label header = new Label
             {
 				Text = "This is your ID for the duration of this session",
-                TextColor = Xamarin.Forms.Color.White,
 				Font = Font.SystemFontOfSize(NamedSize.Large,FontAttributes.Bold),
                 HorizontalOptions = LayoutOptions.Center
             };
@@ -30,7 +29,7 @@ namespace PASample
 
             TableView tableView = new TableView
             {
-                BackgroundColor=Color.Black,
+                //BackgroundColor=Color.Black,
                 Intent = TableIntent.Form,
                 Root = new TableRoot
                 {
@@ -39,12 +38,12 @@ namespace PASample
 						  
                         new TextCell
                         {
-                            Text = "License Key",TextColor=Xamarin.Forms.Color.White,
+                            Text = "License Key",
                             Detail = App.LicenseKey,
                             
                         },
 						new TextCell{
-							Text="Department",TextColor=Xamarin.Forms.Color.White,
+							Text="Department",
 							Detail=App.Department
 						}
 					
