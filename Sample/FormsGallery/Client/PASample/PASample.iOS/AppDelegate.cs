@@ -45,14 +45,26 @@ namespace PASample.iOS
             window.RootViewController = App.GetMainPage().CreateViewController();
             
             window.MakeKeyAndVisible();
-            App.Start();
             return true;
         }
 
         public override void WillTerminate(UIApplication application)
         {
             App.Shutdown();
-            base.WillTerminate(application);
+            //base.WillTerminate(application);
+        }
+
+        public override void DidEnterBackground(UIApplication application)
+        {
+            App.Shutdown();
+            //base.DidEnterBackground(application);
+        }
+
+        public override void OnActivated(UIApplication application)
+        {
+            //App will start again
+            App.Start();
+            //base.OnActivated(application);
         }
     }
 }
