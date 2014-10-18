@@ -85,6 +85,11 @@ namespace PASample
                 // This is the endpoint described here http://www.preemptive.com/support/resources/ris-ce
                 
                 // Optional configuration
+                if (instance==null)
+                {
+                    //When hydrating on iOS PAClient seems to be null so we end up without an instance
+                    instance = App.GetLicenseKey();
+                }
                 
 #if Android
                 var configuration = new Configuration("1d2b02e0-064d-49a0-bc1b-4be4381c62d3", "42AC2020-ABA1-9069-A2BD-98072B33309A");
@@ -104,7 +109,7 @@ namespace PASample
                 //configuration.Endpoint = "josh-2012r2-2.preemptive.internal/endpoint";
                 configuration.UseSSL = false;
                 configuration.FullData = true;
-				configuration.StopBehavior.SessionExtensionWindow = 5000;
+				configuration.StopBehavior.SessionExtensionWindow = 15000;
 				configuration.SupportOfflineStorage = true;
 
 

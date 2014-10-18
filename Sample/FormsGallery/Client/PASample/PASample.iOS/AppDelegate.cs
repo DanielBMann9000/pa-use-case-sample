@@ -56,7 +56,9 @@ namespace PASample.iOS
 
         public override void DidEnterBackground(UIApplication application)
         {
+            
             App.Shutdown();
+            
             //base.DidEnterBackground(application);
         }
 
