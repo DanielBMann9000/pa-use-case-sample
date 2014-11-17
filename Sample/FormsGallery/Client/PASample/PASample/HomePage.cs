@@ -84,7 +84,15 @@ namespace PASample
                             //TextColor=Xamarin.Forms.Color.White,
 							Command = navigateCommand,
 							CommandParameter = typeof(IdentityPage)
-						}
+						},
+                        new TextCell
+                        {
+                            Text="Expense Request Demo",
+                            Command=navigateCommand,
+                            CommandParameter=typeof(ExpenseRequestPage)
+
+}
+
 
 					}
 				}

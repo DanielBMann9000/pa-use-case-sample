@@ -94,8 +94,8 @@ namespace PASample
 #if Android
                 var configuration = new Configuration("1d2b02e0-064d-49a0-bc1b-4be4381c62d3", "42AC2020-ABA1-9069-A2BD-98072B33309A");
 
-                configuration.ApplicationName = "PA Sample App for Android";
-                configuration.ApplicationType = "Android Sample";
+                configuration.ApplicationName = "PA Sample";
+                configuration.ApplicationType = "Sample";
 #elif iOS
                 var configuration = new Configuration("1d2b02e0-064d-49a0-bc1b-4be4381c62d3", " 7A86DE3C-EF84-46BD-9B85-3B04E0673543");
 
@@ -105,16 +105,16 @@ namespace PASample
                 configuration.CompanyName = "PreEmptive Solutions";
                 configuration.InstanceID = instance;
                 configuration.ApplicationVersion = "1.1";
-                configuration.Endpoint = "so-s.info/endpoint";
-                //configuration.Endpoint = "josh-2012r2-2.preemptive.internal/endpoint";
+                //configuration.Endpoint = "so-s.info/endpoint";
+                configuration.Endpoint = "josh-2012r2-2.preemptive.internal/endpoint";
                 configuration.UseSSL = false;
                 configuration.FullData = true;
 				configuration.StopBehavior.SessionExtensionWindow = 15000;
 				configuration.SupportOfflineStorage = true;
 
-
-                Client = new PAClient(configuration);
                 
+                Client = new PAClient(configuration);
+                Client.SetSendDisabled(true);
 
 
             }
@@ -122,5 +122,10 @@ namespace PASample
             return Client;
         }
 
+
+        internal static void StartFeature(string p, ExtendedKeys keys)
+        {
+            GetPAClient().FeatureStart(p, keys);
+        }
     }
 }
