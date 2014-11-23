@@ -48,13 +48,7 @@ namespace PASample
 				PAClientFactory.StopFeature("User Task");
 				_isFeaturePressed=false;
 			};
-			var goButon = new Button
-			{
 
-				Text = "Go",
-
-			};
-			goButon.Clicked += goButon_Clicked;
 
 
 			StackLayout stackLayout = new StackLayout
@@ -80,14 +74,6 @@ namespace PASample
 							stopButton,
 													 
 						}
-					},
-					new StackLayout
-					{
-						Children=
-						{
-							   new Label{Text="Click Me"},
-							goButon
-						}
 					}
 
 				}
@@ -111,22 +97,6 @@ namespace PASample
 			};
 		}
 
-		async void  goButon_Clicked(object sender, EventArgs e)
-		{
-			try
-			{
-				var client = new System.Net.Http.HttpClient();
-				var response = await client.GetAsync("http://192.168.10.124:84/api/values/" + PAClientFactory.GetPAClient().GetActiveDefaultSession().ToString());
-				var result = await response.Content.ReadAsByteArrayAsync();
-
-                var str=System.Text.Encoding.Unicode.GetString(result, 0, result.Length);
-				await DisplayAlert("result",str,"");
-			}
-			catch(Exception ex)
-			{
-				System.Diagnostics.Debug.WriteLine(ex.ToString());
-			}
-		}
 
 		public override string ContextMeansText
 		{

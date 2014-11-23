@@ -11,6 +11,9 @@ namespace PASample
 {
     public class ExpenseRequestPage : BasePage
     {
+        private const string SERVICE_URL = "http://josh-2012r2-2.preemptive.internal/sample/api/Expense/Approve";
+        private const string EXPENSE_FEATURE = "Expense Request";
+    
         public ExpenseRequestPage()
         {
             this.Title = "Expense Request";
@@ -55,6 +58,7 @@ namespace PASample
 
                         ammount.SetValue(Entry.TextProperty, string.Empty);
                         DisplayAlert("Invalid Amount", "You must enter a valid currency","Ok");
+                        return;
                     }
 
                     goButon_Clicked(amt,pick.Items[pick.SelectedIndex]);
@@ -92,13 +96,15 @@ namespace PASample
                 keys.Add("Ammount", ammount);
                 keys.Add("Reason", reason);
 
-                PAClientFactory.StartFeature("Expense Request",keys);
+                PAClientFactory.StartFeature(EXPENSE_FEATURE,keys);
 
                 var handler = new HttpClientHandler();
+                
+                /* Needed to use proxy so I could pass data through fiddler to debug
                 handler.UseProxy = true;
-
                 handler.Proxy = new Proxy(new Uri("http://192.168.1.101:8888"));
-                //handler.Proxy=System.Net.Http.
+                 */
+
                 var client = new System.Net.Http.HttpClient(handler);
                 var content = new System.Net.Http.StringContent(new {
                     Ammount=ammount,
@@ -106,32 +112,43 @@ namespace PASample
                     Id=Guid.NewGuid()
                 
                 }.ToJson());
+
                 content.Headers.ContentType.MediaType = "text/json";
-  
-              
-                System.Net.Http.HttpRequestMessage rm=new System.Net.Http.HttpRequestMessage(HttpMethod.Post,"http://192.168.1.101:84/api/Expense/Approve");
+
+
+                System.Net.Http.HttpRequestMessage rm = new System.Net.Http.HttpRequestMessage(HttpMethod.Post, SERVICE_URL);
                 rm.Content=content;
                 rm.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/json"));
                 
                 var response = await client.SendAsync(rm);
-                //var result = await response.Content.ReadAsByteArrayAsync();
+                if (!response.IsSuccessStatusCode)
+                {
+                    DisplayAlert("Error", "Unknown Error Processing Request","");
+
+                    PAClientFactory.StopFeature(EXPENSE_FEATURE);
+                    return;
+
+                }
                 var respStream=await response.Content.ReadAsStreamAsync();
                 Newtonsoft.Json.JsonSerializer js=new Newtonsoft.Json.JsonSerializer();
                 var expResponse=(ExpenseResult)js.Deserialize(new Newtonsoft.Json.JsonTextReader(new System.IO.StreamReader(respStream)),typeof(ExpenseResult));
                 
                 //var str = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
                 var stopKeys = new ExtendedKeys();
-
+                var msg = string.Empty;
                 if (expResponse.Exception == null || string.IsNullOrEmpty(expResponse.Exception.Message))
                 {
                     stopKeys.Add("Result", "Sucess");
+                    msg = "Your request was processed.";
+
                 }
                 else
                 {
                     stopKeys.Add("Result", expResponse.Exception.Message);
+                    msg="Your request was rejected because - " + expResponse.Exception.Message;
                 }
                 PAClientFactory.StopFeature("Expense Request",stopKeys);
-                //await DisplayAlert("result", str, "");
+                await DisplayAlert("Result", msg, "");
             }
             catch (Exception ex)
             {

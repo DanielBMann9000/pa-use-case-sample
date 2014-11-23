@@ -114,7 +114,7 @@ namespace PASample
 
                 
                 Client = new PAClient(configuration);
-                Client.SetSendDisabled(true);
+                
 
 
             }
