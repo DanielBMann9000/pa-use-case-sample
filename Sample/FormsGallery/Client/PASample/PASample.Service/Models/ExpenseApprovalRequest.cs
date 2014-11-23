@@ -9,7 +9,8 @@ namespace PASample.Service.Models
     public class ExpenseApprovalRequest :ServiceRequest
     {
         
-        public Decimal Ammount { get; set; }
+        public Decimal Amount { get; set; }
         public string Reason { get; set; }
+        
     }
 }

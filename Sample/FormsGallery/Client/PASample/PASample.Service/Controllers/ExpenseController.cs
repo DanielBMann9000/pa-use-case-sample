@@ -22,13 +22,13 @@ namespace PASample.Service.Controllers
         {
             var keys = new ExtendedKeys();
             keys.Add("TransactinoId", request.Id.ToString());
-            keys.Add("Requestor", request.InstanceId);
-            keys.Add("Amount", request.Ammount);
+            keys.Add("Requestor", request.LicenseKey);
+            keys.Add("Amount", request.Amount);
             keys.Add("Reason", request.Reason);
             PAClientFactory.GetPAClient().FeatureStart("Expense Approval - Service",keys);
             var resp = new Models.ExpenseApprovalResponse();
             var stopKeys = new ExtendedKeys();
-            if (request.Ammount>=5000)
+            if (request.Amount>=5000)
             {
                 resp.Exception = new Models.ExceptionModel
                 {

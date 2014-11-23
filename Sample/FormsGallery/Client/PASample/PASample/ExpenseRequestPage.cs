@@ -39,7 +39,7 @@ namespace PASample
 
             Xamarin.Forms.InputView ammount = new Entry()
             {
-                Placeholder="Dollar Ammount"
+                Placeholder="Dollar Amount"
 
                 
             };
@@ -73,7 +73,7 @@ namespace PASample
                    pick,
                    new Label
                    {
-                       Text="Ammount",
+                       Text="Amount",
                        Font = Font.SystemFontOfSize(NamedSize.Large, FontAttributes.Bold),
                    },
                    ammount,
@@ -93,7 +93,7 @@ namespace PASample
             try
             {
                 var keys = new ExtendedKeys();
-                keys.Add("Ammount", ammount);
+                keys.Add("Amount", ammount);
                 keys.Add("Reason", reason);
 
                 PAClientFactory.StartFeature(EXPENSE_FEATURE,keys);
@@ -109,6 +109,7 @@ namespace PASample
                 var content = new System.Net.Http.StringContent(new {
                     Ammount=ammount,
                     Reason=reason,
+                    LicenseKey = App.LicenseKey,
                     Id=Guid.NewGuid()
                 
                 }.ToJson());

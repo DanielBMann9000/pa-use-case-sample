@@ -8,7 +8,7 @@ namespace PASample.Service.Models
 {
     public class ServiceRequest
     {
-        public string InstanceId { get; set; }
+        public string LicenseKey { get; set; }
         public Guid Id { get; set; }
     }
 }
