@@ -21,8 +21,9 @@ namespace PASample.Service.Controllers
         public Models.ExpenseApprovalResponse Approve(Models.ExpenseApprovalRequest request)
         {
             var keys = new ExtendedKeys();
-            keys.Add("TransactinoId", request.Id.ToString());
+            
             keys.Add("Requestor", request.LicenseKey);
+            keys.Add("Department", request.Department);
             keys.Add("Amount", request.Amount);
             keys.Add("Reason", request.Reason);
             PAClientFactory.GetPAClient().FeatureStart("Expense Approval - Service",keys);
@@ -34,6 +35,7 @@ namespace PASample.Service.Controllers
                 {
                     Message = "Amount exceeds allowable request"
                 };
+                stopKeys.Add("RejectedReason", resp.Exception.Message);
                 stopKeys.Add("Approved", 0);
 
             }else

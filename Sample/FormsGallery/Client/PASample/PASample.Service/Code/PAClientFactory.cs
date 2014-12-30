@@ -86,7 +86,7 @@ namespace PASample.Service
 				var configuration = new Configuration("1d2b02e0-064d-49a0-bc1b-4be4381c62d3", "42AC2020-ABA1-9069-A2BD-98072B33309A");
 
 	   
-				configuration.ApplicationName = "PA Sample";
+				configuration.ApplicationName = "PA Sample Service";
 				configuration.ApplicationType = "Sample";
 				configuration.CompanyName = "PreEmptive Solutions";
 				configuration.InstanceID = instance;

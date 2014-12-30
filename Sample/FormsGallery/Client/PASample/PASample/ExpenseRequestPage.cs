@@ -99,18 +99,21 @@ namespace PASample
                 PAClientFactory.StartFeature(EXPENSE_FEATURE,keys);
 
                 var handler = new HttpClientHandler();
-                
+
                 /* Needed to use proxy so I could pass data through fiddler to debug
+                 
                 handler.UseProxy = true;
                 handler.Proxy = new Proxy(new Uri("http://192.168.1.101:8888"));
-                 */
+                */
 
                 var client = new System.Net.Http.HttpClient(handler);
                 var content = new System.Net.Http.StringContent(new {
-                    Ammount=ammount,
+                    Amount = ammount,
                     Reason=reason,
                     LicenseKey = App.LicenseKey,
-                    Id=Guid.NewGuid()
+                    Id=Guid.NewGuid(),
+                    Department=App.Department
+
                 
                 }.ToJson());
 
@@ -132,7 +135,7 @@ namespace PASample
                 }
                 var respStream=await response.Content.ReadAsStreamAsync();
                 Newtonsoft.Json.JsonSerializer js=new Newtonsoft.Json.JsonSerializer();
-                var expResponse=(ExpenseResult)js.Deserialize(new Newtonsoft.Json.JsonTextReader(new System.IO.StreamReader(respStream)),typeof(ExpenseResult));
+                var expResponse = (ExpenseApprovalResponse)js.Deserialize(new Newtonsoft.Json.JsonTextReader(new System.IO.StreamReader(respStream)), typeof(ExpenseApprovalResponse));
                 
                 //var str = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
                 var stopKeys = new ExtendedKeys();
@@ -168,11 +171,11 @@ namespace PASample
 
     }
 
-    public class ExpenseResult
+    public class ExpenseApprovalResponse
     {
-        public ExceptionResult Exception { get; set; }
+        public ExceptionModel Exception { get; set; }
     }
-    public class ExceptionResult
+    public class ExceptionModel
     {
         public string Message { get; set; }
     }

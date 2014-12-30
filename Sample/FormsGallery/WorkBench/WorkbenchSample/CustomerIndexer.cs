@@ -48,7 +48,7 @@ namespace WorkbenchSample
 
         public override Type[] DefineMessageTypesToExtract()
         {
-            return new[] { MessageType.ApplicationLifeCycle };
+            return new[] { MessageType.ApplicationLifeCycle,MessageType.Feature };
         }
 
         protected override void DefineFields()
@@ -60,12 +60,28 @@ namespace WorkbenchSample
             EnvelopeAttributes envelopeAttributes,
             Message message)
         {
+            string custID;
+
             var appMessage = message as ApplicationLifeCycle;
             if (null == appMessage)
-                return new ExtractResult(false);
+            {
+                var key = message.ExtendedInformation.Find(ek => ek.Key == "Requestor");
+                if (key!=null)
+                {
+                    custID = key.Value;
+                }
+                else
+                {
+                    return new ExtractResult(false);
+                }
+            }
+            else
+            {
+                custID = envelopeAttributes.Serial;
+            }
 
 
-            tempStateBin.AddValue(GetFieldKey(Customer), MapSerial(envelopeAttributes.Serial));
+            tempStateBin.AddValue(GetFieldKey(Customer), MapSerial(custID));
 
 
             return new ExtractResult(true);

@@ -74,6 +74,8 @@
     <Compile Include="ColorQuery.cs" />
     <Compile Include="CustomerIndexer.cs" />
     <Compile Include="DepartmentIndexer.cs" />
+    <Compile Include="ExpenseIndexer.cs" />
+    <Compile Include="ExpenseQuery.cs" />
     <Compile Include="HappinessIndexer.cs" />
     <Compile Include="HappinessQuery.cs" />
     <Compile Include="InstanceIndexer.cs" />

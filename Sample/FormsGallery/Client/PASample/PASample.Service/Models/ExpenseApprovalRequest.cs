@@ -11,6 +11,8 @@ namespace PASample.Service.Models
         
         public Decimal Amount { get; set; }
         public string Reason { get; set; }
-        
+
+
+       
     }
 }
