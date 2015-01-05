@@ -49,11 +49,13 @@ namespace WorkbenchSample
 
                     new OutputSchema("ExpenseApprovedSchema",this)
                     {
+                       
                           RequiredFields = new HashSet<FieldKey>
                                                 { 
                                                     GetFieldKey(AmountField),
                                                     GetFieldKey(CountField),
-                                                    GetFieldKey(ApprovedField)
+                                                    GetFieldKey(ApprovedField),
+                                                     GetFieldKey(RejectedField)
 
                                                 },
                         PivotKeys = new HashSet<FieldKey>
@@ -61,22 +63,6 @@ namespace WorkbenchSample
                                                     GetFieldKey(RequestReasonField)
                                                 }
                                                 
-                    },
-                    new OutputSchema("ExpenseRejectedSchema",this)
-                    {
-                          RequiredFields = new HashSet<FieldKey>
-                                                { 
-                                                    GetFieldKey(AmountField),
-                                                    GetFieldKey(CountField),
-                                                    GetFieldKey(RejectedField)
-
-                                                },
-                        PivotKeys = new HashSet<FieldKey>
-                                                { 
-                                                    GetFieldKey(RequestReasonField),
-                                                    GetFieldKey(RejectionReasonField)
-
-                                                }
                     }
             };
         }
@@ -121,9 +107,11 @@ namespace WorkbenchSample
                             if (key.Value == "1")
                             {
                                 bin.AddValue(GetFieldKey(ApprovedField), 1);
+                                bin.AddValue(GetFieldKey(RejectedField), 0);
                             }
                             else
                             {
+                                bin.AddValue(GetFieldKey(ApprovedField), 0);
                                 bin.AddValue(GetFieldKey(RejectedField), 1);
                             }
                             extract = true;

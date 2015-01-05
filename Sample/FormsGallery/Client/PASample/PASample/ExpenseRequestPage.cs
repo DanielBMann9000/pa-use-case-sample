@@ -86,7 +86,13 @@ namespace PASample
      
         }
 
-
+        public override string Feature
+        {
+            get
+            {
+                return "Expense Request Page";
+            }
+        }
 
         async void goButon_Clicked(decimal ammount,string reason)
         {

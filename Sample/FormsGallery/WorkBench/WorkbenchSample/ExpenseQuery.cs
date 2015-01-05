@@ -69,17 +69,7 @@ namespace WorkbenchSample
 
 
 
-                        },
-                        new FieldMetadata
-                        {
-                            AssociatedFieldKey=_fieldKeyFactory.GetFieldKey(ExpenseIndexer.Namespace,ExpenseIndexer.RejectionReasonField),
-                            FieldName=ExpenseIndexer.RejectionReasonField,
-                            FriendlyName=ExpenseIndexer.RejectionReasonField,
-                            DataType=typeof(string)                       
-
-
-
-                        },
+                        },                      
                         new FieldMetadata
                         {
                             AssociatedFieldKey=_fieldKeyFactory.GetFieldKey(ExpenseIndexer.Namespace,ExpenseIndexer.RequestReasonField),
