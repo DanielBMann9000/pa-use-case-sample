@@ -87,7 +87,7 @@ namespace PASample
 						},
                         new TextCell
                         {
-                            Text="Expense Request Demo",
+                            Text="Expense Request",
                             Command=navigateCommand,
                             CommandParameter=typeof(ExpenseRequestPage)
 

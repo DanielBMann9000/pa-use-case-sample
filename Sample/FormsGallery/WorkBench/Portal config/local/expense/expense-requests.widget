@@ -1,0 +1,32 @@
+{
+	"title": "Expense Summary",
+	"type": "Table",
+	"input": "local:expense/expense.query",
+	"options": {
+		"show_count": 10,
+		"columns": [
+			{
+				"key": "TotalCount",
+				"type":"number"
+			},
+			{
+				"key":"TotalApproved",
+				"type": "number"
+			},
+			{
+				"key": "TotalRejected",
+				"type": "number"
+			},			
+			{
+				"key":"RequestReason",
+				"as": "Request",
+				"type": "string"
+			},
+			
+			{
+			"key":"Department"
+			},
+			{"key":"Customer"}
+		]
+	}
+}

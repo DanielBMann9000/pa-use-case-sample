@@ -1,0 +1,27 @@
+{
+	"datasets": [
+	
+		
+		{
+			"name": "performanceFeatures",
+			"input": "features-by-day.query",
+			"transform": [				
+				{ "type": "filter", "test": "d.data.FeatureName ==\"Expense Request\"" }							
+			]
+		},	
+
+		{
+			"name": "performanceTimes",
+			"source": "performanceFeatures",
+			"transform": [
+				{ "type": "formula", "field": "AvgLength", "expr": "round(d.data.TotalLength/(d.data.CompleteCount))"},
+				{ "type": "formula", "field": "CappedMaxLength", "expr": "min(d.data.MaxLength, 30*60*1000*10000 )"},				
+				{ "type": "formula", "field": "Threshold", "data_type": "timelength", "expr": "2*1000*10000"},									
+				{ "type": "sort", "by": "data.Time" }	
+,{"type":"log"}
+				
+			]		
+		}		
+		
+	]
+}

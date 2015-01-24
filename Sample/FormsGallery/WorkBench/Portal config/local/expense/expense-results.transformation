@@ -1,0 +1,49 @@
+{
+	"datasets" : [{
+			"name" : "entities",
+			"input" : "expense/expense-types.query",
+			"transform" : [{
+					"type" : "facet",
+					"keys" : ["data.Time"],
+					"as" : ["Time"]
+				}, {
+					"type" : "aggregate",
+					"fields" : [
+						"data.TotalApproved",
+						"data.TotalRejected"
+					],
+					"as" : [
+						"TotalApproved",
+						"TotalRejected"
+					]
+				}, {
+					"type" : "sort",
+					"by" : "Time"
+				}
+			]
+		},
+		{
+			"name" : "money",
+			"input" : "expense/expense-types.query",
+			"transform" : [{
+					"type" : "facet",
+					"keys" : ["data.Time"],
+					"as" : ["Time"]
+				}, {
+					"type" : "aggregate",
+					"fields" : [
+						"data.ApprovedAmount",
+						"data.RejectedAmount"
+					],
+					"as" : [
+						"ApprovedAmount",
+						"RejectedAmount"
+					]
+				}, {
+					"type" : "sort",
+					"by" : "Time"
+				}
+			]
+		}
+	]
+}

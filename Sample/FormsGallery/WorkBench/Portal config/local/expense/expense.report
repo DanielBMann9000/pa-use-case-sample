@@ -1,0 +1,37 @@
+{
+	"title" : "Approvals",
+	"icon" : "icon-usd",
+	"widgets" : [{
+			"widget_id" : "sessions-by-customer",
+			"span" : 6,
+			"max_height" : "318px"
+
+		}, {
+			"widget_id" : "sessions-by-department",
+			"span" : 6,
+			"max_height" : "318px",
+			"break" : true
+		}, {
+			"widget_id" : "expense/expense-timing",
+			"span" : 12,
+			"break" : true
+
+		}, {
+			"widget_id" : "expense/expense-results",
+			"span" : 12,
+			"break" : true
+
+		},  {
+			"widget_id" : "expense/expense-results-values",
+			"span" : 12,
+			"break" : true
+
+		},{
+			"widget_id" : "expense/expense-requests",
+			"span" : 12,
+			"max_height" : "318px"
+
+		}
+
+	]
+}

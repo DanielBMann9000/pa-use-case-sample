@@ -1,0 +1,39 @@
+{
+  "name": "Expense",
+  "domain": "PASample.Expense",
+  "aggregate_on": [
+    {
+	"field": "RequestReason"
+
+    },
+		{ 
+	"field":"Department"
+	},
+	{
+	"field":"Customer"
+	}
+  ],
+  "fields": [
+
+    {
+      "field": "AppId_Version"
+    },
+
+    {
+      "field": "TotalCount"
+    },
+    {
+      "field": "TotalApproved"
+    },
+    {
+      "field": "TotalRejected"
+    },
+	{
+	  "field": "Amount"
+	}
+
+	
+	
+    
+  ]
+}

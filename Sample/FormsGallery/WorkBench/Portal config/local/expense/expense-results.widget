@@ -1,0 +1,21 @@
+{
+	"title" : "Expense Requests",
+	"type" : "Line Graph",
+	"input" : "expense/expense-results.transformation>entities",
+	"options" : {
+		"type" : "stacked",
+		"series_count" : 10,
+		"series_sort" : "-sum",
+		"xaxis" : {
+			"key" : "Time",
+			"type" : "date"
+		},
+		"yaxis" : [
+			"TotalApproved.sum",
+			"TotalRejected.sum"
+		],
+		"xaxis_label" : " ",
+		"yaxis_label" : " ",
+		"sort" : ["Time"]
+	}
+}

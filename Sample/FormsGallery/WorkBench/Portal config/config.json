@@ -3,8 +3,10 @@
 	"display_date_format": "m/d/yy",
 	"input_date_format": "mm/dd/yyyy",
 	"reports": {
+
 		"overview": "preemptive:overview",
 		"serials":"local:critical-activity",
+		"Approvals":"local:expense/expense",
 		"exceptions": "local:exceptions",
 		"version-adoption": "preemptive:version-adoption",
 		"tamper": "preemptive:tamper",

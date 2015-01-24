@@ -1,0 +1,29 @@
+{
+	"name" : "Expense",
+	"domain" : "PASample.Expense",
+	"aggregate_on" : [{
+			"field" : "AppId_Version"
+
+		}, {
+			"field" : "Time",
+			"options" : "day"
+		}
+	],
+	"fields" : [{
+			"field" : "AppId_Version"
+		}, {
+			"field" : "TotalCount"
+		}, {
+			"field" : "TotalApproved"
+		}, {
+			"field" : "TotalRejected"
+		}, {
+			"field" : "Amount"
+		}, {
+			"field" : "ApprovedAmount"
+		}, {
+			"field" : "RejectedAmount"
+		}
+
+	]
+}

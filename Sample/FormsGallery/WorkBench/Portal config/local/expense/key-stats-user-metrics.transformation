@@ -1,0 +1,31 @@
+{
+  "datasets": [
+		{
+		  "name": "metrics",
+		  "input": "expense/key-stats.query",
+		  "transform": [
+			{   
+			  "type": "aggregate", 
+			  "fields": [
+				"data.StopCount",
+				"data.StartCount",
+				"data.CompleteCount",
+				"data.Count",
+				"data.NewUsers",
+				"data.ReturningUsers",
+				"data.UniqueUsers"
+			  ],
+			  "as": [
+				"AllSessionsStopped",
+				"AllSessionsStarted",
+				"AllCompleteCount",
+				"AllCount",
+				"AllNewUsers",
+				"AllReturningUsers",
+				"AllUniqueUsers"
+			  ]
+			}
+		  ]
+		}
+	]
+}

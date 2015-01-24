@@ -79,6 +79,27 @@ namespace WorkbenchSample
 
 
 
+                        },
+                                              
+                        new FieldMetadata
+                        {
+                            AssociatedFieldKey=_fieldKeyFactory.GetFieldKey(ExpenseIndexer.Namespace,ExpenseIndexer.ApprovedAmountField),
+                            FieldName=ExpenseIndexer.ApprovedAmountField,
+                            FriendlyName=ExpenseIndexer.ApprovedAmountField,
+                            DataType=typeof(int)                       
+
+
+
+                        },                      
+                        new FieldMetadata
+                        {
+                            AssociatedFieldKey=_fieldKeyFactory.GetFieldKey(ExpenseIndexer.Namespace,ExpenseIndexer.RejectedAmountField),
+                            FieldName=ExpenseIndexer.RejectedAmountField,
+                            FriendlyName=ExpenseIndexer.RejectedAmountField,
+                            DataType=typeof(int)                       
+
+
+
                         }
                     }
                     };
