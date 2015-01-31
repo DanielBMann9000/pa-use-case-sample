@@ -11,7 +11,8 @@ namespace PASample
 {
     public class ExpenseRequestPage : BasePage
     {
-        private const string SERVICE_URL = "http://josh-2012r2-2.preemptive.internal/sample/api/Expense/Approve";
+        //private const string SERVICE_URL = "http://josh-2012r2-2.preemptive.internal/sample/api/Expense/Approve";
+        private const string SERVICE_URL = "http://pasampletest.azurewebsites.net/api/Expense/Approve";
         private const string EXPENSE_FEATURE = "Expense Request";
     
         public ExpenseRequestPage()
@@ -102,6 +103,7 @@ namespace PASample
                 keys.Add("Amount", ammount);
                 keys.Add("Reason", reason);
 
+                
                 PAClientFactory.StartFeature(EXPENSE_FEATURE,keys);
 
                 var handler = new HttpClientHandler();
@@ -143,7 +145,7 @@ namespace PASample
                 Newtonsoft.Json.JsonSerializer js=new Newtonsoft.Json.JsonSerializer();
                 var expResponse = (ExpenseApprovalResponse)js.Deserialize(new Newtonsoft.Json.JsonTextReader(new System.IO.StreamReader(respStream)), typeof(ExpenseApprovalResponse));
                 
-                //var str = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
+             
                 var stopKeys = new ExtendedKeys();
                 var msg = string.Empty;
                 if (expResponse.Exception == null || string.IsNullOrEmpty(expResponse.Exception.Message))

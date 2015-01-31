@@ -10,13 +10,14 @@ namespace PASample.Service.Controllers
 {
     public class ExpenseController : ApiController
     {
-        // GET api/values
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/values/5
+        /// <summary>
+        /// A fake endpoint which simulates approval / rejection of expense requests. This demonstrates instrumenting
+        /// a service using the Feature messages in PA. Two messages are generated one at the start of the method and one
+        /// at the end. This allows the workbench to calculate the elaped time between the two messages.
+        ///
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         public Models.ExpenseApprovalResponse Approve(Models.ExpenseApprovalRequest request)
         {
@@ -48,9 +49,5 @@ namespace PASample.Service.Controllers
         }
 
        
-        // DELETE api/values/5
-        public void Delete(Guid id)
-        {
-        }
     }
 }

@@ -105,8 +105,8 @@ namespace PASample
                 configuration.CompanyName = "PreEmptive Solutions";
                 configuration.InstanceID = instance;
                 configuration.ApplicationVersion = "1.1";
-                //configuration.Endpoint = "so-s.info/endpoint";
-                configuration.Endpoint = "josh-2012r2-2.preemptive.internal/endpoint";
+                configuration.Endpoint = "so-s.info/endpoint";
+                //configuration.Endpoint = "josh-2012r2-2.preemptive.internal/endpoint";
                 configuration.UseSSL = false;
                 configuration.FullData = true;
 				configuration.StopBehavior.SessionExtensionWindow = 15000;
