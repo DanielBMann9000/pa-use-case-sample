@@ -12,7 +12,7 @@ namespace PASample
     public class ExpenseRequestPage : BasePage
     {
         //private const string SERVICE_URL = "http://josh-2012r2-2.preemptive.internal/sample/api/Expense/Approve";
-        private const string SERVICE_URL = "http://pasampletest.azurewebsites.net/api/Expense/Approve";
+        private const string SERVICE_URL = "http://pasample.azurewebsites.net/api/Expense/Approve";
         private const string EXPENSE_FEATURE = "Expense Request";
     
         public ExpenseRequestPage()
